@@ -18,7 +18,7 @@ const currentPath = Astro.url.pathname;
     aria-expanded="false"
     aria-label="Mega Menu"
   >
-    Services<Icon name="arrowDownRight" />
+    Services<Icon name="arrowDownRight" className="size-4" />
   </button>
 
   <div
@@ -46,7 +46,7 @@ const currentPath = Astro.url.pathname;
                   class="flex gap-x-4 rounded-lg p-3 hover:bg-slate-100 focus:bg-slate-100 focus:outline-hidden"
                   href={item.href}
                 >
-                  <Icon name={item.icon} class="mt-1 size-5 shrink-0 text-slate-800" />
+                  <Icon name={item.icon} class="mt-1 size-6 shrink-0 text-slate-800" />
 
                   <div class="grow">
                     <p class="text-sm font-medium text-slate-800">

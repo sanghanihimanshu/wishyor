@@ -3,7 +3,7 @@ export const servicesMenu = [
     sectionTitle: "Web Development",
     items: [
       {
-        icon: "lightbulb",
+        icon: "code",
         title: "Custom Web Solutions",
         description: "We create dynamic, responsive websites optimized for speed, security, and user experience.",
         href: "#",
