@@ -1,22 +1,22 @@
 ---
 import Icon from "@ui/icons/Icon.astro";
-import FeatureCard from "@common/FeatureCard.astro";
+import ServiceCard from "@common/ServiceCard.astro";
 import Button from "@ui/Button.astro";
 
 // Content for the section title and subtitle
-const title = "Turn Historical Data into Tomorrow's Decisions";
-const subTitle =
-  "Leverage advanced statistics and ML to uncover hidden patterns in your data. Make confident decisions backed by proven forecasting models. Our predictive engine analyzes thousands of data points to help you anticipate market changes and stay ahead of the competition.";
+const title = "Elevate Your Digital Presence";
+const subTitle = 
+  "Drive growth with our cutting-edge digital marketing solutions. From SEO to social media, we deliver data-driven strategies that help you reach your target audience and achieve measurable results.";
 
 // Call-to-action configuration for the tertiary button
-const tertiaryCTA = { text: "Learn More", href: "#" };
+const tertiaryCTA = { text: "View Services", href: "/services" };
 ---
 
 <section
   class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
 >
   <div
-    class="relative isolate overflow-hidden rounded-3xl bg-teal-400 px-6 pt-16 shadow-xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
+    class="relative isolate overflow-hidden rounded-3xl bg-teal-500 px-6 pt-16 shadow-xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
   >
     {/* Background Circle SVG */}
     <svg
@@ -32,8 +32,8 @@ const tertiaryCTA = { text: "Learn More", href: "#" };
         fill-opacity="0.7"></circle>
       <defs>
         <radialGradient id="gradient_2">
-          <stop offset="0" stop-color="#087F7F"></stop>
-          <stop offset="1" stop-color="#087F7F"></stop>
+          <stop offset="0" stop-color="#087f7f"></stop>
+          <stop offset="1" stop-color="#087f7f"></stop>
         </radialGradient>
       </defs>
     </svg>
@@ -62,18 +62,18 @@ const tertiaryCTA = { text: "Learn More", href: "#" };
       </div>
     </div>
 
-    {/* Section's feature cards and connecting animations */}
+    {/* Section's Service cards and connecting animations */}
 
     <div class="relative my-16 flex flex-col gap-y-7 lg:my-8 2xl:h-full">
-      {/* First Feature Card */}
+      {/* First Service Card */}
 
-      <FeatureCard
-        icon="dataBase"
-        description="Clean, organize, and prepare raw data for analysis."
+      <ServiceCard
+        icon="megaphone"
+        description="Strategic social media marketing and content creation."
         styleClass=""
       />
 
-      {/* First beam line SVG connecting feature cards visually */}
+      {/* First beam line SVG connecting Service cards visually */}
 
       <svg
         class="line-connector absolute z-0 hidden w-1/2 xl:left-[10%] xl:top-[25%] xl:block"
@@ -94,14 +94,14 @@ const tertiaryCTA = { text: "Learn More", href: "#" };
           fill="transparent"></path>
       </svg>
 
-      {/* Second Feature Card */}
-      <FeatureCard
-        icon="brain"
-        description="Use statistical models to identify key patterns and trends."
+      {/* Second Service Card */}
+      <ServiceCard
+        icon="chartBar"
+        description="Search engine optimization and performance analytics."
         styleClass="self-center"
       />
 
-      {/* Second beam line SVG connecting feature cards visually */}
+      {/* Second beam line SVG connecting Service cards visually */}
 
       <svg
         class="line-connector absolute hidden w-1/2 xl:left-[70%] xl:top-[55%] xl:block"
@@ -122,10 +122,10 @@ const tertiaryCTA = { text: "Learn More", href: "#" };
           fill="transparent"></path>
       </svg>
 
-      {/* Third Feature Card */}
-      <FeatureCard
-        icon="lightbulb"
-        description="Convert insights into visuals and actionable decisions."
+      {/* Third Service Card */}
+      <ServiceCard
+        icon="target"
+        description="Targeted advertising and conversion optimization."
         styleClass="self-end"
       />
     </div>
@@ -133,7 +133,7 @@ const tertiaryCTA = { text: "Learn More", href: "#" };
 </section>
 
 <style>
-  /* Styling for animated beam line connecting feature cards */
+  /* Styling for animated beam line connecting Service cards */
   .beam-line {
     stroke-dasharray: 200;
     stroke-dashoffset: 200;

@@ -2,7 +2,7 @@
 import FooterFormExpanded from "@ui/forms/FooterFormExpanded.astro";
 
 // Import data for dynamic rendering
-import { featuresMenu } from "@/utils/megaMenu/services";
+import { servicesMenu } from "@/utils/megaMenu/services";
 import { platformMenu } from "@utils/megaMenu/platform";
 import { supportMenu } from "@utils/megaMenu/support";
 
@@ -54,7 +54,7 @@ const trademarkNotice =
         <div class="mt-3 text-sm">
           <ul class="space-y-3">
             {
-              featuresMenu
+              servicesMenu
                 .flatMap((feature) => feature.items)
                 .map((item) => (
                   <li>

@@ -95,4 +95,13 @@ export const Icons = {
   code: {
     name: "Code",
   },
+  megaphone: {
+    name: "Megaphone",
+  },
+  chartBar:{
+    name: "ChartBar",
+  },
+  target:{
+    name: "Target",
+  }
 };

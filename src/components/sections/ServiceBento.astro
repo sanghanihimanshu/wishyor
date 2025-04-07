@@ -1,20 +1,16 @@
 ---
 import { Image } from "astro:assets";
-
-import image_1 from "@images/toolbar.webp";
-import image_2 from "@images/chart.webp";
-import image_3 from "@images/dashboard.webp";
 import PlatformOrbit from "@common/PlatformOrbit.astro";
 
 // Content for the section title and subtitle
-const title = `<span class="text-teal-700">Data</span><span class="font-normal text-slate-400">Nova</span>'s Powerful Analytics Suite`;
-const subTitle = `Discover how DataNova transforms your Excel workspace into a comprehensive analytics powerhouse, making data analysis accessible and actionable.`;
+const title = `<span class="text-teal-700">Client</span><span class="font-normal text-slate-400">Success</span> Stories`;
+const subTitle = `See how we've helped organizations transform their businesses through innovative technology solutions and exceptional service delivery.`;
 
 const features = [
   {
-    title: "Comprehensive analytics suite",
-    description: `Choose from <span class="font-bold">30+</span> statistical models and <span class="font-bold">25+</span> visualization templates to unlock insights from any dataset.`,
-    image: image_2,
+    title: "Fortune 500 Financial Institution",
+    description: `"Their <span class="font-bold">microservices architecture</span> helped us reduce operational costs by 40% and improved system reliability significantly."`,
+    image: "image_2",
     imageClass: "mx-auto mt-5 self-end object-cover w-[90%]",
     imageContainerClass:
       "relative flex min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm",
@@ -25,10 +21,10 @@ const features = [
     wrapperClass: "lg:rounded-l-3xl",
   },
   {
-    title: "Native Excel integration",
+    title: "Leading Healthcare Provider",
     description:
-      "Work directly in Excel with our native toolbar and custom functions",
-    image: image_1,
+      "The cloud migration was seamless, and their 24/7 support team has been exceptional in maintaining our critical systems.",
+    image: "image_1",
     imageClass: "w-full rounded-t-xl",
     imageContainerClass:
       "relative flex flex-1 items-center justify-center px-4 max-lg:pb-12 max-lg:pt-10 lg:pb-2",
@@ -37,12 +33,11 @@ const features = [
     class: "relative max-lg:row-start-1",
     wrapperClass: "max-lg:rounded-t-3xl",
   },
-
   {
-    title: "Smart analysis tools",
+    title: "Global Retail Chain",
     description:
-      "Let AI do the heavy lifting. Automatically detect patterns, spot anomalies, and get accurate forecasts from your historical data.",
-    image: image_3,
+      "Their custom e-commerce solution scaled flawlessly during our peak season, handling 3x our normal traffic without issues.",
+    image: "image_3",
     imageClass: "h-full object-cover",
     imageContainerClass: "relative min-h-[30rem] w-full grow",
     imageSecondaryContainerClass:
@@ -51,10 +46,10 @@ const features = [
     wrapperClass: "max-lg:rounded-b-3xl lg:rounded-r-3xl",
   },
   {
-    title: "And more...",
+    title: "Client Achievements",
     listItems: [
-      "Works seamlessly with all modern Excel versions (2013+) on both Windows and Mac",
-      "Access your insights anywhere through cloud integration with Google Sheets and OneDrive",
+      "Average 45% reduction in infrastructure costs",
+      "99.99% uptime for mission-critical applications",
     ],
     class: "relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2",
     wrapperClass: "rounded-lg",
@@ -115,7 +110,7 @@ const features = [
                 <div class={`${feature.imageContainerClass}`}>
                   {feature.imageSecondaryContainerClass ? (
                     <div class={`${feature.imageSecondaryContainerClass}`}>
-                      <Image
+                      <img
                         class={`${feature.imageClass}`}
                         src={feature.image}
                         alt=""
@@ -124,7 +119,7 @@ const features = [
                   ) : (
                     <>
                       <div class={`${feature.imageFadeClass}`} />
-                      <Image
+                      <img
                         class={`${feature.imageClass}`}
                         src={feature.image}
                         alt=""

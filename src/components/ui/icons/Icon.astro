@@ -1,18 +1,18 @@
 ---
 import { Icons } from "./icons.ts";
-import LucideIcon from "./Icon.svelte";
+import LucidIcon from "./Icon.svelte";
 
 const { name, class: className, ...attributes } = Astro.props;
 let icon = (Icons as any)[name] || {};
 
 const combinedClass = [
-  icon.class,
+  icon.class||"",
   className
 ].filter(Boolean).join(" ");
 ---
 
 {icon ? (
-  <LucideIcon name={icon.name} class={combinedClass} {...attributes}/>
+  <LucidIcon name={icon.name} className={combinedClass} attributes/>
 ) : (
   "Icon not found"
 )}

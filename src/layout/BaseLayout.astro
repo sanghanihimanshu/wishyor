@@ -24,15 +24,13 @@ const defaultSchema: WithContext<Thing> = {
   inLanguage: "en-US",
   "@id": Astro.url.href,
   url: Astro.url.href,
-  name: "DataNova",
-  description:
-    "Unlock powerful data insights with DataNova's advanced analytics suite for Excel. Visualize, analyze, and make data-driven decisions in minutes with seamless Excel integration, AI-powered analysis, and predictive forecasting models.",
+  name: "Wishyor",
+  description: "Share your wishes and dreams with the world. A place to connect, inspire and make wishes come true.",
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
-    name: "DataNova",
-    description:
-      "DataNova Analytics Inc. provides advanced analytics for Excel to help businesses unlock actionable insights quickly with no coding required.",
+    name: "Wishyor",
+    description: "A social platform for sharing and discovering wishes, dreams, and aspirations with like-minded people.",
   },
 };
 ---
@@ -42,27 +40,27 @@ const defaultSchema: WithContext<Thing> = {
     {/* SEO Meta Tags */}
     <SEO
       charset="utf-8"
-      title={seo?.title ?? "DataNova"}
+      title={seo?.title ?? "Wishyor"}
       description={seo?.description ??
-        "Unlock powerful data insights with DataNova's advanced analytics suite for Excel. Visualize, analyze, and make data-driven decisions in minutes with seamless Excel integration, AI-powered analysis, and predictive forecasting models."}
+        "Share your wishes and dreams with the world. A place to connect, inspire and make wishes come true."}
       openGraph={{
         basic: {
-          title: "DataNova - Unlock Insights from Your Excel Data",
+          title: "Wishyor - Share Your Dreams",
           type: "website",
           image: socialImage,
         },
         optional: {
           description:
-            "Transform your Excel workspace with DataNova's powerful analytics suite. Get insights, predictive models, and visualizations in minutes with no coding required.",
+            "Join our community to share your wishes, connect with others, and turn dreams into reality. Express yourself in a supportive environment.",
         },
       }}
       twitter={{
         card: "summary_large_image",
-        title: "DataNova - Unlock Insights from Your Excel Data",
+        title: "Wishyor - Share Your Dreams",
         description:
-          "Transform your Excel workspace with DataNova's powerful analytics suite. Visualize and analyze data quickly with no coding required.",
+          "Join our community to share your wishes, connect with others, and turn dreams into reality.",
         image: socialImage,
-        imageAlt: "DataNova Logo.",
+        imageAlt: "Wishyor Logo",
       }}
       extend={{
         link: [
