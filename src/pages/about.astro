@@ -4,21 +4,21 @@ import type { WithContext, Thing } from "schema-dts";
 
 // Data describing the "About" section content
 const aboutData = {
-  title: "DataNova,",
+  title: "TechSolutions,",
   description:
-    "founded in 2018, is a leading provider of powerful analytics tools that transform your Excel workspace into a comprehensive analytics powerhouse, making data analysis accessible and actionable for businesses worldwide.",
+    "established in 2015, is a leading enterprise technology solutions provider specializing in custom software development, cloud infrastructure, and digital transformation services for businesses worldwide.",
   statistics: [
     {
-      label: "Industry Sectors Served",
-      value: "15+",
+      label: "Successful Projects",
+      value: "200+",
     },
     {
-      label: "Data Points Processed",
-      value: "Billions",
+      label: "Enterprise Clients",
+      value: "50+",
     },
     {
-      label: "Custom Reports Generated",
-      value: "500,000+",
+      label: "Years Experience",
+      value: "8+",
     },
   ],
 };
@@ -28,27 +28,27 @@ const expertiseData = {
   title: "Our Expertise:",
   expertise: [
     {
-      title: "AI-Powered Insights:",
+      title: "Enterprise Software:",
       description:
-        "Uncover deep insights and predict trends with advanced AI algorithms for proactive decision-making.",
+        "Custom software solutions built with modern tech stack, focusing on scalability, security, and performance.",
     },
     {
-      title: "Real-Time Data Visualization:",
+      title: "Cloud Infrastructure:",
       description:
-        "Transform data into interactive visuals, tracking key metrics in real-time for actionable insights.",
+        "Comprehensive cloud solutions including migration, optimization, and managed services with 24/7 support.",
     },
     {
-      title: "Predictive Analytics Engine:",
+      title: "Digital Transformation:",
       description:
-        "Leverage machine learning to forecast trends and identify opportunities, staying ahead of the curve.",
+        "End-to-end digital transformation services helping businesses modernize their technology infrastructure.",
     },
   ],
 };
 
 // SEO metadata for the page
 const seo = {
-  title: "About DataNova",
-  description: "Learn more about DataNova, the analytics platform that transforms your Excel data with advanced insights and predictive models.",
+  title: "About TechSolutions",
+  description: "Leading provider of enterprise software development, cloud infrastructure, and digital transformation services.",
 };
 
 // Schema.org metadata for SEO
@@ -58,13 +58,13 @@ const schema: WithContext<Thing> = {
   "inLanguage": "en-US",
   "@id": Astro.url.href,
   "url": Astro.url.href,
-  "name": "About DataNova",
-  "description": "Get to know DataNova, the powerful analytics platform for Excel that enables businesses to make data-driven decisions quickly with no coding required.",
+  "name": "About TechSolutions",
+  "description": "Enterprise technology solutions provider specializing in custom software development and cloud infrastructure.",
   "isPartOf": {
     "@type": "WebSite",
     "url": `${Astro.site}`,
-    "name": "DataNova",
-    "description": "DataNova Analytics Inc. provides advanced analytics for Excel to help businesses unlock actionable insights quickly with no coding required."
+    "name": "TechSolutions",
+    "description": "Leading provider of enterprise software development, cloud infrastructure, and digital transformation services."
   }
 };
 ---

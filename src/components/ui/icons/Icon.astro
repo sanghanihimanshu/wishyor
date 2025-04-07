@@ -2,7 +2,7 @@
 import { Icons } from "./icons.ts";
 import LucidIcon from "./Icon.svelte";
 
-const { name, class: className, ...attributes } = Astro.props;
+const { name, class: className, attributes } = Astro.props;
 let icon = (Icons as any)[name] || {};
 
 const combinedClass = [
@@ -12,7 +12,7 @@ const combinedClass = [
 ---
 
 {icon ? (
-  <LucidIcon name={icon.name} className={combinedClass} attributes/>
+  <LucidIcon name={icon.name} className={combinedClass} attributes={attributes}/>
 ) : (
   "Icon not found"
 )}

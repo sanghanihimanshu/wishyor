@@ -1,24 +1,24 @@
-export const platformMenu = [
+export const productsMenu = [
   {
-    href: "/platform",
+    href: "/products",
     title: "DataNova Core",
     description: "AI-powered risk analysis and data modeling engine.",
     image: "datanova",
   },
   {
-    href: "/platform",
+    href: "/products",
     title: "InsightFlow Cloud",
     description: "A web-based platform for collaborative data analytics.",
     image: "if_cloud",
   },
   {
-    href: "/platform",
+    href: "/products",
     title: "InsightFlow Planner",
     description: "Advanced forecasting and scenario planning for business strategy.",
     image: "if_planner",
   },
   {
-    href: "/platform",
+    href: "/products",
     title: "InsightFlow Visualizer",
     description:
       "Custom dashboards and interactive data storytelling.",

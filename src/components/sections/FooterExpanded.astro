@@ -3,7 +3,7 @@ import FooterFormExpanded from "@ui/forms/FooterFormExpanded.astro";
 
 // Import data for dynamic rendering
 import { servicesMenu } from "@/utils/megaMenu/services";
-import { platformMenu } from "@utils/megaMenu/platform";
+import { productsMenu } from "@utils/megaMenu/products";
 import { supportMenu } from "@utils/megaMenu/support";
 
 // Props for customization
@@ -70,14 +70,14 @@ const trademarkNotice =
 
       {/* Products Links */}
       <div>
-        <h3 class="font-semibold text-slate-700">Platform</h3>
+        <h3 class="font-semibold text-slate-700">Products</h3>
         <div class="mt-3 text-sm">
           <ul class="space-y-3">
             {
-              platformMenu.map((platform) => (
+              productsMenu.map((product) => (
                 <li>
-                  <a class="text-sm text-slate-600" href={platform.href}>
-                    {platform.title}
+                  <a class="text-sm text-slate-600" href={product.href}>
+                    {product.title}
                   </a>
                 </li>
               ))

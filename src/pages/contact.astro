@@ -4,50 +4,44 @@ import Icon from "@ui/icons/Icon.astro";
 import ContactForm from "@ui/forms/ContactForm.astro";
 import type { WithContext, Thing } from "schema-dts";
 
-const addressHeading = "Our address:";
-const emailHeading = "Contact us by email:";
-const knowledgeBaseHeading = "Knowledge base";
+const addressHeading = "Headquarters:";
+const emailHeading = "Get in touch:";
+const supportHeading = "Technical Support";
 
 const contactDetails = {
-  addressLine1: "1234 1st Ave Ste 300",
-  addressLine2: "Seattle, WA 98104, USA",
-  phone: "1 (833) 328-2669",
-  email: "info@datanova.com",
+  address: "Mumbai, Maharashtra, 400001",
+  phone: "+91 (022) 1234-5678",
+  email: "contact@wishyor.com",
+  website: "www.wishyor.com",
 };
 
-const knowledgeBaseDetails = {
-  description: "Browse through all of our knowledge base articles.",
-  linkText: "Search the knowledge base",
-  linkUrl: "/support/knowledge-base",
+const supportDetails = {
+  description: "Access technical documentation and developer resources.",
+  linkText: "Visit Developer Portal",
+  linkUrl: "/developers",
 };
 
-// Content for the page title and subtitle
-const title = "Contact us";
-const subTitle = "Questions, Comments or Feedback.";
+const title = "Contact Us";
+const subTitle = "Let's discuss your technology needs.";
 
-// SEO metadata for the page
 const seo = {
-  title: "Contact DataNova",
-  description:
-    "Get in touch with DataNova for inquiries, support, and feedback. Reach out via email, phone, or visit our office.",
+  title: "Contact TechSolutions",
+  description: "Get in touch with our technology experts for enterprise solutions, cloud services, and digital transformation.",
 };
 
-// Schema.org metadata for SEO
 const schema: WithContext<Thing> = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   inLanguage: "en-US",
   "@id": Astro.url.href,
   url: Astro.url.href,
-  name: "Contact DataNova",
-  description:
-    "Reach out to DataNova for any questions, support, or business inquiries. Our team is ready to assist you.",
+  name: "Contact TechSolutions",
+  description: "Connect with our technology experts for enterprise software development, cloud infrastructure, and digital transformation solutions.",
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
-    name: "DataNova",
-    description:
-      "DataNova Analytics Inc. provides advanced analytics for Excel to help businesses unlock actionable insights quickly with no coding required.",
+    name: "TechSolutions",
+    description: "Enterprise technology solutions provider specializing in custom software development and cloud infrastructure.",
   },
 };
 ---
@@ -77,9 +71,7 @@ const schema: WithContext<Thing> = {
             <h4 class="font-semibold text-slate-600">{addressHeading}</h4>
 
             <address class="mt-1 text-sm not-italic text-slate-500">
-              {contactDetails.addressLine1}
-              <br />
-              {contactDetails.addressLine2}
+              {contactDetails.address}
             </address>
           </div>
         </div>
@@ -101,16 +93,16 @@ const schema: WithContext<Thing> = {
         <div class="flex gap-x-5">
           <Icon name="info" class="size-6 shrink-0 text-slate-600" />
           <div class="grow">
-            <h4 class="font-semibold text-slate-600">{knowledgeBaseHeading}</h4>
+            <h4 class="font-semibold text-slate-600">{supportHeading}</h4>
             <p class="mt-1 text-sm text-slate-500">
-              {knowledgeBaseDetails.description}
+              {supportDetails.description}
             </p>
             <p class="mt-2">
               <a
                 class="group inline-flex items-center gap-x-2 text-sm font-medium text-slate-600 decoration-2 transition duration-300 hover:underline focus:underline focus:outline-hidden"
-                href={knowledgeBaseDetails.linkUrl}
+                href={supportDetails.linkUrl}
               >
-                {knowledgeBaseDetails.linkText}
+                {supportDetails.linkText}
                 <Icon name="chevronRight" />
               </a>
             </p>

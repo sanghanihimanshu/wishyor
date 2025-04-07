@@ -6,42 +6,35 @@ import type { WithContext, Thing } from "schema-dts";
 
 export const pageContent = {
   errorCode: "404",
-  title: "This page does not exist",
-  description: "Sorry, we couldn't find the page you're looking for.",
-  goBackLabel: "Go back",
+  title: "Page Not Found",
+  description: "The page you're looking for doesn't exist or has been moved.",
+  goBackLabel: "Return",
 };
 
 const resources = [
   {
-    title: "Knowledge Base",
-    description: "Find answers to common questions.",
+    title: "Solutions",
+    description: "Explore our enterprise tech solutions.",
+    icon: "brain",
+    link: "/solutions",
+  },
+  {
+    title: "Case Studies",
+    description: "Read our client success stories.",
+    icon: "chartBar",
+    link: "/case-studies",
+  },
+  {
+    title: "Support",
+    description: "Get help from our tech experts.",
     icon: "info",
-    link: "/support/knowledge-base",
-  },
-  {
-    title: "Articles",
-    description: "Explore insights and best practices.",
-    icon: "articles",
-    link: "/support/articles",
-  },
-  {
-    title: "Whitepapers",
-    description: "Read in-depth technical reports.",
-    icon: "blankDocument",
-    link: "/support/whitepapers",
-  },
-  {
-    title: "Reference",
-    description: "Browse technical documentation.",
-    icon: "documentMagnifyingGlass",
-    link: "/support/reference",
+    link: "/support",
   },
 ];
 
 const seo = {
-  title: "Page Not Found - DataNova",
-  description:
-    "Sorry, we couldn't find the page you're looking for. Explore our resources or go back to the homepage.",
+  title: "Page Not Found - TechSolutions",
+  description: "The page you're looking for doesn't exist. Explore our resources or return to homepage.",
 };
 
 const schema: WithContext<Thing> = {
@@ -51,14 +44,12 @@ const schema: WithContext<Thing> = {
   "@id": Astro.url.href,
   url: Astro.url.href,
   name: "Page Not Found",
-  description:
-    "Sorry, we couldn't find the page you're looking for. Explore our resources or go back to the homepage.",
+  description: "The page you're looking for doesn't exist. Explore our resources or return to homepage.",
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
-    name: "DataNova",
-    description:
-      "DataNova Analytics Inc. provides advanced analytics for Excel to help businesses unlock actionable insights quickly with no coding required.",
+    name: "TechSolutions",
+    description: "Enterprise technology solutions delivering custom software development, cloud infrastructure, and digital transformation services.",
   },
 };
 ---

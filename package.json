@@ -2,12 +2,16 @@
   "name": "wishyor",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build --remote",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "lint": "astro check",
+    "clean": "rm -rf dist .astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -27,9 +31,7 @@
     "astro-font": "^1.0.0",
     "astro-seo": "^0.8.4",
     "astro-seo-schema": "^5.0.0",
-    "dlx": "^0.2.1",
     "mdast-util-to-string": "^4.0.0",
-    "pnpm": "^10.7.1",
     "preline": "^3.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -46,6 +48,11 @@
     "mdast-util-from-markdown": "^2.0.2",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.11"
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=18.14.1",
+    "pnpm": ">=8.0.0"
   }
 }
