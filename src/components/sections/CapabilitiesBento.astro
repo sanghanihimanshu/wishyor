@@ -2,9 +2,9 @@
 import { Image } from "astro:assets";
 import ProductOrbit from "@common/ProductOrbit.astro";
 
-import image_1 from "@images/bento/Aws.png";
-import image_2 from "@images/bento/Aws.png";
+import image_1 from "@images/Cloud.png";
 import image_3 from "@images/bento/Aws.png";
+import image_2 from "@images/fullStack.png";
 // Content for the section title and subtitle
 const title = `<span class="text-teal-700">Our</span><span class="font-normal text-slate-400">Professional</span> Expertise`;
 const subTitle = `Delivering enterprise-grade solutions with cutting-edge technology and industry best practices.`;
@@ -28,7 +28,7 @@ const features = [
     description:
       "Certified architects specializing in AWS, Azure, and GCP with extensive experience in microservices and containerization.",
     image: image_1,
-    imageClass: "w-full rounded-t-xl",
+    imageClass: "w-full rounded-t-xl object-cover",
     imageContainerClass:
       "relative flex flex-1 items-center justify-center px-4 max-lg:pb-12 max-lg:pt-10 lg:pb-2",
     imageFadeClass:
@@ -41,10 +41,10 @@ const features = [
     description:
       "Implementation of CI/CD pipelines, infrastructure as code, and enterprise-grade security protocols.",
     image: image_3,
-    imageClass: "h-full object-cover",
-    imageContainerClass: "relative min-h-[30rem] w-full grow",
+    imageClass: "h-full w-full object-none rounded-t-xl",
+    imageContainerClass: "relative min-h-[30rem] w-full grow shadow-2xl",
     imageSecondaryContainerClass:
-      "absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl shadow-2xl",
+      "absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl",
     class: "relative lg:row-span-2",
     wrapperClass: "max-lg:rounded-b-3xl lg:rounded-r-3xl",
   },
