@@ -103,5 +103,29 @@ export const Icons = {
   },
   target:{
     name: "Target",
-  }
+  },
+  monitorsmartphone: {
+    name: "MonitorSmartphone",
+  },
+  layoutdashboard: {
+    name: "LayoutDashboard",
+  },
+  database: {
+    name: "Database", 
+  },
+  tabletsmartphone: {
+    name: "TabletSmartphone",
+  },
+  chartline: {
+    name: "ChartLine",
+  },
+  bot: {
+    name: "Bot",
+  },
+  cloudupload: {
+    name: "CloudUpload",
+  },
+  servercog: {
+    name: "ServerCog",
+  },
 };

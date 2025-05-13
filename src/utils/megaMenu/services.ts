@@ -1,34 +1,17 @@
 export const servicesMenu = [
   {
-    sectionTitle: "Web Development",
+    sectionTitle: "Full-Stack Development",
     items: [
       {
-        icon: "code",
-        title: "Custom Web Solutions",
-        description: "We create dynamic, responsive websites optimized for speed, security, and user experience.",
+        icon: "monitorsmartphone",
+        title: "Web & Mobile App Development",
+        description: "Cross-platform solutions using React, Node.js, and Flutter.",
         href: "/services",
       },
       {
-        icon: "lightbulb",
-        title: "Modern Tech Stack",
-        description: "Utilizing Next.js, React, and cutting-edge technologies to ensure top-tier development quality.",
-        href: "/services",
-      },
-    ],
-  },
-  {
-    sectionTitle: "Software Development",
-    items: [
-      {
-        icon: "lightbulb",
-        title: "Scalable Applications",
-        description: "From startups to enterprises, we develop software that grows with your business.",
-        href: "/services",
-      },
-      {
-        icon: "lightbulb",
-        title: "Secure & Reliable",
-        description: "We follow best practices to ensure your software is safe, efficient, and future-proof.",
+        icon: "database",
+        title: "API & Database Design",
+        description: "Secure, scalable APIs and optimized database structures.",
         href: "/services",
       },
     ],
@@ -37,33 +20,50 @@ export const servicesMenu = [
     sectionTitle: "UI/UX Design",
     items: [
       {
-        icon: "lightbulb",
-        title: "Human-Centered Design",
-        description: "We craft seamless digital experiences that prioritize usability and aesthetics.",
+        icon: "layoutdashboard",
+        title: "Wireframing & Prototyping",
+        description: "Interactive mockups to visualize and iterate on your ideas.",
         href: "/services",
       },
       {
-        icon: "lightbulb",
-        title: "Responsive & Adaptive",
-        description: "Designs that work flawlessly across all devices and screen sizes.",
+        icon: "tabletsmartphone",
+        title: "Responsive Interface Design",
+        description: "Clean, mobile-first layouts for consistent user experiences.",
+        href: "/services",
+      },
+    ],
+  },
+  {
+    sectionTitle: "AI & Machine Learning",
+    items: [
+      {
+        icon: "chartline",
+        title: "Predictive Analytics",
+        description: "Use data to forecast trends and customer behavior.",
+        href: "/services",
+      },
+      {
+        icon: "bot",
+        title: "Chatbots & NLP Solutions",
+        description: "Smart assistants powered by natural language processing.",
         href: "/services",
       },
     ],
   },
 
   {
-    sectionTitle: "IT Consulting",
+    sectionTitle: "Cloud Services",
     items: [
       {
-        icon: "lightbulb",
-        title: "Strategic IT Solutions",
-        description: "Get expert guidance on technology adoption, system architecture, and security.",
+        icon: "cloudupload",
+        title: "Cloud Migration & Optimization",
+        description: "Smooth transition to AWS, Azure, or GCP with minimal downtime.",
         href: "/services",
       },
       {
-        icon: "lightbulb",
-        title: "Tailored Consulting",
-        description: "We help businesses navigate digital transformation with customized IT strategies.",
+        icon: "servercog",
+        title: "DevOps & Automation",
+        description: "CI/CD, IaC, and cloud-native workflows to boost efficiency.",
         href: "/services",
       },
     ],
