@@ -1,0 +1,331 @@
+---
+import Cta from "@/components/service/cta.astro";
+import BaseLayout from "@layout/BaseLayout.astro";
+import Icon from "@ui/icons/Icon.astro";
+import type { WithContext, Thing } from "schema-dts";
+
+const platform = {
+  title: "Cloud Services & DevOps",
+  description:
+    "Accelerate your digital transformation with our enterprise-grade cloud solutions. We help organizations migrate, optimize, and automate their infrastructure for maximum efficiency and scalability.",
+};
+
+const video =
+  "https://vyclk3sx0z.ufs.sh/f/hv6ttNERWpXuOGj0KhIPk5MLw0bimBlYnq6Vd2NfSJW9gCQU";
+
+const cloudMigrationSection = {
+  title: "Cloud Migration & Optimization",
+  description:
+    "Seamlessly transition your infrastructure to the cloud with our expert migration services. We ensure minimal disruption while maximizing performance and cost efficiency.",
+  features: [
+    "Comprehensive cloud readiness assessment and planning",
+    "Seamless migration to AWS, Azure, or Google Cloud",
+    "Infrastructure optimization and cost management",
+    "24/7 monitoring and technical support",
+  ],
+};
+
+const devOpsSection = {
+  title: "DevOps & Automation",
+  description:
+    "Streamline your development and operations with our advanced DevOps solutions. We implement automated workflows and CI/CD pipelines that enhance productivity and reliability.",
+  features: [
+    "CI/CD pipeline implementation and optimization",
+    "Infrastructure as Code (IaC) using Terraform/CloudFormation",
+    "Container orchestration with Kubernetes",
+    "Automated testing and deployment strategies",
+  ],
+};
+
+const cloudPlatforms = [
+  "Amazon Web Services",
+  "Microsoft Azure",
+  "Google Cloud Platform",
+  "Digital Ocean",
+  "Cloudflare",
+  "IBM Cloud",
+  "Oracle Cloud",
+  "Vercel",
+];
+
+const devOpsTools = [
+  "Docker",
+  "Kubernetes",
+  "Jenkins",
+  "GitLab CI",
+  "Terraform",
+  "Ansible",
+  "ArgoCD",
+  "Prometheus",
+];
+
+const automationTech = [
+  "GitHub Actions",
+  "CircleCI",
+  "Puppet",
+  "Chef",
+  "New Relic",
+  "Datadog",
+];
+
+const automationIcons = {
+  "GitHub Actions": "github",
+  CircleCI: "circleci",
+  Puppet: "terminal",
+  Chef: "chef",
+  "New Relic": "activity",
+  Datadog: "monitor",
+};
+
+// SEO metadata
+const seo = {
+  title:
+    "Cloud Services & DevOps Solutions | Migration, Optimization & Automation",
+  description:
+    "Enterprise cloud solutions for seamless migration, optimization, and DevOps automation. Expert services in AWS, Azure, and Google Cloud with 24/7 support.",
+};
+
+// Schema.org metadata for SEO
+const schema: WithContext<Thing> = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Cloud Services & DevOps Solutions",
+  description:
+    "Professional cloud migration, optimization, and DevOps automation services for enterprise infrastructure.",
+  provider: {
+    "@type": "Organization",
+    name: "Wishyor",
+    url: `${Astro.site}`,
+  },
+  areaServed: "Worldwide",
+  serviceType: "Cloud Computing Services",
+};
+---
+
+<BaseLayout seo={seo} schema={schema}>
+  <section class="mx-auto max-w-[85rem] px-4 pt-48 pb-12 sm:px-6 lg:px-8">
+    <div class="max-w-7xl">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h1
+          class="text-4xl text-balance text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
+        >
+          {platform.title}
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-slate-700 sm:text-xl/8"
+        >
+          {platform.description}
+        </p>
+      </div>
+
+      <div class="relative m-auto w-full pt-16 sm:w-[90%]">
+        <div
+          class="via-off-white to-off-white pointer-events-none absolute inset-x-0 -bottom-2 z-10 hidden h-1/3 w-full bg-linear-to-b/oklch from-transparent sm:block"
+        >
+        </div>
+        <div class="aspect-video">
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            class="aspect-auto rounded-xl"
+          >
+            <source src={video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cloud Migration Section: Bento Grid Layout -->
+  <section
+    class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+    id="cloud-migration-and-optimization"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <!-- Content Column -->
+      <div class="md:col-span-5">
+        <h2
+          class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
+        >
+          {cloudMigrationSection.title}
+        </h2>
+        <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
+          {cloudMigrationSection.description}
+        </p>
+        <div class="mt-8 flex flex-col gap-4">
+          {
+            cloudMigrationSection.features.map((feature) => (
+              <div class="flex items-center gap-2">
+                <Icon name="checkCircle" />
+                <p class="text-slate-600">{feature}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      
+      <!-- Bento Grid for Cloud Platforms -->
+      <div class="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="animate-pulse col-span-2 md:col-span-3 relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl p-4 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/30 to-purple-600/30 animate-gradient-xy"></div>
+          <h3 class="relative z-10 text-white font-medium text-lg text-center">Cloud Platforms</h3>
+        </div>
+        
+        {cloudPlatforms.map((platform, index) => (
+          <div class={`relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900 to-slate-800 p-4 flex items-center justify-center text-white hover:scale-[1.03] transition-transform ${index === 0 || index === 7 ? "md:col-span-3" : ""}`}>
+            <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-600/10 opacity-75"></div>
+            <div class="relative z-10 text-center animate-fade-in" style={`animation-delay: ${index * 100}ms`}>
+              {platform}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DevOps Section: Bento Grid Layout -->
+  <section
+    class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+    id="devops-and-automation"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <!-- Bento Grid for DevOps Tools -->
+      <div class="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-4 order-last md:order-first">
+        <div class="animate-pulse col-span-2 md:col-span-3 relative bg-gradient-to-tr from-teal-900 to-teal-800 rounded-xl p-4 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-teal-500/30 to-cyan-600/30 animate-gradient-xy"></div>
+          <h3 class="relative z-10 text-white font-medium text-lg text-center">DevOps Tools</h3>
+        </div>
+        
+        {devOpsTools.map((tool, index) => (
+          <div class={`relative overflow-hidden rounded-xl bg-gradient-to-tr from-teal-900 to-teal-800 p-4 flex items-center justify-center text-white hover:scale-[1.03] transition-transform ${index === 0 || index === 7 ? "md:col-span-3" : ""}`}>
+            <div class="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-cyan-600/10 opacity-75"></div>
+            <div class="relative z-10 text-center animate-fade-in" style={`animation-delay: ${index * 100}ms`}>
+              {tool}
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Content Column -->
+      <div class="md:col-span-5 text-end">
+        <h2
+          class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
+        >
+          {devOpsSection.title}
+        </h2>
+        <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
+          {devOpsSection.description}
+        </p>
+        <div class="mt-8 flex flex-col gap-4">
+          {
+            devOpsSection.features.map((feature) => (
+              <div class="flex items-center justify-end gap-2">
+                <p class="text-slate-600">{feature}</p>
+                <Icon name="checkCircle" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Automation Technologies Section: Bento Grid Layout
+  <section
+    class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+    id="automation-technologies"
+  >
+    <div class="mb-12 text-center">
+      <h2
+        class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
+      >
+        Automation Technologies
+      </h2>
+      <p class="mt-4 text-lg/8 text-pretty text-slate-700">
+        Leverage our cutting-edge automation stack to streamline your workflows
+        and boost efficiency
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+      <div class="col-span-2 md:col-span-6 relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl p-6 animate-pulse overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-tr from-slate-500/20 to-slate-700/20 animate-gradient-xy"></div>
+        <h3 class="relative z-10 text-white font-medium text-xl text-center">Technology Stack</h3>
+      </div>
+      
+      {automationTech.map((tech, index) => (
+        <div class={`relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900 to-slate-800 p-6 flex flex-col items-center justify-center hover:scale-[1.03] transition-transform ${index < 2 ? "col-span-2 md:col-span-3" : "col-span-3"}`}>
+          <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-teal-600/10 opacity-75"></div>
+          <div class="relative z-10 flex flex-col items-center animate-fade-in" style={`animation-delay: ${index * 150}ms`}>
+            <Icon
+              name={automationIcons[tech as keyof typeof automationIcons]}
+              class="mb-2 size-8 text-white"
+            />
+            <span class="text-sm font-medium text-white">{tech}</span>
+            <div class="w-12 h-px bg-gradient-to-r from-transparent via-white to-transparent mt-3 animate-pulse"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section> -->
+
+  <Cta />
+
+  <style>
+    /* Tailwind animation utilities */
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+    
+    @keyframes gradient-xy {
+      0% {
+        background-position: 0% 0%;
+      }
+      25% {
+        background-position: 100% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      75% {
+        background-position: 0% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+    
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-pulse {
+      animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    .animate-gradient-xy {
+      animation: gradient-xy 15s ease infinite;
+      background-size: 400% 400%;
+    }
+    
+    .animate-fade-in {
+      animation: fade-in 0.8s ease-out forwards;
+    }
+  </style>
+</BaseLayout>

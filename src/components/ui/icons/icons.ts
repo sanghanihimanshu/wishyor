@@ -128,4 +128,27 @@ export const Icons = {
   servercog: {
     name: "ServerCog",
   },
+  shieldplus: {
+    name: "ShieldPlus",
+  },
+  github:{
+    name: "Github",
+  },
+  circleci:{
+    name: "CircleGauge",
+  },
+  terminal:{
+    name: "Terminal",
+  },
+  chef:{
+    name: "ChefHat",
+  },
+  activity:{
+    name: "Activity",
+  },
+  monitor:{
+    name: "Monitor",
+  },
+  automation:{
+    name: "SquareFunction",}
 };

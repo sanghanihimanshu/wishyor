@@ -1,0 +1,57 @@
+---
+const ctaData = {
+  title: "Ready to Transform Your Infrastructure?",
+  description:
+    "Partner with our cloud experts to modernize your infrastructure and accelerate your digital transformation journey.",
+  buttons: [
+    {
+      text: "Schedule a Consultation",
+      link: "/contact",
+      style:
+        "bg-teal-50 hover:bg-teal-50/70 text-slate-800 focus:bg-teal-50/70",
+    },
+    {
+      text: "View Case Studies",
+      link: "/case-studies",
+      style: "bg-teal-600 text-white hover:bg-teal-600/80 focus:bg-teal-600/80",
+    },
+  ],
+};
+---
+
+<section class="mx-auto max-w-[85rem] px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+  <div
+    class="group relative isolate overflow-hidden rounded-3xl bg-teal-200 p-5 sm:p-11"
+  >
+    <div
+      class="group to-off-white pointer-events-none absolute inset-0 -top-[10%] h-[120%] w-full rounded-xl bg-linear-to-r/oklch from-teal-200 opacity-0 transition duration-1000 group-hover:opacity-100"
+    >
+    </div>
+    <div class="svgBlock mx-auto max-w-7xl">
+      <div class="relative z-5 mx-auto text-center">
+        <h2
+          class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
+        >
+          {ctaData.title}
+        </h2>
+        <p class="mx-auto mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
+          {ctaData.description}
+        </p>
+        <div
+          class="mx-auto mt-8 flex max-w-3xl flex-col gap-4 sm:flex-row sm:justify-center"
+        >
+          {
+            ctaData.buttons.map((button) => (
+              <a
+                href={button.link}
+                class={`mx-auto flex w-full items-center justify-center rounded-lg px-3.5 py-2.5 text-center text-sm font-semibold transition duration-300 focus:outline-hidden sm:w-1/2 ${button.style}`}
+              >
+                {button.text}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
