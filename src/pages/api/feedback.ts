@@ -1,4 +1,4 @@
-import type { APIRoute } from "astro";
+import type { APIContext, APIRoute } from "astro";
 import { db, Feedback, eq, sql } from "astro:db";
 
 /**
@@ -11,10 +11,10 @@ import { db, Feedback, eq, sql } from "astro:db";
  *
  * Returns the feedback data in JSON format with appropriate success or error response status.
  *
- * @param {Object} request An object representing the request data.
+ * @param {APIContext} request An object representing the request data.
  * @returns {Promise<Response>} A Response object containing the feedback data or error message.
  */
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ( {request}:APIContext ): Promise<Response> => {
   try {
     const data = await request.json();
     const { slug, type } = data;
