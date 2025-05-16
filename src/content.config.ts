@@ -20,24 +20,27 @@ const reference = defineCollection({
   }),
 });
 
-const spreadsheets = defineCollection({
-  loader: glob({ pattern: "**/*.json", base: "./src/data/spreadsheets" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    url: z.string(),
-  }),
-});
-
-const whitepapers = defineCollection({
-  loader: glob({ pattern: "**/*.json", base: "./src/data/whitepapers" }),
+const researchPapers = defineCollection({
+  loader: glob({ pattern: "**/*.json", base: "./src/data/researchPapers" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
     readLink: z.string().optional(),
     btnTitle: z.string().optional(),
     btnLink: z.string().optional(),
+    category: z.string().optional(),
   }),
 });
 
-export const collections = { articles, reference, spreadsheets, whitepapers };
+const caseStudies = defineCollection({
+  loader: glob({ pattern: ['**/*.md', '**/*.mdx', '**/*.mdoc'], base: "./src/content/case-studies" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.date(),
+    content: z.string(),
+    industry: z.string().optional(),
+  }),
+});
+
+export const collections = { articles, reference, researchPapers , caseStudies };

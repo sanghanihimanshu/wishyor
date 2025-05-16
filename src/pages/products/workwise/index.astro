@@ -7,109 +7,101 @@ import { Image } from "astro:assets";
 import image_1 from "@images/toolbar.webp";
 
 const platform = {
-  title: "Seamless Data Processing",
+  title: "Enterprise Solutions",
   description:
-    "Leverage the power of AI-driven analytics without complex configurations. DataNova Core integrates seamlessly with your existing data sources, ensuring smooth data ingestion, transformation, and visualization.",
+    "Transform your business with our enterprise-grade technology solutions. We deliver scalable, secure, and innovative solutions that drive growth and efficiency.",
 };
 
-const video =
-  "https://vyclk3sx0z.ufs.sh/f/hv6ttNERWpXuOGj0KhIPk5MLw0bimBlYnq6Vd2NfSJW9gCQU";
+const video = "https://vyclk3sx0z.ufs.sh/f/hv6ttNERWpXuOGj0KhIPk5MLw0bimBlYnq6Vd2NfSJW9gCQU";
 
-const automatedDataProcessing = {
-  title: "Automated Data Processing",
+const digitalTransformation = {
+  title: "Digital Transformation",
   description:
-    "Effortlessly connect your spreadsheets, databases, or cloud storage to DataNova Core and streamline data operations. Automate cleaning, anomaly detection, and predictive modeling — without manual intervention.",
+    "Accelerate your business growth with our comprehensive digital transformation solutions. We help organizations modernize their technology stack, optimize processes, and deliver exceptional digital experiences.",
   features: [
-    "Sync data from Excel, Google Sheets, and CSV files instantly",
-    "Connect to cloud storage providers like OneDrive, AWS, Google Cloud, and Snowflake",
-    "Leverage AI-powered analytics to detect trends, forecast outcomes, and mitigate risks",
+    "Modern technology stack implementation",
+    "Legacy system modernization",
+    "Process automation and optimization",
   ],
 };
 
-const smartAnalytics = {
-  title: "Smart Analytics & Decision-Making",
+const enterpriseSolutions = {
+  title: "Enterprise Architecture",
   description:
-    "Gain deeper insights with intelligent analytics powered by advanced statistical models and machine learning.",
+    "Build robust and scalable enterprise architectures that support your business objectives and future growth.",
 };
 
 const securityCompliance = {
   title: "Security & Compliance",
   description:
-    "Your data remains protected with enterprise-grade security features and compliance standards.",
+    "Protect your business with enterprise-grade security and compliance solutions.",
 };
 
+const techStack = [
+  "React",
+  "Node.js",
+  "Python",
+  "Kubernetes",
+  "Docker",
+  "AWS",
+  "Azure",
+  "GCP",
+];
+
+const frameworks = [
+  "Next.js",
+  "Astro",
+  "Django",
+  "FastAPI",
+  "Spring Boot",
+];
+
+const tools = [
+  "Terraform",
+  "GitLab CI",
+  "Jenkins",
+  "Ansible",
+  "ArgoCD",
+  "Prometheus",
+];
+
 const ctaData = {
-  title: "Start Unlocking Insights Today",
+  title: "Ready to Transform Your Business?",
   description:
-    "Join thousands of data-driven professionals leveraging DataNova Core to make smarter business decisions.",
+    "Partner with us to modernize your technology infrastructure and accelerate your digital transformation journey.",
   buttons: [
     {
-      text: "Start Free Trial",
-      link: "#",
-      style:
-        "bg-teal-50 hover:bg-teal-50/70 text-slate-800 focus:bg-teal-50/70",
+      text: "Schedule Consultation",
+      link: "/contact",
+      style: "bg-teal-50 hover:bg-teal-50/70 text-slate-800 focus:bg-teal-50/70",
     },
     {
-      text: "View Pricing",
-      link: "#",
+      text: "View Case Studies",
+      link: "/case-studies",
       style: "bg-teal-600 text-white hover:bg-teal-600/80 focus:bg-teal-600/80",
     },
   ],
 };
 
-const cloudSecurity = [
-  "AWS Shield",
-  "Google Cloud Security",
-  "Azure Security Center",
-  "Cloudflare",
-  "Zscaler",
-  "Qualys",
-  "Bitdefender",
-];
-
-const identityAccessManagement = [
-  "Okta",
-  "Auth0",
-  "Cisco Secure",
-  "IBM Security",
-  "Norton Enterprise",
-];
-
-const threatDetection = [
-  "Splunk",
-  "Palo Alto Networks",
-  "FireEye",
-  "Tenable",
-  "Fortinet",
-  "CrowdStrike",
-  "McAfee",
-  "Trend Micro",
-];
-
-// SEO metadata for the page
+// SEO metadata
 const seo = {
-  title: "DataNova Core - Seamless AI-Driven Data Processing",
-  description:
-    "Discover DataNova Core, an AI-powered platform that streamlines data processing and integrates effortlessly with your existing data sources, enabling businesses to unlock actionable insights with advanced analytics and predictive modeling.",
+  title: "Enterprise Solutions - Digital Transformation & Technology Services",
+  description: "Transform your business with our enterprise-grade technology solutions. We deliver scalable, secure, and innovative solutions that drive growth and efficiency.",
 };
 
-// Schema.org metadata for SEO
+// Schema.org metadata
 const schema: WithContext<Thing> = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  inLanguage: "en-US",
-  "@id": Astro.url.href,
-  url: Astro.url.href,
-  name: "DataNova Core - Seamless AI-Driven Data Processing",
-  description:
-    "Explore DataNova Core, the powerful analytics platform that automates data processing, integrates seamlessly with cloud storage and spreadsheets, and empowers businesses to make smarter, data-driven decisions without complex configurations.",
-  isPartOf: {
-    "@type": "WebSite",
-    url: `${Astro.site}`,
-    name: "DataNova",
-    description:
-      "DataNova Analytics Inc. provides advanced analytics for Excel to help businesses unlock actionable insights quickly with no coding required.",
+  "@type": "Service",
+  name: "Enterprise Technology Solutions",
+  description: "Professional enterprise technology services including digital transformation, cloud infrastructure, and custom software development.",
+  provider: {
+    "@type": "Organization",
+    name: "Wishyor",
+    url: `${Astro.site}`
   },
+  areaServed: "Worldwide",
+  serviceType: "Technology Services"
 };
 ---
 
@@ -159,14 +151,14 @@ const schema: WithContext<Thing> = {
         <h2
           class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
         >
-          {automatedDataProcessing.title}
+          {digitalTransformation.title}
         </h2>
         <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
-          {automatedDataProcessing.description}
+          {digitalTransformation.description}
         </p>
         <div class="mt-8 flex flex-col gap-4">
           {
-            automatedDataProcessing.features.map((feature) => (
+            digitalTransformation.features.map((feature) => (
               <div class="flex items-center gap-2">
                 <Icon name="checkCircle" />
                 <p class="text-slate-600">{feature}</p>
@@ -194,10 +186,10 @@ const schema: WithContext<Thing> = {
         <h2
           class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
         >
-          {smartAnalytics.title}
+          {enterpriseSolutions.title}
         </h2>
         <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
-          {smartAnalytics.description}
+          {enterpriseSolutions.description}
         </p>
       </div>
     </div>
@@ -231,7 +223,7 @@ const schema: WithContext<Thing> = {
             >
               {/* Original items */}
               {
-                cloudSecurity.map((item) => (
+                techStack.map((item) => (
                   <div class="flex items-center gap-5 rounded-md bg-white px-4 py-2 text-slate-700 shadow-md ring-1 ring-white/15">
                     {item}
                   </div>
@@ -240,7 +232,7 @@ const schema: WithContext<Thing> = {
 
               {/* Duplicated items for seamless scroll */}
               {
-                cloudSecurity.map((item) => (
+                techStack.map((item) => (
                   <div class="flex items-center gap-5 rounded-md bg-white px-4 py-2 text-slate-700 shadow-md ring-1 ring-white/15">
                     {item}
                   </div>
@@ -256,7 +248,7 @@ const schema: WithContext<Thing> = {
             >
               {/* Original items */}
               {
-                identityAccessManagement.map((item) => (
+                frameworks.map((item) => (
                   <div class="flex items-center gap-5 rounded-md bg-white px-4 py-2 text-slate-700 shadow-md ring-1 ring-white/15">
                     {item}
                   </div>
@@ -265,7 +257,7 @@ const schema: WithContext<Thing> = {
 
               {/* Duplicated items for seamless scroll */}
               {
-                identityAccessManagement.map((item) => (
+                frameworks.map((item) => (
                   <div class="flex items-center gap-5 rounded-md bg-white px-4 py-2 text-slate-700 shadow-md ring-1 ring-white/15">
                     {item}
                   </div>
@@ -280,7 +272,7 @@ const schema: WithContext<Thing> = {
             >
               {/* Original items */}
               {
-                threatDetection.map((item) => (
+                tools.map((item) => (
                   <div class="flex items-center gap-5 rounded-md bg-white px-4 py-2 text-slate-700 shadow-md ring-1 ring-white/15">
                     {item}
                   </div>
@@ -289,7 +281,7 @@ const schema: WithContext<Thing> = {
 
               {/* Duplicated items for seamless scroll */}
               {
-                threatDetection.map((item) => (
+                tools.map((item) => (
                   <div class="flex items-center gap-5 rounded-md bg-white px-4 py-2 text-slate-700 shadow-md ring-1 ring-white/15">
                     {item}
                   </div>

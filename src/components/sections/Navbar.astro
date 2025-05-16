@@ -1,10 +1,10 @@
 ---
-import Downloads from "@megaMenu/Downloads.astro";
 import Support from "@megaMenu/Support.astro";
 import Products from "@megaMenu/Products.astro";
 import Services from "@megaMenu/Services.astro";
 import Button from "@ui/Button.astro";
 import { navigationLinks } from "@utils/navigation";
+import CaseStudies from "../common/MegaMenu/caseStudies.astro";
 
 const currentPath = Astro.url.pathname;
 
@@ -100,8 +100,8 @@ const primaryCTA = { text: "Contact Us", href: "mailto:info@lotusdevgroup.tech" 
 
               <Products />
 
-              <Downloads />
-
+              <CaseStudies/>
+              
               <Support />
 
               {

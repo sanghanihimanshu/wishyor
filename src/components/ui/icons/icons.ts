@@ -98,10 +98,85 @@ export const Icons = {
   megaphone: {
     name: "Megaphone",
   },
-  chartBar:{
+  chartBar: {
     name: "ChartBar",
   },
-  target:{
+  target: {
     name: "Target",
+  },
+  monitorsmartphone: {
+    name: "MonitorSmartphone",
+  },
+  layoutdashboard: {
+    name: "LayoutDashboard",
+  },
+  database: {
+    name: "Database",
+  },
+  tabletsmartphone: {
+    name: "TabletSmartphone",
+  },
+  chartline: {
+    name: "ChartLine",
+  },
+  bot: {
+    name: "Bot",
+  },
+  cloudupload: {
+    name: "CloudUpload",
+  },
+  servercog: {
+    name: "ServerCog",
+  },
+  shieldplus: {
+    name: "ShieldPlus",
+  },
+  github: {
+    name: "Github",
+  },
+  circleci: {
+    name: "CircleGauge",
+  },
+  terminal: {
+    name: "Terminal",
+  },
+  chef: {
+    name: "ChefHat",
+  },
+  activity: {
+    name: "Activity",
+  },
+  monitor: {
+    name: "Monitor",
+  },
+  automation: {
+    name: "SquareFunction",
+  },
+  speedometer:{
+    name:"Gauge"
+  },
+  users:{
+    name:"Users"
+  },
+  trophy:{
+    name:"Trophy"
+  },
+  trendingUp:{
+    name:"TrendingUp"
+  },
+  rocket:{
+    name:"Rocket"
+  },
+  heart:{
+    name:"Heart"
+  },
+  dollarSign:{
+    name:"DollarSign"
+  },
+  barChart:{
+    name:"BarChart"
+  },
+  link:{
+    name:"Link"
   }
 };

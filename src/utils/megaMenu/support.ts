@@ -1,42 +1,41 @@
 export const supportMenu = [
   {
-    sectionTitle: "Documentation",
+    sectionTitle: "Resources",
     items: [
       {
         icon: "articles",
         title: "Articles",
-        description: "Learn from our collection of insightful articles.",
+        description: "Explore industry insights and best practices.",
         href: "/support/articles",
       },
       {
-        icon: "documentChartBar",
-        title: "Sample Spreadsheets",
-        description: "Download sample spreadsheets to practice with.",
-        href: "/support/sample-spreadsheets",
-      },
-      {
         icon: "blankDocument",
-        title: "Whitepapers",
-        description: "Access detailed reports on advanced analytics techniques.",
-        href: "/support/whitepapers",
-      },
-      {
-        icon: "documentMagnifyingGlass",
-        title: "Reference",
-        description: "Find technical documentation and reference materials.",
-        href: "/support/reference",
+        title: "R&D Papers",
+        description: "Access our latest research and technical innovations.",
+        href: "/support/researchPapers",
       },
     ],
   },
   {
-    sectionTitle: "Knowledge Base",
+    sectionTitle: "Help Center",
     items: [
       {
         icon: "info",
-        title: "Search the Knowledge Base",
-        description: "Search for answers to your questions in our Knowledge Base.",
+        title: "Knowledge Base",
+        description: "Find answers to common questions and technical guides.",
         href: "/support/knowledge-base",
       },
     ],
   },
+  {
+    sectionTitle: "Reference",
+    items: [
+      {
+        icon: "link",
+        title: "Erp for All Businesses",
+        description: "Discover how our ERP solutions can benefit your business.",
+        href: "/reference/workwise",
+      },
+    ],
+  }
 ];

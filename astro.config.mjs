@@ -2,7 +2,7 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import vercel from "@astrojs/vercel";
-import react from "@astrojs/react";
+// import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from "@keystatic/astro";
 import db from "@astrojs/db";
@@ -19,7 +19,7 @@ export default defineConfig({
     clientPrerender: true,
   },
   integrations: [
-    react(),
+    // react(),
     markdoc(),
     ...(process.env.SKIP_KEYSTATIC ? [] : [keystatic()]),
     db(),
