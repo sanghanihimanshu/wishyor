@@ -28,6 +28,7 @@ const researchPapers = defineCollection({
     readLink: z.string().optional(),
     btnTitle: z.string().optional(),
     btnLink: z.string().optional(),
+    category: z.string().optional(),
   }),
 });
 
