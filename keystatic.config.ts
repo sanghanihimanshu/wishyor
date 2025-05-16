@@ -66,24 +66,40 @@ export default config({
         }),
       },
     }),
-    spreadsheets: collection({
-      label: "Sample Spreadsheets",
+    caseStudies: collection({
+      label: "caseStudies",
       slugField: "title",
-      path: "src/data/spreadsheets/*",
-      format: { data: "json" },
+      path: "src/content/case-studies/*",
+      format: { contentField: "content" },
       schema: {
-        title: fields.slug({ name: { label: "Spreadsheet Name" } }),
+        title: fields.slug({ name: { label: "Title" } }),
         description: fields.text({ label: "Description" }),
-        url: fields.url({ label: "Link" }),
+        content: fields.markdoc({
+          label: "Content",
+          options: {
+            image: {
+              directory: "src/assets/images/case-studies",
+              publicPath: "@images/case-studies/",
+            },
+          },
+        }),
+        industry: fields.text({
+          label: "Industry",
+          description: "The industry of the case study",
+        }),
+        date: fields.date({
+          label: "Publication date",
+          description: "The date of the publication",
+        }),
       },
     }),
-    whitepapers: collection({
-      label: "Whitepapers",
+    researchPapers: collection({
+      label: "researchPapers",
       slugField: "title",
-      path: "src/data/whitepapers/*",
+      path: "src/data/researchPapers/*",
       format: { data: "json" },
       schema: {
-        title: fields.slug({ name: { label: "Whitepaper Name" } }),
+        title: fields.slug({ name: { label: "Research Papers Name" } }),
         description: fields.text({ label: "Description" }),
         readLink: fields.url({ label: "Read Link" }),
         btnTitle: fields.text({ label: "Button Title" }),

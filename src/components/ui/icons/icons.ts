@@ -98,10 +98,10 @@ export const Icons = {
   megaphone: {
     name: "Megaphone",
   },
-  chartBar:{
+  chartBar: {
     name: "ChartBar",
   },
-  target:{
+  target: {
     name: "Target",
   },
   monitorsmartphone: {
@@ -111,7 +111,7 @@ export const Icons = {
     name: "LayoutDashboard",
   },
   database: {
-    name: "Database", 
+    name: "Database",
   },
   tabletsmartphone: {
     name: "TabletSmartphone",
@@ -131,24 +131,52 @@ export const Icons = {
   shieldplus: {
     name: "ShieldPlus",
   },
-  github:{
+  github: {
     name: "Github",
   },
-  circleci:{
+  circleci: {
     name: "CircleGauge",
   },
-  terminal:{
+  terminal: {
     name: "Terminal",
   },
-  chef:{
+  chef: {
     name: "ChefHat",
   },
-  activity:{
+  activity: {
     name: "Activity",
   },
-  monitor:{
+  monitor: {
     name: "Monitor",
   },
-  automation:{
-    name: "SquareFunction",}
+  automation: {
+    name: "SquareFunction",
+  },
+  speedometer:{
+    name:"Gauge"
+  },
+  users:{
+    name:"Users"
+  },
+  trophy:{
+    name:"Trophy"
+  },
+  trendingUp:{
+    name:"TrendingUp"
+  },
+  rocket:{
+    name:"Rocket"
+  },
+  heart:{
+    name:"Heart"
+  },
+  dollarSign:{
+    name:"DollarSign"
+  },
+  barChart:{
+    name:"BarChart"
+  },
+  link:{
+    name:"Link"
+  }
 };

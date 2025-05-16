@@ -10,7 +10,7 @@ import Cta from "@/components/service/cta.astro";
 const platform = {
   title: "Full-Stack Development Services",
   description:
-    "Transform your ideas into powerful digital solutions with our comprehensive full-stack development services. We deliver scalable, secure, and innovative applications that drive business growth.",
+    "Transform your ideas into powerful digital solutions with our comprehensive full-stack development services. We deliver scalable, secure, and innovative applications that drive business growth and set the foundation for your future product ecosystem.",
 };
 
 const video =
@@ -19,22 +19,48 @@ const video =
 const webMobileDevSection = {
   title: "Web & Mobile App Development",
   description:
-    "Build powerful, cross-platform applications that deliver exceptional user experiences across all devices. Our expert team leverages cutting-edge technologies to create scalable solutions that grow with your business.",
+    "Build powerful, cross-platform applications that deliver exceptional user experiences across all devices. Our expert team leverages cutting-edge technologies to create scalable solutions that grow with your business and can evolve into standalone products.",
   features: [
     "Custom web applications using React, Angular, and Vue.js",
     "Native and cross-platform mobile apps with React Native and Flutter",
-    "Progressive Web Apps (PWAs) for optimal performance",
+    "Progressive Web Apps (PWAs) for optimal performance and offline capabilities",
+    "User-centric interfaces with advanced analytics integration for product evolution",
   ],
 };
 
 const apiDatabaseSection = {
   title: "API & Database Design",
   description:
-    "Create robust, scalable backend architectures with our expert API and database design services. We ensure high performance, security, and seamless integration capabilities for your applications.",
+    "Create robust, scalable backend architectures with our expert API and database design services. We ensure high performance, security, and seamless integration capabilities for your applications, building a foundation that can support future product offerings.",
   features: [
-    "RESTful and GraphQL API development",
-    "Microservices architecture design",
-    "Database optimization and scaling solutions",
+    "RESTful and GraphQL API development with versioning for long-term evolution",
+    "Microservices architecture design for modular product development",
+    "Database optimization and scaling solutions with future growth in mind",
+    "API-as-a-Product readiness with developer portals and documentation",
+  ],
+};
+
+const cloudDevOpsSection = {
+  title: "Cloud & DevOps Excellence",
+  description: 
+    "Leverage the power of cloud infrastructure and DevOps practices to ensure your applications are scalable, reliable, and ready for rapid growth. We implement CI/CD pipelines and infrastructure-as-code to support your journey from services to products.",
+  features: [
+    "Multi-cloud deployment strategies with AWS, Azure, and Google Cloud",
+    "Containerization with Docker and orchestration with Kubernetes",
+    "Automated testing and deployment pipelines for rapid feature delivery",
+    "Infrastructure-as-code using Terraform and CloudFormation",
+  ],
+};
+
+const productReadinessSection = {
+  title: "Product Readiness & Innovation",
+  description:
+    "We don't just build applications; we architect solutions that can transform into scalable products. Our development approaches incorporate product thinking from day one, setting you on the path to developing your own software products.",
+  features: [
+    "Modular architecture designed for future productization",
+    "White-label ready solutions that can be resold or repackaged",
+    "Data-driven design with analytics integration for product evolution",
+    "Subscription and monetization models built into service offerings",
   ],
 };
 
@@ -42,13 +68,13 @@ const apiDatabaseSection = {
 const seo = {
   title: "Full-Stack Development Services | Web, Mobile & API Development",
   description:
-    "Transform your business with our comprehensive full-stack development services. Expert web & mobile app development, API design, and database solutions for scalable applications.",
+    "Transform your business with our comprehensive full-stack development services. Expert web & mobile app development, API design, and cloud solutions for scalable applications that can evolve into products.",
 };
 
 const securityCompliance = {
   title: "Enterprise-Grade Security & Compliance",
   description:
-    "We implement robust security measures and follow industry-standard compliance frameworks to ensure your applications and data are protected at every layer of the stack.",
+    "We implement robust security measures and follow industry-standard compliance frameworks to ensure your applications and data are protected at every layer of the stack. Our security-first approach builds customer trust essential for successful product launches.",
 };
 
 const cloudSecurity = [
@@ -57,6 +83,7 @@ const cloudSecurity = [
   "Cloud Security",
   "Secure APIs",
   "Firewall Protection",
+  "Zero Trust Architecture",
 ];
 
 const identityAccessManagement = [
@@ -65,6 +92,7 @@ const identityAccessManagement = [
   "Role-based Access",
   "SSO Integration",
   "JWT Authentication",
+  "Biometric Integration",
 ];
 
 const threatDetection = [
@@ -73,7 +101,30 @@ const threatDetection = [
   "Intrusion Detection",
   "Security Auditing",
   "Incident Response",
+  "Threat Intelligence",
 ];
+
+const serviceToProdTransformation = {
+  title: "Service to Product Transformation",
+  steps: [
+    {
+      title: "Patterns Identification",
+      description: "We identify common patterns across client projects that can be standardized and productized"
+    },
+    {
+      title: "Modular Architecture",
+      description: "Build components designed to be repackaged and reused across multiple solutions"
+    },
+    {
+      title: "IP Development",
+      description: "Create proprietary frameworks and tools that accelerate development and add unique value"
+    },
+    {
+      title: "Growth Roadmap",
+      description: "Strategic planning for transforming successful services into scalable, marketable products"
+    }
+  ]
+};
 
 // Schema.org metadata for SEO
 const schema: WithContext<Thing> = {
@@ -81,7 +132,7 @@ const schema: WithContext<Thing> = {
   "@type": "Service",
   name: "Full-Stack Development Services",
   description:
-    "Professional full-stack development services including web applications, mobile apps, API design, and database solutions.",
+    "Professional full-stack development services including web applications, mobile apps, API design, and database solutions with a product-oriented approach.",
   provider: {
     "@type": "Organization",
     name: "Wishyor",
@@ -180,6 +231,120 @@ const schema: WithContext<Thing> = {
         <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
           {apiDatabaseSection.description}
         </p>
+        <div class="mt-8 flex flex-col items-end gap-4">
+          {
+            apiDatabaseSection.features.map((feature) => (
+              <div class="flex items-center gap-2">
+                <p class="text-slate-600 text-right">{feature}</p>
+                <Icon name="checkCircle" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+    id="cloud-and-devops-excellence"
+  >
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div>
+        <h2
+          class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
+        >
+          {cloudDevOpsSection.title}
+        </h2>
+        <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
+          {cloudDevOpsSection.description}
+        </p>
+        <div class="mt-8 flex flex-col gap-4">
+          {
+            cloudDevOpsSection.features.map((feature) => (
+              <div class="flex items-center gap-2">
+                <Icon name="checkCircle" />
+                <p class="text-slate-600">{feature}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="cloud-animation-container relative h-64 w-full">
+          <div class="cloud absolute left-8 top-4 animate-float-slow h-16 w-24 bg-slate-200 rounded-full"></div>
+          <div class="cloud absolute left-24 top-12 animate-float-medium h-20 w-32 bg-slate-300 rounded-full"></div>
+          <div class="cloud absolute right-8 top-8 animate-float h-16 w-24 bg-slate-200 rounded-full"></div>
+          <div class="server absolute bottom-4 left-1/2 transform -translate-x-1/2 h-28 w-36 bg-slate-600 rounded-md flex flex-col justify-end items-center p-2">
+            <div class="server-light h-2 w-2 bg-green-400 rounded-full animate-pulse"></div>
+            <div class="server-detail h-1 w-24 bg-slate-400 rounded-full mt-2"></div>
+            <div class="server-detail h-1 w-20 bg-slate-400 rounded-full mt-1"></div>
+          </div>
+          <div class="connection-line absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-32 w-1 bg-blue-400 opacity-50 animate-pulse"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+    id="product-readiness-and-innovation"
+  >
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div class="order-last md:order-first">
+        <div class="product-evolution-container relative h-64 w-full">
+          <div class="flex flex-col h-full justify-center">
+            <div class="evolution-step flex items-center mb-6">
+              <div class="evolution-circle h-8 w-8 rounded-full bg-slate-300 flex items-center justify-center">
+                <div class="h-4 w-4 rounded-full bg-blue-500 animate-pulse"></div>
+              </div>
+              <div class="evolution-line h-1 w-12 bg-slate-300 mx-2"></div>
+              <div class="evolution-box p-3 bg-slate-100 rounded-md w-32 shadow-sm">
+                <p class="text-xs font-medium">Services</p>
+              </div>
+            </div>
+            
+            <div class="evolution-step flex items-center mb-6">
+              <div class="evolution-circle h-8 w-8 rounded-full bg-slate-300 flex items-center justify-center">
+                <div class="h-4 w-4 rounded-full bg-blue-500 animate-pulse-delay-1"></div>
+              </div>
+              <div class="evolution-line h-1 w-24 bg-slate-300 mx-2"></div>
+              <div class="evolution-box p-3 bg-slate-100 rounded-md w-48 shadow-sm">
+                <p class="text-xs font-medium">Reusable Components</p>
+              </div>
+            </div>
+            
+            <div class="evolution-step flex items-center">
+              <div class="evolution-circle h-8 w-8 rounded-full bg-slate-300 flex items-center justify-center">
+                <div class="h-4 w-4 rounded-full bg-blue-500 animate-pulse-delay-2"></div>
+              </div>
+              <div class="evolution-line h-1 w-36 bg-slate-300 mx-2"></div>
+              <div class="evolution-box p-3 bg-slate-100 rounded-md w-64 shadow-sm">
+                <p class="text-xs font-medium">Scalable Product Ecosystem</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2
+          class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
+        >
+          {productReadinessSection.title}
+        </h2>
+        <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
+          {productReadinessSection.description}
+        </p>
+        <div class="mt-8 flex flex-col gap-4">
+          {
+            productReadinessSection.features.map((feature) => (
+              <div class="flex items-center gap-2">
+                <Icon name="checkCircle" />
+                <p class="text-slate-600">{feature}</p>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </div>
   </section>
@@ -293,6 +458,32 @@ const schema: WithContext<Thing> = {
     </div>
   </section>
 
+  <section
+    class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+    id="service-to-product-transformation"
+  >
+    <div class="text-center mb-12">
+      <h2 class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight">
+        {serviceToProdTransformation.title}
+      </h2>
+      <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+        How we help you evolve from service delivery to building a scalable product ecosystem
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {serviceToProdTransformation.steps.map((step, index) => (
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 transform hover:-translate-y-1 transition-transform duration-300">
+          <div class="w-12 h-12 flex items-center justify-center bg-blue-50 text-blue-600 rounded-full mb-4 text-xl font-bold">
+            {index + 1}
+          </div>
+          <h3 class="text-lg font-medium text-slate-800 mb-2">{step.title}</h3>
+          <p class="text-slate-600">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
   <Cta />
 
   <style>
@@ -308,6 +499,76 @@ const schema: WithContext<Thing> = {
       background-clip: padding-box;
       mask-image: linear-gradient(270deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
       pointer-events: none;
+    }
+
+    /* Animation styles */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes float-medium {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @keyframes pulse-delay-1 {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.8); }
+    }
+
+    @keyframes pulse-delay-2 {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.8); }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-float-medium {
+      animation: float-medium 8s ease-in-out infinite;
+    }
+
+    .animate-float-slow {
+      animation: float-slow 10s ease-in-out infinite;
+    }
+
+    .animate-pulse-delay-1 {
+      animation: pulse-delay-1 4s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+
+    .animate-pulse-delay-2 {
+      animation: pulse-delay-2 4s ease-in-out infinite;
+      animation-delay: 2s;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: "";
+      position: absolute;
+      background-color: inherit;
+      border-radius: 50%;
+    }
+
+    .cloud::before {
+      width: 60%;
+      height: 100%;
+      top: -40%;
+      left: 20%;
+    }
+
+    .cloud::after {
+      width: 80%;
+      height: 100%;
+      top: -30%;
+      right: 10%;
     }
   </style>
 </BaseLayout>

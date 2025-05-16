@@ -1,104 +1,145 @@
 ---
-import Cta from "@/components/service/cta.astro";
 import BaseLayout from "@layout/BaseLayout.astro";
 import Icon from "@ui/icons/Icon.astro";
 import type { WithContext, Thing } from "schema-dts";
+import { Image } from "astro:assets";
+import image_1 from "@images/toolbar.webp";
+import Cta from "@/components/service/cta.astro";
 
 const platform = {
-  title: "Cloud Services & DevOps",
+  title: "Cloud Services & Solutions",
   description:
-    "Accelerate your digital transformation with our enterprise-grade cloud solutions. We help organizations migrate, optimize, and automate their infrastructure for maximum efficiency and scalability.",
+    "Accelerate your digital transformation with our comprehensive cloud services. We help businesses leverage cloud technology to enhance scalability, security, and operational efficiency while reducing infrastructure costs.",
 };
 
 const video =
   "https://vyclk3sx0z.ufs.sh/f/hv6ttNERWpXuOGj0KhIPk5MLw0bimBlYnq6Vd2NfSJW9gCQU";
 
 const cloudMigrationSection = {
-  title: "Cloud Migration & Optimization",
+  title: "Cloud Migration & Assessment",
   description:
-    "Seamlessly transition your infrastructure to the cloud with our expert migration services. We ensure minimal disruption while maximizing performance and cost efficiency.",
+    "Seamlessly transition your existing infrastructure to the cloud with our proven migration methodology. Our experts assess your current environment, develop a tailored migration strategy, and execute a smooth transition with minimal disruption to your operations.",
   features: [
     "Comprehensive cloud readiness assessment and planning",
-    "Seamless migration to AWS, Azure, or Google Cloud",
-    "Infrastructure optimization and cost management",
-    "24/7 monitoring and technical support",
+    "Secure data migration with zero downtime strategies",
+    "Legacy system modernization and refactoring",
+    "Multi-cloud and hybrid cloud architecture design",
   ],
 };
 
-const devOpsSection = {
-  title: "DevOps & Automation",
+const cloudInfrastructureSection = {
+  title: "Cloud Infrastructure Management",
   description:
-    "Streamline your development and operations with our advanced DevOps solutions. We implement automated workflows and CI/CD pipelines that enhance productivity and reliability.",
+    "Build, deploy, and manage scalable cloud infrastructure that adapts to your business needs. Our infrastructure solutions are designed for reliability, performance, and cost-efficiency across all major cloud platforms.",
   features: [
-    "CI/CD pipeline implementation and optimization",
-    "Infrastructure as Code (IaC) using Terraform/CloudFormation",
-    "Container orchestration with Kubernetes",
-    "Automated testing and deployment strategies",
+    "Infrastructure-as-Code (IaC) for automated provisioning",
+    "Cloud cost optimization and resource management",
+    "High-availability and disaster recovery solutions",
+    "24/7 monitoring and proactive maintenance",
   ],
 };
 
-const cloudPlatforms = [
-  "Amazon Web Services",
-  "Microsoft Azure",
-  "Google Cloud Platform",
-  "Digital Ocean",
-  "Cloudflare",
-  "IBM Cloud",
-  "Oracle Cloud",
-  "Vercel",
-];
+const cloudSecuritySection = {
+  title: "Cloud Security & Compliance",
+  description: 
+    "Protect your cloud environments with industry-leading security practices and compliance frameworks. We implement comprehensive security measures to safeguard your data, applications, and infrastructure from evolving threats.",
+  features: [
+    "Zero-trust security architecture implementation",
+    "Continuous security monitoring and threat detection",
+    "Compliance management for GDPR, HIPAA, SOC 2, and more",
+    "Security-as-Code for automated security testing",
+  ],
+};
 
-const devOpsTools = [
-  "Docker",
-  "Kubernetes",
-  "Jenkins",
-  "GitLab CI",
-  "Terraform",
-  "Ansible",
-  "ArgoCD",
-  "Prometheus",
-];
-
-const automationTech = [
-  "GitHub Actions",
-  "CircleCI",
-  "Puppet",
-  "Chef",
-  "New Relic",
-  "Datadog",
-];
-
-const automationIcons = {
-  "GitHub Actions": "github",
-  CircleCI: "circleci",
-  Puppet: "terminal",
-  Chef: "chef",
-  "New Relic": "activity",
-  Datadog: "monitor",
+const cloudApplicationSection = {
+  title: "Cloud-Native Applications",
+  description:
+    "Develop modern, scalable applications optimized for cloud environments. Our cloud-native approach leverages containerization, microservices, and serverless architectures to deliver agile, resilient, and cost-effective solutions.",
+  features: [
+    "Containerized applications with Docker and Kubernetes",
+    "Serverless architecture design and implementation",
+    "Microservices development and API orchestration",
+    "Auto-scaling and self-healing application architectures",
+  ],
 };
 
 // SEO metadata
 const seo = {
-  title:
-    "Cloud Services & DevOps Solutions | Migration, Optimization & Automation",
+  title: "Cloud Services & Solutions | Migration, Infrastructure & Security",
   description:
-    "Enterprise cloud solutions for seamless migration, optimization, and DevOps automation. Expert services in AWS, Azure, and Google Cloud with 24/7 support.",
+    "Transform your business with our comprehensive cloud services. Expert cloud migration, infrastructure management, security solutions, and cloud-native application development.",
+};
+
+const cloudBenefits = {
+  title: "Business Benefits of Cloud Adoption",
+  description:
+    "Moving to the cloud isn't just a technological upgrade—it's a strategic business decision that delivers tangible advantages to your organization's bottom line and operational capabilities.",
+};
+
+const benefitTypes = [
+  {
+    title: "Cost Efficiency",
+    points: [
+      "Pay-as-you-go pricing models",
+      "Reduced capital expenditure",
+      "Optimized resource allocation",
+      "Lower maintenance costs",
+    ]
+  },
+  {
+    title: "Scalability & Flexibility",
+    points: [
+      "On-demand resource scaling",
+      "Rapid deployment capabilities",
+      "Global reach and distribution",
+      "Flexible work environments",
+    ]
+  },
+  {
+    title: "Innovation & Agility",
+    points: [
+      "Faster time-to-market",
+      "Advanced analytics capabilities",
+      "AI and ML integration",
+      "Rapid prototyping and testing",
+    ]
+  },
+  {
+    title: "Business Continuity",
+    points: [
+      "Automated backup solutions",
+      "Disaster recovery capabilities",
+      "High availability architecture",
+      "Geographic redundancy",
+    ]
+  }
+];
+
+const cloudPartners = {
+  title: "Our Cloud Partners",
+  partners: [
+    "Amazon Web Services (AWS)",
+    "Microsoft Azure",
+    "Google Cloud Platform",
+    "IBM Cloud",
+    "Oracle Cloud"
+  ]
 };
 
 // Schema.org metadata for SEO
 const schema: WithContext<Thing> = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Cloud Services & DevOps Solutions",
+  name: "Cloud Services & Solutions",
   description:
-    "Professional cloud migration, optimization, and DevOps automation services for enterprise infrastructure.",
+    "Comprehensive cloud services including migration, infrastructure management, security, and cloud-native application development.",
   provider: {
     "@type": "Organization",
     name: "Wishyor",
     url: `${Astro.site}`,
   },
   areaServed: "Worldwide",
-  serviceType: "Cloud Computing Services",
+  serviceType: "Cloud Computing",
 };
 ---
 
@@ -140,14 +181,12 @@ const schema: WithContext<Thing> = {
     </div>
   </section>
 
-  <!-- Cloud Migration Section: Bento Grid Layout -->
   <section
     class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
-    id="cloud-migration-and-optimization"
+    id="cloud-migration-and-assessment"
   >
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-      <!-- Content Column -->
-      <div class="md:col-span-5">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div>
         <h2
           class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
         >
@@ -167,64 +206,41 @@ const schema: WithContext<Thing> = {
           }
         </div>
       </div>
-      
-      <!-- Bento Grid for Cloud Platforms -->
-      <div class="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="animate-pulse col-span-2 md:col-span-3 relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl p-4 overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/30 to-purple-600/30 animate-gradient-xy"></div>
-          <h3 class="relative z-10 text-white font-medium text-lg text-center">Cloud Platforms</h3>
-        </div>
-        
-        {cloudPlatforms.map((platform, index) => (
-          <div class={`relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900 to-slate-800 p-4 flex items-center justify-center text-white hover:scale-[1.03] transition-transform ${index === 0 || index === 7 ? "md:col-span-3" : ""}`}>
-            <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-600/10 opacity-75"></div>
-            <div class="relative z-10 text-center animate-fade-in" style={`animation-delay: ${index * 100}ms`}>
-              {platform}
-            </div>
+      <div
+        class="relative flex flex-col items-center justify-center gap-8 rounded-xl p-6 md:flex-row lg:gap-16"
+      >
+        <div class="h-64 w-full bg-slate-50 rounded-lg shadow-sm border border-slate-100 flex items-center justify-center">
+          <div class="text-center p-4">
+            <div class="text-5xl text-blue-500 mb-4">☁️</div>
+            <p class="text-slate-500 font-medium">Cloud Migration Visualization</p>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- DevOps Section: Bento Grid Layout -->
   <section
     class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
-    id="devops-and-automation"
+    id="cloud-infrastructure-management"
   >
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-      <!-- Bento Grid for DevOps Tools -->
-      <div class="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-4 order-last md:order-first">
-        <div class="animate-pulse col-span-2 md:col-span-3 relative bg-gradient-to-tr from-teal-900 to-teal-800 rounded-xl p-4 overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-br from-teal-500/30 to-cyan-600/30 animate-gradient-xy"></div>
-          <h3 class="relative z-10 text-white font-medium text-lg text-center">DevOps Tools</h3>
-        </div>
-        
-        {devOpsTools.map((tool, index) => (
-          <div class={`relative overflow-hidden rounded-xl bg-gradient-to-tr from-teal-900 to-teal-800 p-4 flex items-center justify-center text-white hover:scale-[1.03] transition-transform ${index === 0 || index === 7 ? "md:col-span-3" : ""}`}>
-            <div class="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-cyan-600/10 opacity-75"></div>
-            <div class="relative z-10 text-center animate-fade-in" style={`animation-delay: ${index * 100}ms`}>
-              {tool}
-            </div>
-          </div>
-        ))}
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div class="order-last md:order-first">
+        <Image src={image_1} alt="Infrastructure Management Dashboard" class="rounded-xl shadow-lg" />
       </div>
-      
-      <!-- Content Column -->
-      <div class="md:col-span-5 text-end">
+      <div class="text-end">
         <h2
           class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
         >
-          {devOpsSection.title}
+          {cloudInfrastructureSection.title}
         </h2>
         <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
-          {devOpsSection.description}
+          {cloudInfrastructureSection.description}
         </p>
-        <div class="mt-8 flex flex-col gap-4">
+        <div class="mt-8 flex flex-col items-end gap-4">
           {
-            devOpsSection.features.map((feature) => (
-              <div class="flex items-center justify-end gap-2">
-                <p class="text-slate-600">{feature}</p>
+            cloudInfrastructureSection.features.map((feature) => (
+              <div class="flex items-center gap-2">
+                <p class="text-slate-600 text-right">{feature}</p>
                 <Icon name="checkCircle" />
               </div>
             ))
@@ -234,98 +250,142 @@ const schema: WithContext<Thing> = {
     </div>
   </section>
 
-  <!-- Automation Technologies Section: Bento Grid Layout
   <section
     class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
-    id="automation-technologies"
+    id="cloud-security-and-compliance"
   >
-    <div class="mb-12 text-center">
-      <h2
-        class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
-      >
-        Automation Technologies
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div>
+        <h2
+          class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
+        >
+          {cloudSecuritySection.title}
+        </h2>
+        <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
+          {cloudSecuritySection.description}
+        </p>
+        <div class="mt-8 flex flex-col gap-4">
+          {
+            cloudSecuritySection.features.map((feature) => (
+              <div class="flex items-center gap-2">
+                <Icon name="checkCircle" />
+                <p class="text-slate-600">{feature}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="h-64 w-full bg-slate-50 rounded-lg shadow-sm border border-slate-100 flex items-center justify-center">
+          <div class="text-center p-4">
+            <div class="text-5xl text-blue-500 mb-4">🔒</div>
+            <p class="text-slate-500 font-medium">Cloud Security Visualization</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+    id="cloud-native-applications"
+  >
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div class="order-last md:order-first">
+        <div class="h-64 w-full bg-slate-50 rounded-lg shadow-sm border border-slate-100 flex items-center justify-center">
+          <div class="text-center p-4">
+            <div class="text-5xl text-blue-500 mb-4">⚙️</div>
+            <p class="text-slate-500 font-medium">Cloud-Native Applications Visualization</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-end">
+        <h2
+          class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
+        >
+          {cloudApplicationSection.title}
+        </h2>
+        <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
+          {cloudApplicationSection.description}
+        </p>
+        <div class="mt-8 flex flex-col items-end gap-4">
+          {
+            cloudApplicationSection.features.map((feature) => (
+              <div class="flex items-center gap-2">
+                <p class="text-slate-600 text-right">{feature}</p>
+                <Icon name="checkCircle" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+    id="business-benefits"
+  >
+    <div class="text-center mb-12">
+      <h2 class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight">
+        {cloudBenefits.title}
       </h2>
-      <p class="mt-4 text-lg/8 text-pretty text-slate-700">
-        Leverage our cutting-edge automation stack to streamline your workflows
-        and boost efficiency
+      <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+        {cloudBenefits.description}
       </p>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
-      <div class="col-span-2 md:col-span-6 relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl p-6 animate-pulse overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-tr from-slate-500/20 to-slate-700/20 animate-gradient-xy"></div>
-        <h3 class="relative z-10 text-white font-medium text-xl text-center">Technology Stack</h3>
-      </div>
-      
-      {automationTech.map((tech, index) => (
-        <div class={`relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900 to-slate-800 p-6 flex flex-col items-center justify-center hover:scale-[1.03] transition-transform ${index < 2 ? "col-span-2 md:col-span-3" : "col-span-3"}`}>
-          <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-teal-600/10 opacity-75"></div>
-          <div class="relative z-10 flex flex-col items-center animate-fade-in" style={`animation-delay: ${index * 150}ms`}>
-            <Icon
-              name={automationIcons[tech as keyof typeof automationIcons]}
-              class="mb-2 size-8 text-white"
-            />
-            <span class="text-sm font-medium text-white">{tech}</span>
-            <div class="w-12 h-px bg-gradient-to-r from-transparent via-white to-transparent mt-3 animate-pulse"></div>
-          </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {benefitTypes.map((benefit) => (
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+          <h3 class="text-lg font-medium text-slate-800 mb-4">{benefit.title}</h3>
+          <ul class="space-y-2">
+            {benefit.points.map((point) => (
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 mt-1">•</span>
+                <span class="text-slate-600">{point}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
-  </section> -->
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+    id="cloud-partners"
+  >
+    <div class="text-center mb-12">
+      <h2 class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight">
+        {cloudPartners.title}
+      </h2>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-8">
+      {cloudPartners.partners.map((partner) => (
+        <div class="bg-white px-8 py-6 rounded-lg shadow-sm border border-slate-100 min-w-[240px] text-center">
+          <p class="text-lg font-medium text-slate-700">{partner}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 
   <Cta />
 
   <style>
-    /* Tailwind animation utilities */
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.5;
-      }
-    }
-    
-    @keyframes gradient-xy {
-      0% {
-        background-position: 0% 0%;
-      }
-      25% {
-        background-position: 100% 0%;
-      }
-      50% {
-        background-position: 100% 100%;
-      }
-      75% {
-        background-position: 0% 100%;
-      }
-      100% {
-        background-position: 0% 0%;
-      }
-    }
-    
-    @keyframes fade-in {
-      0% {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .animate-pulse {
-      animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-    
-    .animate-gradient-xy {
-      animation: gradient-xy 15s ease infinite;
-      background-size: 400% 400%;
-    }
-    
-    .animate-fade-in {
-      animation: fade-in 0.8s ease-out forwards;
+    .svgBlock::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url(/guilloche.svg);
+      background-repeat: repeat;
+      background-position: right top;
+      background-size: 20px, 20px;
+      opacity: 0.075;
+      background-clip: padding-box;
+      mask-image: linear-gradient(270deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+      pointer-events: none;
     }
   </style>
 </BaseLayout>
