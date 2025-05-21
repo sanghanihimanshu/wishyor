@@ -72,12 +72,6 @@ export const servicesMenu = [
         description: "CI/CD, IaC, and cloud-native workflows to boost efficiency.",
         href: "/services/cloud-services#devops-and-automation",
       },
-      // {
-      //   icon:"automation",
-      //   title: "Automation Technologies",
-      //   description: "Streamline processes with tools like Terraform, Ansible, and Jenkins.",
-      //   href: "/services/cloud-services#automation-technologies",
-      // }
     ],
   },
 ];
