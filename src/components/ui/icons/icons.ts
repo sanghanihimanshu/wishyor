@@ -178,5 +178,8 @@ export const Icons = {
   },
   link:{
     name:"Link"
+  },
+  bookOpen:{
+    name:"BookOpen"
   }
 };
