@@ -181,5 +181,17 @@ export const Icons = {
   },
   bookOpen:{
     name:"BookOpen"
+  },
+  layersLinked:{
+    name:"Layers2"
+  },
+  expandDiagonal:{
+    name:"MoveDiagonal"
+  },
+  handshake:{
+    name:"Handshake"
+  },
+  arrowRight:{
+    name:"ArrowRight"
   }
 };
