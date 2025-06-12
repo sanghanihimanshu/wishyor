@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig,passthroughImageService } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import vercel from "@astrojs/vercel";
 // import react from "@astrojs/react";
@@ -7,16 +7,20 @@ import markdoc from "@astrojs/markdoc";
 import keystatic from "@keystatic/astro";
 import db from "@astrojs/db";
 import svelte from "@astrojs/svelte";
+// import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  // The `site` property specifies the base URL for your site.
-  // Be sure to update this to your own domain (e.g., "https://yourdomain.com") before deploying.
-  site: "https://data-nova.vercel.app",
+  site: "https://wishyor.vercel.app",
   prefetch: true,
   trailingSlash: "never",
   experimental: {
     clientPrerender: true,
+   responsiveImages: true,
+  },
+  image:{
+    service: passthroughImageService(),
+    domains:["images.wishyor.com","images.wishyor.dev","images.wishyor.net","images.wishyor.org","images.wishyor.app"],
   },
   integrations: [
     // react(),
@@ -26,8 +30,9 @@ export default defineConfig({
     svelte(),
   ],
   vite: {
+    // @ts-ignore
     plugins: [tailwindcss()],
   },
   output: "server",
-  adapter: vercel(),
+    adapter: vercel()
 });

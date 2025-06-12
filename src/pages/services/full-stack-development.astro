@@ -218,11 +218,11 @@ const schema: WithContext<Thing> = {
     class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
     id="api-and-database-design"
   >
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-      <div class="order-last md:order-first">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div>
         <Image src={image_1} alt="Toolbar" class="rounded-xl shadow-lg" />
       </div>
-      <div class="text-end">
+      <div>
         <h2
           class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
         >
@@ -231,12 +231,12 @@ const schema: WithContext<Thing> = {
         <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
           {apiDatabaseSection.description}
         </p>
-        <div class="mt-8 flex flex-col items-end gap-4">
+        <div class="mt-8 flex flex-col gap-4">
           {
             apiDatabaseSection.features.map((feature) => (
               <div class="flex items-center gap-2">
-                <p class="text-slate-600 text-right">{feature}</p>
                 <Icon name="checkCircle" />
+                <p class="text-slate-600">{feature}</p>
               </div>
             ))
           }
