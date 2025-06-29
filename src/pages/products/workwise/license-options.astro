@@ -105,14 +105,10 @@ const infoSections = [
     <div class="max-w-7xl">
       <div class="mx-auto max-w-xl lg:mx-0">
         <p class="text-base/7 font-medium text-slate-400">{preTitle}</p>
-        <h1
-          class="mt-1 text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
-        >
+        <h1 class="mt-1 text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl">
           {title}
         </h1>
-        <p
-          class="mt-8 text-pretty text-lg font-medium text-slate-700 sm:text-xl/8"
-        >
+        <p class="mt-8 text-pretty text-lg font-medium text-slate-700 sm:text-xl/8">
           {subTitle}
         </p>
         <a
@@ -141,9 +137,7 @@ const infoSections = [
         <span class="text-5xl font-semibold tracking-tight text-slate-900"
           >{essentialTier.price}</span
         >
-        <span class="text-base text-slate-500"
-          >{essentialTier.priceDescription}</span
-        >
+        <span class="text-base text-slate-500">{essentialTier.priceDescription}</span>
       </p>
       {
         essentialTier.description.map((desc, index) => (
@@ -170,12 +164,8 @@ const infoSections = [
         {advancedTier.title}
       </h3>
       <p class="mt-4 flex items-baseline gap-x-2">
-        <span class="text-5xl font-semibold tracking-tight text-white"
-          >{advancedTier.price}</span
-        >
-        <span class="text-base text-teal-200"
-          >{advancedTier.priceDescription}</span
-        >
+        <span class="text-5xl font-semibold tracking-tight text-white">{advancedTier.price}</span>
+        <span class="text-base text-teal-200">{advancedTier.priceDescription}</span>
       </p>
       {
         advancedTier.description.map((desc, index) => (
@@ -213,9 +203,7 @@ const infoSections = [
     </div>
   </section>
 
-  <section
-    class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 md:pb-14 lg:px-8 lg:pb-20"
-  >
+  <section class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 md:pb-14 lg:px-8 lg:pb-20">
     <div
       class="relative grid overflow-hidden rounded-3xl bg-teal-300 px-5 py-5 shadow-xl md:grid-cols-2 md:grid-rows-2"
     >
@@ -223,9 +211,7 @@ const infoSections = [
         infoSections.map(({ title, content, className, icon, iconClass }) => (
           <div class={className}>
             {title && (
-              <h3 class="text-balance text-2xl font-bold tracking-tight text-slate-800">
-                {title}
-              </h3>
+              <h3 class="text-balance text-2xl font-bold tracking-tight text-slate-800">{title}</h3>
             )}
             {icon && <Icon name={icon} class={iconClass} />}
 

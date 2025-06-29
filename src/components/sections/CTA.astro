@@ -1,22 +1,22 @@
 ---
 import Button from "@ui/Button.astro";
-import {type HTMLAttributes} from "astro/types";
+import { type HTMLAttributes } from "astro/types";
 
 const title =
   'Accelerate Your Digital Journey Today. <br /> Experience the Power of <span class="font-medium text-teal-700">Wish</span><span class="font-light text-slate-400">yor</span>.';
 const subTitle =
   "Connect with our experts and discover how Wishyor's innovative solutions can transform your business with cutting-edge technology and digital excellence.";
 
-const primaryCTA = { 
-  text: "Schedule Consultation", 
+const primaryCTA = {
+  text: "Schedule Consultation",
   href: "/contact",
-  ariaLabel: "Schedule a free consultation with Wishyor experts"
+  ariaLabel: "Schedule a free consultation with Wishyor experts",
 };
 
-const sectionMetadata:HTMLAttributes<'section'> = {
+const sectionMetadata: HTMLAttributes<"section"> = {
   id: "cta-section",
   role: "region",
-  "aria-label": "Call to Action"
+  "aria-label": "Call to Action",
 };
 ---
 
@@ -25,10 +25,7 @@ const sectionMetadata:HTMLAttributes<'section'> = {
   class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
 >
   <div class="mx-auto mb-10 max-w-3xl text-center lg:mb-14">
-    <h2
-      class="text-balance text-4xl text-slate-800 sm:text-5xl"
-      id="cta-heading"
-    >
+    <h2 class="text-balance text-4xl text-slate-800 sm:text-5xl" id="cta-heading">
       <Fragment set:html={title} />
     </h2>
     <p class="text-lg/8 mt-5 text-pretty text-slate-600">

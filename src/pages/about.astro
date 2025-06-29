@@ -48,24 +48,27 @@ const expertiseData = {
 // SEO metadata for the page
 const seo = {
   title: "About TechSolutions",
-  description: "Leading provider of enterprise software development, cloud infrastructure, and digital transformation services.",
+  description:
+    "Leading provider of enterprise software development, cloud infrastructure, and digital transformation services.",
 };
 
 // Schema.org metadata for SEO
 const schema: WithContext<Thing> = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "inLanguage": "en-US",
+  inLanguage: "en-US",
   "@id": Astro.url.href,
-  "url": Astro.url.href,
-  "name": "About TechSolutions",
-  "description": "Enterprise technology solutions provider specializing in custom software development and cloud infrastructure.",
-  "isPartOf": {
+  url: Astro.url.href,
+  name: "About TechSolutions",
+  description:
+    "Enterprise technology solutions provider specializing in custom software development and cloud infrastructure.",
+  isPartOf: {
     "@type": "WebSite",
-    "url": `${Astro.site}`,
-    "name": "TechSolutions",
-    "description": "Leading provider of enterprise software development, cloud infrastructure, and digital transformation services."
-  }
+    url: `${Astro.site}`,
+    name: "TechSolutions",
+    description:
+      "Leading provider of enterprise software development, cloud infrastructure, and digital transformation services.",
+  },
 };
 ---
 
@@ -73,30 +76,22 @@ const schema: WithContext<Thing> = {
   <section class="mx-auto max-w-[85rem] px-4 pb-12 pt-48 sm:px-6 lg:px-8">
     <div class="max-w-7xl">
       <div class="mx-auto max-w-2xl lg:mx-0">
-        <h1
-          class="text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
-        >
+        <h1 class="text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl">
           {aboutData.title}
         </h1>
-        <p
-          class="mt-8 text-pretty text-lg font-medium text-slate-700 sm:text-xl/8"
-        >
+        <p class="mt-8 text-pretty text-lg font-medium text-slate-700 sm:text-xl/8">
           {aboutData.description}
         </p>
       </div>
 
       {/* Statistics Section */}
       <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-        <dl
-          class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4"
-        >
+        <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
           {
             aboutData.statistics.map((stat) => (
               <div class="flex flex-col-reverse gap-1">
                 <dt class="text-base/7 text-slate-700">{stat.label}</dt>
-                <dd class="text-4xl font-semibold tracking-tight text-slate-800">
-                  {stat.value}
-                </dd>
+                <dd class="text-4xl font-semibold tracking-tight text-slate-800">{stat.value}</dd>
               </div>
             ))
           }
@@ -107,9 +102,7 @@ const schema: WithContext<Thing> = {
 
   {/* Expertise Section */}
   <section class="mx-auto max-w-[85rem] px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
-    <div
-      class="group relative isolate overflow-hidden rounded-3xl bg-teal-200 p-5 sm:p-11"
-    >
+    <div class="group relative isolate overflow-hidden rounded-3xl bg-teal-200 p-5 sm:p-11">
       <div
         class="group pointer-events-none absolute inset-0 -top-[10%] h-[120%] w-full rounded-xl bg-linear-to-r/oklch from-teal-200 to-off-white opacity-0 transition duration-1000 group-hover:opacity-100"
       >
@@ -128,12 +121,8 @@ const schema: WithContext<Thing> = {
               <div
                 class={`px-5 py-5 sm:px-10 lg:py-0 ${index === 1 ? "h-full border-y border-dashed border-slate-400 lg:border-x lg:border-y-0" : ""}`}
               >
-                <dt class="text-balance text-lg font-semibold text-slate-600">
-                  {item.title}
-                </dt>
-                <dd class="mt-2 text-pretty text-slate-500">
-                  {item.description}
-                </dd>
+                <dt class="text-balance text-lg font-semibold text-slate-600">{item.title}</dt>
+                <dd class="mt-2 text-pretty text-slate-500">{item.description}</dd>
               </div>
             ))
           }

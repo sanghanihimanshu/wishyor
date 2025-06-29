@@ -1,55 +1,63 @@
-  ---
-  import BaseLayout from "@layout/BaseLayout.astro";
-  import Icon from "@ui/icons/Icon.astro";
-  import PostFeedback from "@common/PostFeedback.svelte";
-  import type { WithContext, Thing } from "schema-dts";
-  import { formatDate } from "@utils/utils";
-  import { getReadingTime } from "@utils/reading-time";
-  import { getEntry, render } from "astro:content";
+---
+import BaseLayout from "@layout/BaseLayout.astro";
+import Icon from "@ui/icons/Icon.astro";
+import PostFeedback from "@common/PostFeedback.svelte";
+import type { WithContext, Thing } from "schema-dts";
+import { formatDate } from "@utils/utils";
+import { getReadingTime } from "@utils/reading-time";
+import { getEntry, render, getCollection } from "astro:content";
 
-  // 1. Get the slug from the incoming server request
-  const { id } = Astro.params;
-  if (id === undefined) {
-    return Astro.redirect("/404");
-  }
+// Static generation compatible: all async in frontmatter
+const { id } = Astro.params;
+let post, Content, headings;
+if (!id) {
+  throw new Error("Not found");
+}
+try {
+  post = await getEntry("articles", id);
+  if (!post) throw new Error("Not found");
+  const rendered = await render(post);
+  Content = rendered.Content;
+  headings = rendered.headings;
+} catch {
+  throw new Error("Not found");
+}
 
-  // 2. Query for the entry directly using the request slug
-  const post = await getEntry("articles", id);
+const validHeadings = headings.filter((heading) => heading.depth === 2);
+const readingTime = getReadingTime(post.body ?? "");
+const slug = id;
 
-  // 3. Redirect if the entry does not exist
-  if (post === undefined) {
-    return Astro.redirect("/404");
-  }
+// Prepare SEO metadata based on the article content
+const seo = {
+  title: post.data.title,
+  description: post.data.description,
+};
 
-  // 4. Render the entry to HTML in the template
-  const { Content, headings } = await render(post);
+// Schema.org metadata for SEO
+const schema: WithContext<Thing> = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  url: Astro.url.href,
+  name: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toLocaleDateString("en-UK"),
+  isPartOf: {
+    "@type": "WebSite",
+    url: `${Astro.site}`,
+    name: "wishyor",
+    description:
+      "wishyor Analytics Inc. provides advanced analytics for Excel to help businesses unlock actionable insights quickly with no coding required.",
+  },
+};
 
-  const validHeadings = headings.filter((heading) => heading.depth === 2);
-  const readingTime = getReadingTime(post.body ?? "");
-  const slug = id;
-
-  // Prepare SEO metadata based on the article content
-  const seo = {
-    title: post.data.title,
-    description: post.data.description,
-  };
-
-  // Schema.org metadata for SEO
-  const schema: WithContext<Thing> = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "url": Astro.url.href,
-    "name": post.data.title,
-    "description": post.data.description,
-    "datePublished": post.data.date.toLocaleDateString('en-UK'),
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": `${Astro.site}`,
-      "name": "wishyor",
-      "description": "wishyor Analytics Inc. provides advanced analytics for Excel to help businesses unlock actionable insights quickly with no coding required."
-    }
-  };
-  ---
+// Static generation: provide all possible paths for [id]
+export async function getStaticPaths() {
+  const all = await getCollection("articles");
+  return all.map((entry) => ({
+    params: { id: entry.id },
+  }));
+}
+---
 
 <BaseLayout seo={seo} schema={schema}>
   <section class="mx-auto max-w-[85rem] px-4 py-24 sm:px-6 lg:px-8">
@@ -145,9 +153,7 @@
 
       if (!tocLinks.length || !sections.length) return;
 
-      tocLinks.forEach((link) =>
-        link.classList.remove("text-slate-600", "font-medium"),
-      );
+      tocLinks.forEach((link) => link.classList.remove("text-slate-600", "font-medium"));
 
       intersectionObserver = new IntersectionObserver(
         (entries) => {
@@ -171,7 +177,7 @@
         {
           threshold: 0.3,
           rootMargin: "-20% 0px -55% 0px",
-        },
+        }
       );
 
       sections.forEach((section) => intersectionObserver?.observe(section));

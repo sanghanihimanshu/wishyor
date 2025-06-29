@@ -1,10 +1,7 @@
 ---
-import BaseLayout from "@layout/BaseLayout.astro";
-import Icon from "@ui/icons/Icon.astro";
-import type { WithContext, Thing } from "schema-dts";
-import { Image } from "astro:assets";
-import image_1 from "@images/Api.png";
 import Cta from "@/components/service/cta.astro";
+import BaseLayout from "@layout/BaseLayout.astro";
+import type { Thing, WithContext } from "schema-dts";
 
 const platform = {
   title: "Cloud Services & Solutions",
@@ -12,8 +9,7 @@ const platform = {
     "Accelerate your digital transformation with our comprehensive cloud services. We help businesses leverage cloud technology to enhance scalability, security, and operational efficiency while reducing infrastructure costs.",
 };
 
-const video =
-  "https://vyclk3sx0z.ufs.sh/f/hv6ttNERWpXuOGj0KhIPk5MLw0bimBlYnq6Vd2NfSJW9gCQU";
+const video = "https://vyclk3sx0z.ufs.sh/f/hv6ttNERWpXuOGj0KhIPk5MLw0bimBlYnq6Vd2NfSJW9gCQU";
 
 const cloudMigrationSection = {
   title: "Cloud Migration & Assessment",
@@ -41,7 +37,7 @@ const cloudInfrastructureSection = {
 
 const cloudSecuritySection = {
   title: "Cloud Security & Compliance",
-  description: 
+  description:
     "Protect your cloud environments with industry-leading security practices and compliance frameworks. We implement comprehensive security measures to safeguard your data, applications, and infrastructure from evolving threats.",
   features: [
     "Zero-trust security architecture implementation",
@@ -84,7 +80,7 @@ const benefitTypes = [
       "Reduced capital expenditure",
       "Optimized resource allocation",
       "Lower maintenance costs",
-    ]
+    ],
   },
   {
     title: "Scalability & Flexibility",
@@ -93,7 +89,7 @@ const benefitTypes = [
       "Rapid deployment capabilities",
       "Global reach and distribution",
       "Flexible work environments",
-    ]
+    ],
   },
   {
     title: "Innovation & Agility",
@@ -102,7 +98,7 @@ const benefitTypes = [
       "Advanced analytics capabilities",
       "AI and ML integration",
       "Rapid prototyping and testing",
-    ]
+    ],
   },
   {
     title: "Business Continuity",
@@ -111,8 +107,8 @@ const benefitTypes = [
       "Disaster recovery capabilities",
       "High availability architecture",
       "Geographic redundancy",
-    ]
-  }
+    ],
+  },
 ];
 
 const cloudPartners = {
@@ -122,8 +118,8 @@ const cloudPartners = {
     "Microsoft Azure",
     "Google Cloud Platform",
     "IBM Cloud",
-    "Oracle Cloud"
-  ]
+    "Oracle Cloud",
+  ],
 };
 
 // Schema.org metadata for SEO
@@ -147,14 +143,10 @@ const schema: WithContext<Thing> = {
   <section class="mx-auto max-w-[85rem] px-4 pt-48 pb-12 sm:px-6 lg:px-8">
     <div class="max-w-7xl">
       <div class="mx-auto max-w-2xl lg:mx-0">
-        <h1
-          class="text-4xl text-balance text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
-        >
+        <h1 class="text-4xl text-balance text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl">
           {platform.title}
         </h1>
-        <p
-          class="mt-8 text-lg font-medium text-pretty text-slate-700 sm:text-xl/8"
-        >
+        <p class="mt-8 text-lg font-medium text-pretty text-slate-700 sm:text-xl/8">
           {platform.description}
         </p>
       </div>
@@ -165,14 +157,7 @@ const schema: WithContext<Thing> = {
         >
         </div>
         <div class="aspect-video">
-          <video
-            autoplay
-            loop
-            muted
-            playsinline
-            preload="metadata"
-            class="aspect-auto rounded-xl"
-          >
+          <video autoplay loop muted playsinline preload="metadata" class="aspect-auto rounded-xl">
             <source src={video} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -181,805 +166,1008 @@ const schema: WithContext<Thing> = {
     </div>
   </section>
 
-  
-<section
-  class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
-  id="cloud-migration-and-assessment"
->
-  <div class="mt-2 grid grid-cols-1 gap-8 md:grid-cols-2 md:justify-items-end">
-    <!-- Content Column -->
-    <div>
-      <h2 class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight">
-        {cloudMigrationSection.title}
-      </h2>
-      <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
-        {cloudMigrationSection.description}
-      </p>
-      
-      <!-- Features as Static Cards -->
-      <div class="mt-6 sm:mt-8 flex flex-col gap-3 sm:gap-4">
-        {
-          cloudMigrationSection.features.map((feature) => (
-             <div class="flex items-start gap-2 sm:gap-3">
-            <div class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center">
-              <div class="w-2 h-2 rounded-full bg-teal-500"></div>
-            </div>
-            <p class="text-slate-600 text-sm sm:text-base">{feature}</p>
-          </div>
-          ))
-        }
-      </div>
-    </div>
+  <section
+    class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+    id="cloud-migration-and-assessment"
+  >
+    <div class="mt-2 grid grid-cols-1 gap-8 md:grid-cols-2 md:justify-items-end">
+      <!-- Content Column -->
+      <div>
+        <h2
+          class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
+        >
+          {cloudMigrationSection.title}
+        </h2>
+        <p class="mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
+          {cloudMigrationSection.description}
+        </p>
 
-    <!-- Animated Visualization Column -->
-    <div class="h-full w-full">
-      <div class="relative flex h-full flex-col justify-center rounded-lg py-8 ring-white/15">
-        
-        <!-- Cloud Platforms Row -->
-        <div class="group flex flex-row overflow-hidden p-2">
-          <div
-            class="animate-scroll flex w-max min-w-full shrink-0 flex-row flex-nowrap justify-around gap-4 [--duration:25s]"
-            aria-hidden="true"
-          >
-            {/* Cloud Platforms */}
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-              <span class="font-medium">Amazon Web Services</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-              <span class="font-medium">Microsoft Azure</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-              <span class="font-medium">Google Cloud Platform</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-              <span class="font-medium">Multi-Cloud Strategy</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-              <span class="font-medium">Hybrid Infrastructure</span>
-            </div>
-            
-            {/* Duplicated for seamless scroll */}
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-              <span class="font-medium">Amazon Web Services</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-              <span class="font-medium">Microsoft Azure</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-              <span class="font-medium">Google Cloud Platform</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-              <span class="font-medium">Multi-Cloud Strategy</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-              <span class="font-medium">Hybrid Infrastructure</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Migration Process Row (Reverse Direction) -->
-        <div class="group flex flex-row overflow-hidden p-2">
-          <div
-            class="animate-scroll flex w-max min-w-full shrink-0 flex-row flex-nowrap justify-around gap-4 [--direction:reverse] [--duration:35s]"
-            aria-hidden="true"
-          >
-            {/* Migration Process Phases */}
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
-                <span class="text-xs font-bold text-teal-600">1</span>
+        <!-- Features as Static Cards -->
+        <div class="mt-6 sm:mt-8 flex flex-col gap-3 sm:gap-4">
+          {
+            cloudMigrationSection.features.map((feature) => (
+              <div class="flex items-start gap-2 sm:gap-3">
+                <div class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-teal-500" />
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base">{feature}</p>
               </div>
-              <span class="font-medium">Discovery & Assessment</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="flex items-center justify-center w-6 h-6 bg-indigo-100 rounded-full">
-                <span class="text-xs font-bold text-indigo-600">2</span>
-              </div>
-              <span class="font-medium">Strategy & Planning</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
-                <span class="text-xs font-bold text-teal-600">3</span>
-              </div>
-              <span class="font-medium">Migration Execution</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="flex items-center justify-center w-6 h-6 bg-pink-100 rounded-full">
-                <span class="text-xs font-bold text-pink-600">4</span>
-              </div>
-              <span class="font-medium">Testing & Validation</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
-                <span class="text-xs font-bold text-teal-600">5</span>
-              </div>
-              <span class="font-medium">Go-Live & Optimization</span>
-            </div>
-            
-            {/* Duplicated for seamless scroll */}
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
-                <span class="text-xs font-bold text-teal-600">1</span>
-              </div>
-              <span class="font-medium">Discovery & Assessment</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="flex items-center justify-center w-6 h-6 bg-indigo-100 rounded-full">
-                <span class="text-xs font-bold text-indigo-600">2</span>
-              </div>
-              <span class="font-medium">Strategy & Planning</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
-                <span class="text-xs font-bold text-teal-600">3</span>
-              </div>
-              <span class="font-medium">Migration Execution</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="flex items-center justify-center w-6 h-6 bg-pink-100 rounded-full">
-                <span class="text-xs font-bold text-pink-600">4</span>
-              </div>
-              <span class="font-medium">Testing & Validation</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
-                <span class="text-xs font-bold text-teal-600">5</span>
-              </div>
-              <span class="font-medium">Go-Live & Optimization</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Key Benefits Row -->
-        <div class="group flex flex-row overflow-hidden p-2">
-          <div
-            class="animate-scroll flex w-max min-w-full shrink-0 flex-row flex-nowrap justify-around gap-4 [--duration:20s]"
-            aria-hidden="true"
-          >
-            {/* Business Benefits */}
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">40% Cost Reduction</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">99.9% Uptime SLA</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">Auto-Scaling Capability</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">Enterprise Security</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">Global Distribution</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">24/7 Monitoring</span>
-            </div>
-            
-            {/* Duplicated for seamless scroll */}
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">40% Cost Reduction</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">99.9% Uptime SLA</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">Auto-Scaling Capability</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">Enterprise Security</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">Global Distribution</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200">
-              <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
-              <span class="font-medium">24/7 Monitoring</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Fade Gradients -->
-        <div class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white"></div>
-        <div class="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section
-  id="cloud-infrastructure-management"
-  class="relative overflow-hidden border-b border-dashed border-slate-200/60 bg-gradient-to-br from-slate-50/30 via-transparent to-teal-50/20 px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-24"
->
-  <div class="relative mx-auto max-w-7xl grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20 items-center">
-    
-    <!-- Left Column: Interactive Visualization -->
-    <div class="order-last lg:order-first">
-      <div class="relative p-6 sm:p-8 bg-gradient-to-br from-white via-slate-50 to-teal-50/30 border border-slate-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
-        
-        <!-- Visualization Box -->
-        <div class="relative h-80 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-slate-700/40">
-          <!-- Animated Grid Overlay -->
-          <div class="absolute inset-0 opacity-20">
-            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-teal-500/30 to-transparent animate-pulse"></div>
-            <div class="grid grid-cols-8 grid-rows-6 h-full w-full">
-              <!-- Replace with actual mapped elements -->
-              <div class="border border-slate-600/30 hover:border-teal-400/50 hover:bg-teal-500/10 transition-all duration-300 cursor-pointer" />
-              <!-- ... repeat up to 48 as per JS render -->
-            </div>
-          </div>
-
-          <!-- Node Dots -->
-          <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-teal-500 rounded-full shadow-lg animate-pulse"></div>
-          <div class="absolute top-1/3 right-1/3 w-3 h-3 bg-teal-500 rounded-full shadow-lg animate-pulse delay-100"></div>
-          <div class="absolute bottom-1/3 left-1/2 w-5 h-5 bg-teal-500 rounded-full shadow-lg animate-pulse delay-200"></div>
-          <div class="absolute top-1/2 right-1/4 w-3 h-3 bg-teal-500 rounded-full shadow-lg animate-pulse delay-300"></div>
-          <div class="absolute bottom-1/4 left-1/3 w-4 h-4 bg-cyan-500 rounded-full shadow-lg animate-pulse delay-500"></div>
-
-          <!-- SVG Lines -->
-          <svg class="absolute inset-0 w-full h-full pointer-events-none">
-            <line x1="25%" y1="25%" x2="50%" y2="67%" stroke="url(#gradient1)" stroke-width="2" opacity="0.6" class="animate-pulse" />
-            <line x1="67%" y1="33%" x2="33%" y2="67%" stroke="url(#gradient2)" stroke-width="2" opacity="0.6" class="animate-pulse" />
-            <line x1="50%" y1="67%" x2="75%" y2="50%" stroke="url(#gradient3)" stroke-width="2" opacity="0.6" class="animate-pulse" />
-            <defs>
-              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#3b82f6" stop-opacity="1" />
-                <stop offset="100%" stop-color="#10b981" stop-opacity="1" />
-              </linearGradient>
-              <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#8b5cf6" stop-opacity="1" />
-                <stop offset="100%" stop-color="#06b6d4" stop-opacity="1" />
-              </linearGradient>
-              <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#10b981" stop-opacity="1" />
-                <stop offset="100%" stop-color="#f59e0b" stop-opacity="1" />
-              </linearGradient>
-            </defs>
-          </svg>
-
-          <!-- Status -->
-          <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-sm rounded-md px-3 py-1.5 border border-slate-600/50">
-            <div class="flex items-center gap-2">
-              <div class="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
-              <span class="text-teal-400 text-xs font-medium">System Online</span>
-            </div>
-          </div>
-
-          <!-- Metrics -->
-          <div class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm rounded-md px-3 py-2 border border-slate-600/50 text-xs text-slate-300 space-y-1">
-            <div class="flex justify-between"><span>Nodes:</span><span class="text-teal-400">5 Active</span></div>
-            <div class="flex justify-between"><span>Load:</span><span class="text-teal-400">23%</span></div>
-            <div class="flex justify-between"><span>Latency:</span><span class="text-teal-400">1.2ms</span></div>
-          </div>
-        </div>
-
-        <!-- Stats Cards -->
-        <div class="grid grid-cols-3 gap-4 mt-6">
-          <div class="bg-white rounded-xl p-4 text-center border border-slate-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300">
-            <div class="w-8 h-8 bg-teal-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-              <div class="w-3 h-3 bg-teal-600 rounded-full"></div>
-            </div>
-            <p class="text-2xl font-bold text-slate-800">99.9%</p>
-            <p class="text-xs text-slate-500">Uptime</p>
-          </div>
-          <div class="bg-white rounded-xl p-4 text-center border border-slate-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300">
-            <div class="w-8 h-8 bg-teal-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-              <div class="w-3 h-3 bg-teal-600 rounded-full"></div>
-            </div>
-            <p class="text-2xl font-bold text-slate-800">2.1s</p>
-            <p class="text-xs text-slate-500">Response</p>
-          </div>
-          <div class="bg-white rounded-xl p-4 text-center border border-slate-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300">
-            <div class="w-8 h-8 bg-teal-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-              <div class="w-3 h-3 bg-teal-600 rounded-full"></div>
-            </div>
-            <p class="text-2xl font-bold text-slate-800">847</p>
-            <p class="text-xs text-slate-500">Requests</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right Column: Text & Features -->
-    <div>
-      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-800">
-        {cloudInfrastructureSection.title}
-      </h2>
-      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl">
-        {cloudInfrastructureSection.description}
-      </p>
-
-      <div class="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
-        {
-            cloudInfrastructureSection.features.map((feature) => (
-               <div class="flex items-start gap-2 sm:gap-3">
-            <div class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center">
-              <div class="w-2 h-2 rounded-full bg-teal-500"></div>
-            </div>
-            <p class="text-slate-600 text-sm sm:text-base">{feature}</p>
-          </div>
             ))
           }
+        </div>
+      </div>
+
+      <!-- Animated Visualization Column -->
+      <div class="h-full w-full">
+        <div class="relative flex h-full flex-col justify-center rounded-lg py-8 ring-white/15">
+          <!-- Cloud Platforms Row -->
+          <div class="group flex flex-row overflow-hidden p-2">
+            <div
+              class="animate-scroll flex w-max min-w-full shrink-0 flex-row flex-nowrap justify-around gap-4 [--duration:25s]"
+              aria-hidden="true"
+            >
+              {/* Cloud Platforms */}
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                <span class="font-medium">Amazon Web Services</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                <span class="font-medium">Microsoft Azure</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                <span class="font-medium">Google Cloud Platform</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                <span class="font-medium">Multi-Cloud Strategy</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                <span class="font-medium">Hybrid Infrastructure</span>
+              </div>
+
+              {/* Duplicated for seamless scroll */}
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                <span class="font-medium">Amazon Web Services</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                <span class="font-medium">Microsoft Azure</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                <span class="font-medium">Google Cloud Platform</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                <span class="font-medium">Multi-Cloud Strategy</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                <span class="font-medium">Hybrid Infrastructure</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Migration Process Row (Reverse Direction) -->
+          <div class="group flex flex-row overflow-hidden p-2">
+            <div
+              class="animate-scroll flex w-max min-w-full shrink-0 flex-row flex-nowrap justify-around gap-4 [--direction:reverse] [--duration:35s]"
+              aria-hidden="true"
+            >
+              {/* Migration Process Phases */}
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
+                  <span class="text-xs font-bold text-teal-600">1</span>
+                </div>
+                <span class="font-medium">Discovery & Assessment</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="flex items-center justify-center w-6 h-6 bg-indigo-100 rounded-full">
+                  <span class="text-xs font-bold text-indigo-600">2</span>
+                </div>
+                <span class="font-medium">Strategy & Planning</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
+                  <span class="text-xs font-bold text-teal-600">3</span>
+                </div>
+                <span class="font-medium">Migration Execution</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="flex items-center justify-center w-6 h-6 bg-pink-100 rounded-full">
+                  <span class="text-xs font-bold text-pink-600">4</span>
+                </div>
+                <span class="font-medium">Testing & Validation</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
+                  <span class="text-xs font-bold text-teal-600">5</span>
+                </div>
+                <span class="font-medium">Go-Live & Optimization</span>
+              </div>
+
+              {/* Duplicated for seamless scroll */}
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
+                  <span class="text-xs font-bold text-teal-600">1</span>
+                </div>
+                <span class="font-medium">Discovery & Assessment</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="flex items-center justify-center w-6 h-6 bg-indigo-100 rounded-full">
+                  <span class="text-xs font-bold text-indigo-600">2</span>
+                </div>
+                <span class="font-medium">Strategy & Planning</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
+                  <span class="text-xs font-bold text-teal-600">3</span>
+                </div>
+                <span class="font-medium">Migration Execution</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="flex items-center justify-center w-6 h-6 bg-pink-100 rounded-full">
+                  <span class="text-xs font-bold text-pink-600">4</span>
+                </div>
+                <span class="font-medium">Testing & Validation</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full">
+                  <span class="text-xs font-bold text-teal-600">5</span>
+                </div>
+                <span class="font-medium">Go-Live & Optimization</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Benefits Row -->
+          <div class="group flex flex-row overflow-hidden p-2">
+            <div
+              class="animate-scroll flex w-max min-w-full shrink-0 flex-row flex-nowrap justify-around gap-4 [--duration:20s]"
+              aria-hidden="true"
+            >
+              {/* Business Benefits */}
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">40% Cost Reduction</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">99.9% Uptime SLA</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">Auto-Scaling Capability</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">Enterprise Security</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">Global Distribution</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">24/7 Monitoring</span>
+              </div>
+
+              {/* Duplicated for seamless scroll */}
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">40% Cost Reduction</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">99.9% Uptime SLA</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">Auto-Scaling Capability</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">Enterprise Security</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">Global Distribution</span>
+              </div>
+              <div
+                class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-slate-700 shadow-md ring-1 ring-white/15 hover:shadow-lg transition-shadow duration-200"
+              >
+                <div class="w-2 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded-full"></div>
+                <span class="font-medium">24/7 Monitoring</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fade Gradients -->
+          <div
+            class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white"
+          >
+          </div>
+          <div
+            class="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white"
+          >
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <section
+    id="cloud-infrastructure-management"
+    class="relative overflow-hidden border-b border-dashed border-slate-200/60 bg-gradient-to-br from-slate-50/30 via-transparent to-teal-50/20 px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-24"
+  >
+    <div
+      class="relative mx-auto max-w-7xl grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20 items-center"
+    >
+      <!-- Left Column: Interactive Visualization -->
+      <div class="order-last lg:order-first">
+        <div
+          class="relative p-6 sm:p-8 bg-gradient-to-br from-white via-slate-50 to-teal-50/30 border border-slate-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500"
+        >
+          <!-- Visualization Box -->
+          <div
+            class="relative h-80 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-slate-700/40"
+          >
+            <!-- Animated Grid Overlay -->
+            <div class="absolute inset-0 opacity-20">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-transparent via-teal-500/30 to-transparent animate-pulse"
+              >
+              </div>
+              <div class="grid grid-cols-8 grid-rows-6 h-full w-full">
+                <!-- Replace with actual mapped elements -->
+                <div
+                  class="border border-slate-600/30 hover:border-teal-400/50 hover:bg-teal-500/10 transition-all duration-300 cursor-pointer"
+                >
+                </div>
+                <!-- ... repeat up to 48 as per JS render -->
+              </div>
+            </div>
 
+            <!-- Node Dots -->
+            <div
+              class="absolute top-1/4 left-1/4 w-4 h-4 bg-teal-500 rounded-full shadow-lg animate-pulse"
+            >
+            </div>
+            <div
+              class="absolute top-1/3 right-1/3 w-3 h-3 bg-teal-500 rounded-full shadow-lg animate-pulse delay-100"
+            >
+            </div>
+            <div
+              class="absolute bottom-1/3 left-1/2 w-5 h-5 bg-teal-500 rounded-full shadow-lg animate-pulse delay-200"
+            >
+            </div>
+            <div
+              class="absolute top-1/2 right-1/4 w-3 h-3 bg-teal-500 rounded-full shadow-lg animate-pulse delay-300"
+            >
+            </div>
+            <div
+              class="absolute bottom-1/4 left-1/3 w-4 h-4 bg-cyan-500 rounded-full shadow-lg animate-pulse delay-500"
+            >
+            </div>
 
-<section class="mx-auto max-w-[85rem] border-b border-dashed border-slate-300 px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20" id="cloud-security-and-compliance">
-  <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-14 lg:gap-20">
-    
-    <!-- Left: Content Section -->
-    <div class="flex flex-col justify-center">
-      <h2 class="text-2xl font-semibold tracking-tight text-slate-800 md:text-3xl md:leading-tight">
-        {cloudSecuritySection.title}
-      </h2>
-      <p class="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-slate-700">
-        {cloudSecuritySection.description}
-      </p>
-      <div class="mt-6 sm:mt-8 flex flex-col gap-3 sm:gap-4">
-        {
+            <!-- SVG Lines -->
+            <svg class="absolute inset-0 w-full h-full pointer-events-none">
+              <line
+                x1="25%"
+                y1="25%"
+                x2="50%"
+                y2="67%"
+                stroke="url(#gradient1)"
+                stroke-width="2"
+                opacity="0.6"
+                class="animate-pulse"></line>
+              <line
+                x1="67%"
+                y1="33%"
+                x2="33%"
+                y2="67%"
+                stroke="url(#gradient2)"
+                stroke-width="2"
+                opacity="0.6"
+                class="animate-pulse"></line>
+              <line
+                x1="50%"
+                y1="67%"
+                x2="75%"
+                y2="50%"
+                stroke="url(#gradient3)"
+                stroke-width="2"
+                opacity="0.6"
+                class="animate-pulse"></line>
+              <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3b82f6" stop-opacity="1"></stop>
+                  <stop offset="100%" stop-color="#10b981" stop-opacity="1"></stop>
+                </linearGradient>
+                <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#8b5cf6" stop-opacity="1"></stop>
+                  <stop offset="100%" stop-color="#06b6d4" stop-opacity="1"></stop>
+                </linearGradient>
+                <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#10b981" stop-opacity="1"></stop>
+                  <stop offset="100%" stop-color="#f59e0b" stop-opacity="1"></stop>
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <!-- Status -->
+            <div
+              class="absolute top-4 left-4 bg-black/50 backdrop-blur-sm rounded-md px-3 py-1.5 border border-slate-600/50"
+            >
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
+                <span class="text-teal-400 text-xs font-medium">System Online</span>
+              </div>
+            </div>
+
+            <!-- Metrics -->
+            <div
+              class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm rounded-md px-3 py-2 border border-slate-600/50 text-xs text-slate-300 space-y-1"
+            >
+              <div class="flex justify-between">
+                <span>Nodes:</span><span class="text-teal-400">5 Active</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Load:</span><span class="text-teal-400">23%</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Latency:</span><span class="text-teal-400">1.2ms</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats Cards -->
+          <div class="grid grid-cols-3 gap-4 mt-6">
+            <div
+              class="bg-white rounded-xl p-4 text-center border border-slate-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300"
+            >
+              <div
+                class="w-8 h-8 bg-teal-100 rounded-lg mx-auto mb-2 flex items-center justify-center"
+              >
+                <div class="w-3 h-3 bg-teal-600 rounded-full"></div>
+              </div>
+              <p class="text-2xl font-bold text-slate-800">99.9%</p>
+              <p class="text-xs text-slate-500">Uptime</p>
+            </div>
+            <div
+              class="bg-white rounded-xl p-4 text-center border border-slate-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300"
+            >
+              <div
+                class="w-8 h-8 bg-teal-100 rounded-lg mx-auto mb-2 flex items-center justify-center"
+              >
+                <div class="w-3 h-3 bg-teal-600 rounded-full"></div>
+              </div>
+              <p class="text-2xl font-bold text-slate-800">2.1s</p>
+              <p class="text-xs text-slate-500">Response</p>
+            </div>
+            <div
+              class="bg-white rounded-xl p-4 text-center border border-slate-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300"
+            >
+              <div
+                class="w-8 h-8 bg-teal-100 rounded-lg mx-auto mb-2 flex items-center justify-center"
+              >
+                <div class="w-3 h-3 bg-teal-600 rounded-full"></div>
+              </div>
+              <p class="text-2xl font-bold text-slate-800">847</p>
+              <p class="text-xs text-slate-500">Requests</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Text & Features -->
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-800">
+          {cloudInfrastructureSection.title}
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl">
+          {cloudInfrastructureSection.description}
+        </p>
+
+        <div class="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
+          {
+            cloudInfrastructureSection.features.map((feature) => (
+              <div class="flex items-start gap-2 sm:gap-3">
+                <div class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-teal-500" />
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base">{feature}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] border-b border-dashed border-slate-300 px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20"
+    id="cloud-security-and-compliance"
+  >
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-14 lg:gap-20">
+      <!-- Left: Content Section -->
+      <div class="flex flex-col justify-center">
+        <h2
+          class="text-2xl font-semibold tracking-tight text-slate-800 md:text-3xl md:leading-tight"
+        >
+          {cloudSecuritySection.title}
+        </h2>
+        <p class="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-slate-700">
+          {cloudSecuritySection.description}
+        </p>
+        <div class="mt-6 sm:mt-8 flex flex-col gap-3 sm:gap-4">
+          {
             cloudSecuritySection.features.map((feature) => (
               <div class="flex items-start gap-2 sm:gap-3">
-            <div class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center">
-              <div class="w-2 h-2 rounded-full bg-teal-500"></div>
-            </div>
-            <p class="text-slate-600 text-sm sm:text-base">{feature}</p>
-          </div>
+                <div class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-teal-500" />
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base">{feature}</p>
+              </div>
             ))
           }
+        </div>
       </div>
-    </div>
 
-    <!-- Right: Development Stack Visualization -->
- <div>
-      <div class="relative w-full max-w-3xl mx-auto">
-        
-        <!-- Zero Trust Architecture -->
-        <div class="bg-white rounded-2xl shadow-xl border border-teal-100 p-6 mb-8">
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center gap-3">
-              <div class="h-4 w-4 rounded-full bg-teal-500 flex items-center justify-center">
-                <div class="h-2 w-2 rounded-full bg-white"></div>
+      <!-- Right: Development Stack Visualization -->
+      <div>
+        <div class="relative w-full max-w-3xl mx-auto">
+          <!-- Zero Trust Architecture -->
+          <div class="bg-white rounded-2xl shadow-xl border border-teal-100 p-6 mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-3">
+                <div class="h-4 w-4 rounded-full bg-teal-500 flex items-center justify-center">
+                  <div class="h-2 w-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-sm font-semibold text-slate-800">Zero Trust Architecture</span>
               </div>
-              <span class="text-sm font-semibold text-slate-800">Zero Trust Architecture</span>
+              <div class="flex items-center gap-2">
+                <div class="h-2 w-2 rounded-full bg-green-500"></div>
+                <span class="text-xs text-green-600 font-medium">Protected</span>
+              </div>
             </div>
-            <div class="flex items-center gap-2">
-              <div class="h-2 w-2 rounded-full bg-green-500"></div>
-              <span class="text-xs text-green-600 font-medium">Protected</span>
-            </div>
-          </div>
 
-          <!-- Security Perimeter -->
-          <div class="relative">
-            <!-- Central Security Core -->
-            <div class="flex justify-center mb-6">
-              <div class="relative">
-                <div class="w-20 h-20 bg-gradient-to-br from-teal-400 via-teal-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg">
-                  <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                    <div class="w-4 h-4 bg-teal-500 rounded"></div>
+            <!-- Security Perimeter -->
+            <div class="relative">
+              <!-- Central Security Core -->
+              <div class="flex justify-center mb-6">
+                <div class="relative">
+                  <div
+                    class="w-20 h-20 bg-gradient-to-br from-teal-400 via-teal-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg"
+                  >
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                      <div class="w-4 h-4 bg-teal-500 rounded"></div>
+                    </div>
+                  </div>
+                  <!-- Security Rings -->
+                  <div class="absolute -inset-3 rounded-full border-2 border-teal-200 opacity-60">
+                  </div>
+                  <div class="absolute -inset-6 rounded-full border border-teal-100 opacity-40">
+                  </div>
+                  <div class="absolute -inset-9 rounded-full border border-teal-50 opacity-20">
                   </div>
                 </div>
-                <!-- Security Rings -->
-                <div class="absolute -inset-3 rounded-full border-2 border-teal-200 opacity-60"></div>
-                <div class="absolute -inset-6 rounded-full border border-teal-100 opacity-40"></div>
-                <div class="absolute -inset-9 rounded-full border border-teal-50 opacity-20"></div>
+              </div>
+
+              <!-- Identity Verification Points -->
+              <div class="grid grid-cols-4 gap-2 mb-4">
+                <div class="bg-teal-50 rounded-lg p-2 border border-teal-200 text-center">
+                  <div
+                    class="w-6 h-6 mx-auto mb-1 bg-teal-500 rounded-full flex items-center justify-center"
+                  >
+                    <div class="w-3 h-3 bg-white rounded-full"></div>
+                  </div>
+                  <span class="text-xs text-slate-600">Identity</span>
+                </div>
+                <div class="bg-teal-50 rounded-lg p-2 border border-teal-200 text-center">
+                  <div
+                    class="w-6 h-6 mx-auto mb-1 bg-teal-500 rounded-full flex items-center justify-center"
+                  >
+                    <div class="w-3 h-3 bg-white rounded-full"></div>
+                  </div>
+                  <span class="text-xs text-slate-600">Device</span>
+                </div>
+                <div class="bg-teal-50 rounded-lg p-2 border border-teal-200 text-center">
+                  <div
+                    class="w-6 h-6 mx-auto mb-1 bg-teal-500 rounded-full flex items-center justify-center"
+                  >
+                    <div class="w-3 h-3 bg-white rounded-full"></div>
+                  </div>
+                  <span class="text-xs text-slate-600">Location</span>
+                </div>
+                <div class="bg-teal-50 rounded-lg p-2 border border-teal-200 text-center">
+                  <div
+                    class="w-6 h-6 mx-auto mb-1 bg-teal-500 rounded-full flex items-center justify-center"
+                  >
+                    <div class="w-3 h-3 bg-white rounded-full"></div>
+                  </div>
+                  <span class="text-xs text-slate-600">Access</span>
+                </div>
+              </div>
+
+              <!-- Trust Score -->
+              <div
+                class="bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg p-3 text-white text-center"
+              >
+                <div class="text-sm font-medium mb-1">Trust Score</div>
+                <div class="text-2xl font-bold">98.7%</div>
+                <div class="text-xs opacity-90">Continuous Verification</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Threat Detection Dashboard -->
+          <div class="bg-white rounded-2xl shadow-xl border border-teal-100 p-6 mb-8">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-semibold text-slate-800">Threat Detection & Monitoring</h3>
+              <div class="flex items-center gap-2">
+                <div class="h-2 w-2 rounded-full bg-green-500"></div>
+                <span class="text-xs text-green-600 font-medium">Active</span>
               </div>
             </div>
 
-            <!-- Identity Verification Points -->
-            <div class="grid grid-cols-4 gap-2 mb-4">
-              <div class="bg-teal-50 rounded-lg p-2 border border-teal-200 text-center">
-                <div class="w-6 h-6 mx-auto mb-1 bg-teal-500 rounded-full flex items-center justify-center">
-                  <div class="w-3 h-3 bg-white rounded-full"></div>
-                </div>
-                <span class="text-xs text-slate-600">Identity</span>
+            <!-- Threat Metrics -->
+            <div class="grid grid-cols-3 gap-3 mb-4">
+              <div class="text-center">
+                <div class="text-lg font-bold text-teal-600">0</div>
+                <div class="text-xs text-slate-600">Active Threats</div>
               </div>
-              <div class="bg-teal-50 rounded-lg p-2 border border-teal-200 text-center">
-                <div class="w-6 h-6 mx-auto mb-1 bg-teal-500 rounded-full flex items-center justify-center">
-                  <div class="w-3 h-3 bg-white rounded-full"></div>
-                </div>
-                <span class="text-xs text-slate-600">Device</span>
+              <div class="text-center">
+                <div class="text-lg font-bold text-teal-600">1,247</div>
+                <div class="text-xs text-slate-600">Blocked Attempts</div>
               </div>
-              <div class="bg-teal-50 rounded-lg p-2 border border-teal-200 text-center">
-                <div class="w-6 h-6 mx-auto mb-1 bg-teal-500 rounded-full flex items-center justify-center">
-                  <div class="w-3 h-3 bg-white rounded-full"></div>
-                </div>
-                <span class="text-xs text-slate-600">Location</span>
-              </div>
-              <div class="bg-teal-50 rounded-lg p-2 border border-teal-200 text-center">
-                <div class="w-6 h-6 mx-auto mb-1 bg-teal-500 rounded-full flex items-center justify-center">
-                  <div class="w-3 h-3 bg-white rounded-full"></div>
-                </div>
-                <span class="text-xs text-slate-600">Access</span>
+              <div class="text-center">
+                <div class="text-lg font-bold text-teal-600">99.9%</div>
+                <div class="text-xs text-slate-600">Detection Rate</div>
               </div>
             </div>
 
-            <!-- Trust Score -->
-            <div class="bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg p-3 text-white text-center">
-              <div class="text-sm font-medium mb-1">Trust Score</div>
-              <div class="text-2xl font-bold">98.7%</div>
-              <div class="text-xs opacity-90">Continuous Verification</div>
+            <!-- Real-time Monitoring -->
+            <div class="space-y-2">
+              <div
+                class="flex items-center justify-between bg-green-50 rounded-lg p-2 border border-green-200"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                  <span class="text-xs text-slate-700">Network Monitoring</span>
+                </div>
+                <span class="text-xs text-green-600 font-medium">Secure</span>
+              </div>
+              <div
+                class="flex items-center justify-between bg-green-50 rounded-lg p-2 border border-green-200"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                  <span class="text-xs text-slate-700">Endpoint Protection</span>
+                </div>
+                <span class="text-xs text-green-600 font-medium">Secure</span>
+              </div>
+              <div
+                class="flex items-center justify-between bg-green-50 rounded-lg p-2 border border-green-200"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                  <span class="text-xs text-slate-700">Cloud Workloads</span>
+                </div>
+                <span class="text-xs text-green-600 font-medium">Secure</span>
+              </div>
             </div>
+          </div>
+
+          <!-- Compliance Framework -->
+          <div class="bg-white rounded-2xl shadow-xl border border-teal-100 p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-semibold text-slate-800">Compliance Framework</h3>
+              <div class="flex items-center gap-2">
+                <div class="h-2 w-2 rounded-full bg-teal-500"></div>
+                <span class="text-xs text-teal-600 font-medium">Certified</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 mb-4">
+              <!-- SOC 2 -->
+              <div
+                class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition cursor-pointer"
+              >
+                <div class="flex items-center gap-2 mb-1">
+                  <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                  <span class="text-sm font-medium text-slate-700">SOC 2 Type II</span>
+                </div>
+                <p class="text-xs text-slate-600">Security Controls</p>
+              </div>
+
+              <!-- GDPR -->
+              <div
+                class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition cursor-pointer"
+              >
+                <div class="flex items-center gap-2 mb-1">
+                  <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                  <span class="text-sm font-medium text-slate-700">GDPR</span>
+                </div>
+                <p class="text-xs text-slate-600">Data Protection</p>
+              </div>
+
+              <!-- HIPAA -->
+              <div
+                class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition cursor-pointer"
+              >
+                <div class="flex items-center gap-2 mb-1">
+                  <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                  <span class="text-sm font-medium text-slate-700">HIPAA</span>
+                </div>
+                <p class="text-xs text-slate-600">Healthcare Security</p>
+              </div>
+
+              <!-- ISO 27001 -->
+              <div
+                class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition cursor-pointer"
+              >
+                <div class="flex items-center gap-2 mb-1">
+                  <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                  <span class="text-sm font-medium text-slate-700">ISO 27001</span>
+                </div>
+                <p class="text-xs text-slate-600">Information Security</p>
+              </div>
+            </div>
+
+            <!-- Security-as-Code -->
+            <div class="bg-gradient-to-r from-slate-800 to-slate-900 rounded-lg p-4 text-white">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium">Security-as-Code</span>
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                  <span class="text-xs">Automated</span>
+                </div>
+              </div>
+              <div class="text-xs font-mono text-slate-300 mb-1">
+                terraform scan --security-checks
+              </div>
+              <div class="text-xs font-mono text-slate-300 mb-1">docker scan --severity high</div>
+              <div class="text-xs font-mono text-slate-300">kubectl security-scan</div>
+            </div>
+          </div>
+
+          <!-- Floating Security Elements -->
+          <div class="absolute top-4 -right-2 w-3 h-3 bg-teal-400 rounded-full opacity-60"></div>
+          <div class="absolute top-1/2 -left-2 w-2 h-2 bg-teal-400 rounded-full opacity-60"></div>
+          <div class="absolute bottom-8 right-4 w-4 h-4 bg-teal-400 rounded-full opacity-60"></div>
+
+          <!-- Security Connection Lines -->
+          <div
+            class="absolute top-1/4 left-1/2 w-8 h-px bg-gradient-to-r from-transparent via-teal-300 to-transparent opacity-50"
+          >
+          </div>
+          <div
+            class="absolute top-3/4 right-1/4 w-6 h-px bg-gradient-to-r from-transparent via-teal-300 to-transparent opacity-50"
+          >
           </div>
         </div>
-
-        <!-- Threat Detection Dashboard -->
-        <div class="bg-white rounded-2xl shadow-xl border border-teal-100 p-6 mb-8">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-sm font-semibold text-slate-800">Threat Detection & Monitoring</h3>
-            <div class="flex items-center gap-2">
-              <div class="h-2 w-2 rounded-full bg-green-500"></div>
-              <span class="text-xs text-green-600 font-medium">Active</span>
-            </div>
-          </div>
-
-          <!-- Threat Metrics -->
-          <div class="grid grid-cols-3 gap-3 mb-4">
-            <div class="text-center">
-              <div class="text-lg font-bold text-teal-600">0</div>
-              <div class="text-xs text-slate-600">Active Threats</div>
-            </div>
-            <div class="text-center">
-              <div class="text-lg font-bold text-teal-600">1,247</div>
-              <div class="text-xs text-slate-600">Blocked Attempts</div>
-            </div>
-            <div class="text-center">
-              <div class="text-lg font-bold text-teal-600">99.9%</div>
-              <div class="text-xs text-slate-600">Detection Rate</div>
-            </div>
-          </div>
-
-          <!-- Real-time Monitoring -->
-          <div class="space-y-2">
-            <div class="flex items-center justify-between bg-green-50 rounded-lg p-2 border border-green-200">
-              <div class="flex items-center gap-2">
-                <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                <span class="text-xs text-slate-700">Network Monitoring</span>
-              </div>
-              <span class="text-xs text-green-600 font-medium">Secure</span>
-            </div>
-            <div class="flex items-center justify-between bg-green-50 rounded-lg p-2 border border-green-200">
-              <div class="flex items-center gap-2">
-                <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                <span class="text-xs text-slate-700">Endpoint Protection</span>
-              </div>
-              <span class="text-xs text-green-600 font-medium">Secure</span>
-            </div>
-            <div class="flex items-center justify-between bg-green-50 rounded-lg p-2 border border-green-200">
-              <div class="flex items-center gap-2">
-                <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                <span class="text-xs text-slate-700">Cloud Workloads</span>
-              </div>
-              <span class="text-xs text-green-600 font-medium">Secure</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Compliance Framework -->
-        <div class="bg-white rounded-2xl shadow-xl border border-teal-100 p-6">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-sm font-semibold text-slate-800">Compliance Framework</h3>
-            <div class="flex items-center gap-2">
-              <div class="h-2 w-2 rounded-full bg-teal-500"></div>
-              <span class="text-xs text-teal-600 font-medium">Certified</span>
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-2 gap-3 mb-4">
-            <!-- SOC 2 -->
-            <div class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition cursor-pointer">
-              <div class="flex items-center gap-2 mb-1">
-                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-                <span class="text-sm font-medium text-slate-700">SOC 2 Type II</span>
-              </div>
-              <p class="text-xs text-slate-600">Security Controls</p>
-            </div>
-
-            <!-- GDPR -->
-            <div class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition cursor-pointer">
-              <div class="flex items-center gap-2 mb-1">
-                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-                <span class="text-sm font-medium text-slate-700">GDPR</span>
-              </div>
-              <p class="text-xs text-slate-600">Data Protection</p>
-            </div>
-
-            <!-- HIPAA -->
-            <div class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition cursor-pointer">
-              <div class="flex items-center gap-2 mb-1">
-                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-                <span class="text-sm font-medium text-slate-700">HIPAA</span>
-              </div>
-              <p class="text-xs text-slate-600">Healthcare Security</p>
-            </div>
-
-            <!-- ISO 27001 -->
-            <div class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition cursor-pointer">
-              <div class="flex items-center gap-2 mb-1">
-                <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
-                <span class="text-sm font-medium text-slate-700">ISO 27001</span>
-              </div>
-              <p class="text-xs text-slate-600">Information Security</p>
-            </div>
-          </div>
-
-          <!-- Security-as-Code -->
-          <div class="bg-gradient-to-r from-slate-800 to-slate-900 rounded-lg p-4 text-white">
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-sm font-medium">Security-as-Code</span>
-              <div class="flex items-center gap-1">
-                <div class="w-2 h-2 rounded-full bg-green-400"></div>
-                <span class="text-xs">Automated</span>
-              </div>
-            </div>
-            <div class="text-xs font-mono text-slate-300 mb-1">terraform scan --security-checks</div>
-            <div class="text-xs font-mono text-slate-300 mb-1">docker scan --severity high</div>
-            <div class="text-xs font-mono text-slate-300">kubectl security-scan</div>
-          </div>
-        </div>
-
-        <!-- Floating Security Elements -->
-        <div class="absolute top-4 -right-2 w-3 h-3 bg-teal-400 rounded-full opacity-60"></div>
-        <div class="absolute top-1/2 -left-2 w-2 h-2 bg-teal-400 rounded-full opacity-60"></div>
-        <div class="absolute bottom-8 right-4 w-4 h-4 bg-teal-400 rounded-full opacity-60"></div>
-        
-        <!-- Security Connection Lines -->
-        <div class="absolute top-1/4 left-1/2 w-8 h-px bg-gradient-to-r from-transparent via-teal-300 to-transparent opacity-50"></div>
-        <div class="absolute top-3/4 right-1/4 w-6 h-px bg-gradient-to-r from-transparent via-teal-300 to-transparent opacity-50"></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section
-  class="mx-auto max-w-[85rem] border-b border-dashed border-slate-300 px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20"
-  id="cloud-native-applications"
->
-  <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-14 lg:gap-20">
-    
-    <!-- Left: Cloud-Native Visualization -->
-    <div class="order-last md:order-first">
-      <div class="relative w-full max-w-3xl mx-auto">
-        
-        <!-- Container Orchestration -->
-        <div class="bg-white rounded-2xl shadow-xl border border-teal-100 p-6 mb-8">
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center gap-3">
-              <div class="h-4 w-4 rounded-full bg-teal-500 flex items-center justify-center">
-                <div class="h-2 w-2 rounded-full bg-white"></div>
+  <section
+    class="mx-auto max-w-[85rem] border-b border-dashed border-slate-300 px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20"
+    id="cloud-native-applications"
+  >
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-14 lg:gap-20">
+      <!-- Left: Cloud-Native Visualization -->
+      <div class="order-last md:order-first">
+        <div class="relative w-full max-w-3xl mx-auto">
+          <!-- Container Orchestration -->
+          <div class="bg-white rounded-2xl shadow-xl border border-teal-100 p-6 mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-3">
+                <div class="h-4 w-4 rounded-full bg-teal-500 flex items-center justify-center">
+                  <div class="h-2 w-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-sm font-semibold text-slate-800">Container Orchestration</span>
               </div>
-              <span class="text-sm font-semibold text-slate-800">Container Orchestration</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <div class="h-2 w-2 rounded-full bg-teal-500"></div>
-              <span class="text-xs text-teal-600 font-medium">Running</span>
-            </div>
-          </div>
-
-          <!-- Kubernetes Pods -->
-          <div class="grid grid-cols-3 gap-3 mb-6">
-            <div class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition">
-              <div class="flex items-center justify-between mb-2">
-                <div class="w-3 h-3 rounded bg-teal-500"></div>
-                <span class="text-xs text-slate-600">Pod 1</span>
-              </div>
-              <div class="space-y-1">
-                <div class="h-1.5 bg-teal-300 rounded-full w-full"></div>
-                <div class="h-1.5 bg-teal-300 rounded-full w-3/4"></div>
-                <div class="h-1.5 bg-teal-300 rounded-full w-1/2"></div>
-              </div>
-              <div class="text-xs text-teal-600 mt-2 font-medium">CPU: 45%</div>
-            </div>
-
-            <div class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition">
-              <div class="flex items-center justify-between mb-2">
-                <div class="w-3 h-3 rounded bg-teal-500"></div>
-                <span class="text-xs text-slate-600">Pod 2</span>
-              </div>
-              <div class="space-y-1">
-                <div class="h-1.5 bg-teal-300 rounded-full w-full"></div>
-                <div class="h-1.5 bg-teal-300 rounded-full w-2/3"></div>
-                <div class="h-1.5 bg-teal-300 rounded-full w-4/5"></div>
-              </div>
-              <div class="text-xs text-teal-600 mt-2 font-medium">CPU: 62%</div>
-            </div>
-
-            <div class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition">
-              <div class="flex items-center justify-between mb-2">
-                <div class="w-3 h-3 rounded bg-teal-500"></div>
-                <span class="text-xs text-slate-600">Pod 3</span>
-              </div>
-              <div class="space-y-1">
-                <div class="h-1.5 bg-teal-300 rounded-full w-full"></div>
-                <div class="h-1.5 bg-teal-300 rounded-full w-1/3"></div>
-                <div class="h-1.5 bg-teal-300 rounded-full w-2/3"></div>
-              </div>
-              <div class="text-xs text-teal-600 mt-2 font-medium">CPU: 38%</div>
-            </div>
-          </div>
-
-          <!-- Load Balancer -->
-          <div class="bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg p-4 text-white">
-            <div class="flex items-center justify-between">
-              <span class="text-sm font-medium">Load Balancer</span>
               <div class="flex items-center gap-2">
-                <div class="h-2 w-2 rounded-full bg-white"></div>
-                <span class="text-xs">Active</span>
+                <div class="h-2 w-2 rounded-full bg-teal-500"></div>
+                <span class="text-xs text-teal-600 font-medium">Running</span>
               </div>
             </div>
-            <div class="mt-3 flex justify-between items-center">
-              <span class="text-xs opacity-90">Traffic Distribution</span>
-              <span class="text-xs font-medium">2.4K req/sec</span>
+
+            <!-- Kubernetes Pods -->
+            <div class="grid grid-cols-3 gap-3 mb-6">
+              <div
+                class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-3 h-3 rounded bg-teal-500"></div>
+                  <span class="text-xs text-slate-600">Pod 1</span>
+                </div>
+                <div class="space-y-1">
+                  <div class="h-1.5 bg-teal-300 rounded-full w-full"></div>
+                  <div class="h-1.5 bg-teal-300 rounded-full w-3/4"></div>
+                  <div class="h-1.5 bg-teal-300 rounded-full w-1/2"></div>
+                </div>
+                <div class="text-xs text-teal-600 mt-2 font-medium">CPU: 45%</div>
+              </div>
+
+              <div
+                class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-3 h-3 rounded bg-teal-500"></div>
+                  <span class="text-xs text-slate-600">Pod 2</span>
+                </div>
+                <div class="space-y-1">
+                  <div class="h-1.5 bg-teal-300 rounded-full w-full"></div>
+                  <div class="h-1.5 bg-teal-300 rounded-full w-2/3"></div>
+                  <div class="h-1.5 bg-teal-300 rounded-full w-4/5"></div>
+                </div>
+                <div class="text-xs text-teal-600 mt-2 font-medium">CPU: 62%</div>
+              </div>
+
+              <div
+                class="bg-teal-50 rounded-lg p-3 border border-teal-200 hover:shadow-md transition"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-3 h-3 rounded bg-teal-500"></div>
+                  <span class="text-xs text-slate-600">Pod 3</span>
+                </div>
+                <div class="space-y-1">
+                  <div class="h-1.5 bg-teal-300 rounded-full w-full"></div>
+                  <div class="h-1.5 bg-teal-300 rounded-full w-1/3"></div>
+                  <div class="h-1.5 bg-teal-300 rounded-full w-2/3"></div>
+                </div>
+                <div class="text-xs text-teal-600 mt-2 font-medium">CPU: 38%</div>
+              </div>
             </div>
+
+            <!-- Load Balancer -->
+            <div class="bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg p-4 text-white">
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-medium">Load Balancer</span>
+                <div class="flex items-center gap-2">
+                  <div class="h-2 w-2 rounded-full bg-white"></div>
+                  <span class="text-xs">Active</span>
+                </div>
+              </div>
+              <div class="mt-3 flex justify-between items-center">
+                <span class="text-xs opacity-90">Traffic Distribution</span>
+                <span class="text-xs font-medium">2.4K req/sec</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connection Lines -->
+          <div class="flex justify-center mb-6">
+            <div class="flex items-center gap-4">
+              <div class="h-px w-8 bg-teal-300"></div>
+              <div class="h-3 w-3 rounded-full bg-teal-400"></div>
+              <div class="h-px w-8 bg-teal-300"></div>
+            </div>
+          </div>
+
+          <!-- Microservices Layer -->
+          <div class="bg-white rounded-2xl shadow-xl border border-teal-100 p-6">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-3">
+                <div class="h-4 w-4 rounded-full bg-teal-500 flex items-center justify-center">
+                  <div class="h-2 w-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-sm font-semibold text-slate-800">Microservices Architecture</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="h-2 w-2 rounded-full bg-teal-500"></div>
+                <span class="text-xs text-teal-600 font-medium">Scalable</span>
+              </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-2 gap-4">
+              <!-- Auth Service -->
+              <div
+                class="bg-white rounded-lg border border-teal-100 p-4 hover:shadow-sm transition"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <span class="text-sm font-medium text-slate-700">Auth Service</span>
+                  </div>
+                  <div class="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">Live</div>
+                </div>
+                <div class="text-xs text-slate-600 mb-2">JWT Authentication</div>
+                <div class="flex justify-between text-xs text-slate-500">
+                  <span>v2.1.0</span>
+                  <span>3 instances</span>
+                </div>
+              </div>
+
+              <!-- API Gateway -->
+              <div
+                class="bg-white rounded-lg border border-teal-100 p-4 hover:shadow-sm transition"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+                    <span class="text-sm font-medium text-slate-700">API Gateway</span>
+                  </div>
+                  <div class="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">Live</div>
+                </div>
+                <div class="text-xs text-slate-600 mb-2">Route Management</div>
+                <div class="flex justify-between text-xs text-slate-500">
+                  <span>v1.8.3</span>
+                  <span>2 instances</span>
+                </div>
+              </div>
+
+              <!-- User Service -->
+              <div
+                class="bg-white rounded-lg border border-teal-100 p-4 hover:shadow-sm transition"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-teal-500"></div>
+                    <span class="text-sm font-medium text-slate-700">User Service</span>
+                  </div>
+                  <div class="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">Live</div>
+                </div>
+                <div class="text-xs text-slate-600 mb-2">Profile Management</div>
+                <div class="flex justify-between text-xs text-slate-500">
+                  <span>v3.0.1</span>
+                  <span>4 instances</span>
+                </div>
+              </div>
+
+              <!-- Payment Service -->
+              <div
+                class="bg-white rounded-lg border border-teal-100 p-4 hover:shadow-sm transition"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-orange-500"></div>
+                    <span class="text-sm font-medium text-slate-700">Payment Service</span>
+                  </div>
+                  <div class="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">Live</div>
+                </div>
+                <div class="text-xs text-slate-600 mb-2">Transaction Processing</div>
+                <div class="flex justify-between text-xs text-slate-500">
+                  <span>v1.9.2</span>
+                  <span>5 instances</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service Mesh Status -->
+            <div class="mt-6 flex justify-center">
+              <div
+                class="flex items-center gap-3 bg-teal-50 border border-teal-200 rounded-full px-4 py-2"
+              >
+                <div class="h-2 w-2 rounded-full bg-teal-500"></div>
+                <span class="text-xs text-slate-700 font-medium">Service Mesh: Istio</span>
+                <div class="h-3 w-px bg-slate-300 mx-2"></div>
+                <span class="text-xs text-slate-700 font-medium">Auto-Scaling: ON</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Elements -->
+          <div class="absolute top-6 -right-3 w-2 h-2 bg-teal-400 rounded-full opacity-60"></div>
+          <div class="absolute bottom-12 -left-3 w-3 h-3 bg-teal-400 rounded-full opacity-60"></div>
+          <div class="absolute top-1/3 -right-4 w-1.5 h-1.5 bg-teal-400 rounded-full opacity-60">
+          </div>
+
+          <!-- Network Lines -->
+          <div
+            class="absolute top-1/2 left-1/4 w-8 h-px bg-gradient-to-r from-transparent via-teal-300 to-transparent opacity-50"
+          >
+          </div>
+          <div
+            class="absolute top-1/3 right-1/4 w-6 h-px bg-gradient-to-r from-transparent via-teal-300 to-transparent opacity-50"
+          >
           </div>
         </div>
-
-        <!-- Connection Lines -->
-        <div class="flex justify-center mb-6">
-          <div class="flex items-center gap-4">
-            <div class="h-px w-8 bg-teal-300"></div>
-            <div class="h-3 w-3 rounded-full bg-teal-400"></div>
-            <div class="h-px w-8 bg-teal-300"></div>
-          </div>
-        </div>
-
-        <!-- Microservices Layer -->
-        <div class="bg-white rounded-2xl shadow-xl border border-teal-100 p-6">
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center gap-3">
-              <div class="h-4 w-4 rounded-full bg-teal-500 flex items-center justify-center">
-                <div class="h-2 w-2 rounded-full bg-white"></div>
-              </div>
-              <span class="text-sm font-semibold text-slate-800">Microservices Architecture</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <div class="h-2 w-2 rounded-full bg-teal-500"></div>
-              <span class="text-xs text-teal-600 font-medium">Scalable</span>
-            </div>
-          </div>
-
-          <!-- Services Grid -->
-          <div class="grid grid-cols-2 gap-4">
-            <!-- Auth Service -->
-            <div class="bg-white rounded-lg border border-teal-100 p-4 hover:shadow-sm transition">
-              <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center gap-2">
-                  <div class="w-3 h-3 rounded-full bg-blue-500"></div>
-                  <span class="text-sm font-medium text-slate-700">Auth Service</span>
-                </div>
-                <div class="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">Live</div>
-              </div>
-              <div class="text-xs text-slate-600 mb-2">JWT Authentication</div>
-              <div class="flex justify-between text-xs text-slate-500">
-                <span>v2.1.0</span>
-                <span>3 instances</span>
-              </div>
-            </div>
-
-            <!-- API Gateway -->
-            <div class="bg-white rounded-lg border border-teal-100 p-4 hover:shadow-sm transition">
-              <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center gap-2">
-                  <div class="w-3 h-3 rounded-full bg-purple-500"></div>
-                  <span class="text-sm font-medium text-slate-700">API Gateway</span>
-                </div>
-                <div class="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">Live</div>
-              </div>
-              <div class="text-xs text-slate-600 mb-2">Route Management</div>
-              <div class="flex justify-between text-xs text-slate-500">
-                <span>v1.8.3</span>
-                <span>2 instances</span>
-              </div>
-            </div>
-
-            <!-- User Service -->
-            <div class="bg-white rounded-lg border border-teal-100 p-4 hover:shadow-sm transition">
-              <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center gap-2">
-                  <div class="w-3 h-3 rounded-full bg-teal-500"></div>
-                  <span class="text-sm font-medium text-slate-700">User Service</span>
-                </div>
-                <div class="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">Live</div>
-              </div>
-              <div class="text-xs text-slate-600 mb-2">Profile Management</div>
-              <div class="flex justify-between text-xs text-slate-500">
-                <span>v3.0.1</span>
-                <span>4 instances</span>
-              </div>
-            </div>
-
-            <!-- Payment Service -->
-            <div class="bg-white rounded-lg border border-teal-100 p-4 hover:shadow-sm transition">
-              <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center gap-2">
-                  <div class="w-3 h-3 rounded-full bg-orange-500"></div>
-                  <span class="text-sm font-medium text-slate-700">Payment Service</span>
-                </div>
-                <div class="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">Live</div>
-              </div>
-              <div class="text-xs text-slate-600 mb-2">Transaction Processing</div>
-              <div class="flex justify-between text-xs text-slate-500">
-                <span>v1.9.2</span>
-                <span>5 instances</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Service Mesh Status -->
-          <div class="mt-6 flex justify-center">
-            <div class="flex items-center gap-3 bg-teal-50 border border-teal-200 rounded-full px-4 py-2">
-              <div class="h-2 w-2 rounded-full bg-teal-500"></div>
-              <span class="text-xs text-slate-700 font-medium">Service Mesh: Istio</span>
-              <div class="h-3 w-px bg-slate-300 mx-2"></div>
-              <span class="text-xs text-slate-700 font-medium">Auto-Scaling: ON</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Floating Elements -->
-        <div class="absolute top-6 -right-3 w-2 h-2 bg-teal-400 rounded-full opacity-60"></div>
-        <div class="absolute bottom-12 -left-3 w-3 h-3 bg-teal-400 rounded-full opacity-60"></div>
-        <div class="absolute top-1/3 -right-4 w-1.5 h-1.5 bg-teal-400 rounded-full opacity-60"></div>
-        
-        <!-- Network Lines -->
-        <div class="absolute top-1/2 left-1/4 w-8 h-px bg-gradient-to-r from-transparent via-teal-300 to-transparent opacity-50"></div>
-        <div class="absolute top-1/3 right-1/4 w-6 h-px bg-gradient-to-r from-transparent via-teal-300 to-transparent opacity-50"></div>
       </div>
-    </div>
 
-    <!-- Right: Content Section -->
-    <div class="flex flex-col justify-center text-left">
-      <h2 class="text-2xl font-semibold tracking-tight text-slate-800 md:text-3xl md:leading-tight">
-        {cloudApplicationSection.title}
-      </h2>
-      <p class="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-slate-700">
-        {cloudApplicationSection.description}
-      </p>
-     <div class="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
-        {
+      <!-- Right: Content Section -->
+      <div class="flex flex-col justify-center text-left">
+        <h2
+          class="text-2xl font-semibold tracking-tight text-slate-800 md:text-3xl md:leading-tight"
+        >
+          {cloudApplicationSection.title}
+        </h2>
+        <p class="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-slate-700">
+          {cloudApplicationSection.description}
+        </p>
+        <div class="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
+          {
             cloudApplicationSection.features.map((feature) => (
-               <div class="flex items-start gap-2 sm:gap-3">
-            <div class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center">
-              <div class="w-2 h-2 rounded-full bg-teal-500"></div>
-            </div>
-            <p class="text-slate-600 text-sm sm:text-base">{feature}</p>
-          </div>
+              <div class="flex items-start gap-2 sm:gap-3">
+                <div class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-teal-500" />
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base">{feature}</p>
+              </div>
             ))
           }
+        </div>
       </div>
     </div>
-
-  </div>
-</section>
+  </section>
 
   <section
     class="mx-auto max-w-[85rem] border-b border-dashed border-slate-400 px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
     id="business-benefits"
   >
     <div class="text-center mb-12">
-      <h2 class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight">
+      <h2
+        class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
+      >
         {cloudBenefits.title}
       </h2>
       <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
@@ -988,19 +1176,21 @@ const schema: WithContext<Thing> = {
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {benefitTypes.map((benefit) => (
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-          <h3 class="text-lg font-medium text-slate-800 mb-4">{benefit.title}</h3>
-          <ul class="space-y-2">
-            {benefit.points.map((point) => (
-              <li class="flex items-start gap-2">
-                <span class="text-teal-500 mt-1">•</span>
-                <span class="text-slate-600">{point}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      {
+        benefitTypes.map((benefit) => (
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+            <h3 class="text-lg font-medium text-slate-800 mb-4">{benefit.title}</h3>
+            <ul class="space-y-2">
+              {benefit.points.map((point) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-teal-500 mt-1">•</span>
+                  <span class="text-slate-600">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </div>
   </section>
 
@@ -1009,17 +1199,21 @@ const schema: WithContext<Thing> = {
     id="cloud-partners"
   >
     <div class="text-center mb-12">
-      <h2 class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight">
+      <h2
+        class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight"
+      >
         {cloudPartners.title}
       </h2>
     </div>
 
     <div class="flex flex-wrap justify-center gap-8">
-      {cloudPartners.partners.map((partner) => (
-        <div class="bg-white px-8 py-6 rounded-lg shadow-sm border border-slate-100 min-w-[240px] text-center">
-          <p class="text-lg font-medium text-slate-700">{partner}</p>
-        </div>
-      ))}
+      {
+        cloudPartners.partners.map((partner) => (
+          <div class="bg-white px-8 py-6 rounded-lg shadow-sm border border-slate-100 min-w-[240px] text-center">
+            <p class="text-lg font-medium text-slate-700">{partner}</p>
+          </div>
+        ))
+      }
     </div>
   </section>
 

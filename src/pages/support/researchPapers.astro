@@ -35,9 +35,7 @@ export const pageContent = {
               <span class="mb-3 inline-block text-sm font-medium text-teal-600">
                 {paper.data.category}
               </span>
-              <h2 class="text-xl font-semibold text-slate-800">
-                {paper.data.title}
-              </h2>
+              <h2 class="text-xl font-semibold text-slate-800">{paper.data.title}</h2>
               <p class="mt-4 text-slate-600">{paper.data.description}</p>
             </div>
             <div class="mt-8 flex flex-wrap items-center gap-4">
@@ -48,10 +46,7 @@ export const pageContent = {
                   class="group inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition-colors hover:text-teal-600"
                 >
                   {pageContent.actionLabel}
-                  <Icon
-                    name="newWindow"
-                    class="size-4 transition group-hover:translate-x-0.5"
-                  />
+                  <Icon name="newWindow" class="size-4 transition group-hover:translate-x-0.5" />
                 </a>
               )}
             </div>

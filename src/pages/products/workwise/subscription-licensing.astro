@@ -73,20 +73,14 @@ const faqSection = {
         <p class="text-base/7 font-medium text-slate-400">
           {preTitle}
         </p>
-        <h1
-          class="mt-1 text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
-        >
+        <h1 class="mt-1 text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl">
           {title}
         </h1>
-        <p
-          class="mt-8 text-pretty text-lg font-medium text-slate-700 sm:text-xl/8"
-        >
+        <p class="mt-8 text-pretty text-lg font-medium text-slate-700 sm:text-xl/8">
           <Fragment set:html={subTitle} />
         </p>
 
-        <div
-          class="mt-10 grid auto-rows-fr grid-rows-2 gap-2 sm:gap-6 md:grid-cols-2"
-        >
+        <div class="mt-10 grid auto-rows-fr grid-rows-2 gap-2 sm:gap-6 md:grid-cols-2">
           {
             features.map((feature) => (
               <div class="flex gap-x-2">
@@ -109,16 +103,12 @@ const faqSection = {
     </div>
   </section>
 
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
-  >
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20">
     <div
       class="relative grid divide-y divide-dashed divide-slate-400 overflow-hidden rounded-3xl bg-teal-300 px-5 py-5 shadow-xl md:grid-cols-2 md:divide-x md:divide-y-0"
     >
       <div class="content-center py-5 sm:p-5">
-        <h3
-          class="text-balance text-2xl font-bold tracking-tight text-slate-800"
-        >
+        <h3 class="text-balance text-2xl font-bold tracking-tight text-slate-800">
           {infoSection.systemRequirements.title}
         </h3>
         <p class="mt-6 text-pretty text-lg/8 text-slate-700">
@@ -135,9 +125,7 @@ const faqSection = {
     </div>
   </section>
 
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
-  >
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20">
     <div class="mx-auto mb-10 max-w-2xl lg:mb-14">
       <h2
         class="text-balance text-2xl font-semibold tracking-tight text-slate-800 md:text-3xl md:leading-tight"
@@ -154,9 +142,7 @@ const faqSection = {
               <Icon name="questionMark" />
 
               <div class="grow">
-                <h3 class="font-semibold text-slate-600 md:text-lg">
-                  {faq.question}
-                </h3>
+                <h3 class="font-semibold text-slate-600 md:text-lg">{faq.question}</h3>
                 <p class="mt-1 text-slate-500">
                   <Fragment set:html={faq.answer} />
                 </p>

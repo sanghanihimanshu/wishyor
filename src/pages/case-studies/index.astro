@@ -2,10 +2,13 @@
 import BaseLayout from "@layout/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-// Change collection from "articles" to "caseStudies"
-const caseStudies = (await getCollection("caseStudies")).toSorted(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-);
+let caseStudies: any[] = [];
+try {
+  caseStudies = await getCollection("caseStudies");
+  caseStudies = caseStudies.toSorted((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+} catch (e) {
+  caseStudies = [];
+}
 
 const urlPath = Astro.url;
 
@@ -21,18 +24,14 @@ export const pageContent = {
     <div class="mx-auto max-w-[85rem] px-4 pb-12 pt-48 sm:px-6 lg:px-8">
       <div class="max-w-7xl">
         <div class="mx-auto max-w-3xl lg:mx-0">
-          <h1
-            class="text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
-          >
+          <h1 class="text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl">
             {pageContent.pageTitle}
           </h1>
         </div>
       </div>
     </div>
   </section>
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
-  >
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20">
     <div class="grid grid-cols-1 items-center lg:grid-cols-3">
       {
         caseStudies.map((item, index) => {
@@ -40,8 +39,7 @@ export const pageContent = {
           const itemsPerRow = 3;
 
           const isLastRow =
-            Math.floor(index / itemsPerRow) ===
-            Math.floor((totalItems - 1) / itemsPerRow);
+            Math.floor(index / itemsPerRow) === Math.floor((totalItems - 1) / itemsPerRow);
 
           const borderClasses = isLastRow
             ? index % 3 === 0
@@ -56,15 +54,10 @@ export const pageContent = {
                 : "border-b";
 
           return (
-            <a
-              class={`card group ${borderClasses}`}
-              href={`${urlPath}/${item.id}`}
-            >
+            <a class={`card group ${borderClasses}`} href={`${urlPath}/${item.id}`}>
               <div class="mb-5">
                 <div class="mt-5">
-                  <h3 class="mt-5 text-lg font-medium text-slate-800">
-                    {item.data.title}
-                  </h3>
+                  <h3 class="mt-5 text-lg font-medium text-slate-800">{item.data.title}</h3>
                   {/* Add industry tag if available */}
                   {item.data.industry && (
                     <span class="mt-2 inline-block rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600">

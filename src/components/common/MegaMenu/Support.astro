@@ -29,9 +29,7 @@ const currentPath = Astro.url.pathname;
     <div
       class="from-teal-100 via-transparent to-white px-4 py-2 lg:mx-8 xl:mx-6 xl:rounded-lg xl:bg-white xl:bg-linear-to-t/oklch xl:px-16 xl:py-10 xl:shadow-lg xl:ring-1 xl:ring-teal-950/5"
     >
-      <div
-        class="gap-x-8 gap-y-4 md:grid md:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2"
-      >
+      <div class="gap-x-8 gap-y-4 md:grid md:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
         {
           supportMenu.map((section) => (
             <div class="flex flex-col">
@@ -46,9 +44,7 @@ const currentPath = Astro.url.pathname;
                     <Icon name={item.icon} class="mt-1 size-5 shrink-0 text-slate-800" />
 
                     <div class="grow">
-                      <p class="text-sm font-medium text-slate-800">
-                        {item.title}
-                      </p>
+                      <p class="text-sm font-medium text-slate-800">{item.title}</p>
                       <p class="text-sm text-slate-500">{item.description}</p>
                     </div>
                   </a>

@@ -18,7 +18,7 @@ const currentPath = Astro.url.pathname;
     aria-expanded="false"
     aria-label="Mega Menu"
   >
-  Case studies<Icon name="arrowDownRight" className="size-4" />
+    Case studies<Icon name="arrowDownRight" className="size-4" />
   </button>
 
   <div
@@ -49,9 +49,7 @@ const currentPath = Astro.url.pathname;
                   <Icon name={item.icon} class="mt-1 size-6 shrink-0 text-slate-800" />
 
                   <div class="grow">
-                    <p class="text-sm font-medium text-slate-800">
-                      {item.title}
-                    </p>
+                    <p class="text-sm font-medium text-slate-800">{item.title}</p>
                     <p class="text-sm text-slate-500">{item.description}</p>
                   </div>
                 </a>

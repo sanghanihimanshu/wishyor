@@ -17,16 +17,14 @@ const { address, phone, email, website } = Astro.props;
     </li>
     <li class="flex items-center gap-x-2">
       <Icon name="email" />
-      <a
-        href={"mailto:" + email}
-        class="transition-colors duration-300 hover:text-slate-500">{email}</a
+      <a href={"mailto:" + email} class="transition-colors duration-300 hover:text-slate-500"
+        >{email}</a
       >
     </li>
     <li class="flex items-center gap-x-2">
       <Icon name="world" />
-      <a
-        href={"https://" + website}
-        class="transition-colors duration-300 hover:text-slate-500">{website}</a
+      <a href={"https://" + website} class="transition-colors duration-300 hover:text-slate-500"
+        >{website}</a
       >
     </li>
   </ul>

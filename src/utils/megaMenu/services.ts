@@ -16,10 +16,10 @@ export const servicesMenu = [
       },
       {
         icon: "shieldplus",
-        title: 'Enterprise-Grade Security & Compliance',
+        title: "Enterprise-Grade Security & Compliance",
         description: "Robust security measures and compliance with industry standards.",
         href: "/services/full-stack-development#enterprise-grade-security-and-compliance",
-      }
+      },
     ],
   },
   {
@@ -48,7 +48,7 @@ export const servicesMenu = [
         title: "Cloud Native Applications",
         description: "Build and deploy applications designed for the cloud from the ground up.",
         href: "/services/cloud-services#cloud-native-applications",
-      }
+      },
     ],
   },
   {

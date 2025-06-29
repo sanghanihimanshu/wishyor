@@ -5,16 +5,14 @@ import Button from "@ui/Button.astro";
 
 // Content for the section title and subtitle
 const title = "Elevate Your Digital Presence";
-const subTitle = 
+const subTitle =
   "Drive growth with our cutting-edge digital marketing solutions. From SEO to social media, we deliver data-driven strategies that help you reach your target audience and achieve measurable results.";
 
 // Call-to-action configuration for the tertiary button
 const tertiaryCTA = { text: "View Services", href: "/services" };
 ---
 
-<section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
->
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20">
   <div
     class="relative isolate overflow-hidden rounded-3xl bg-teal-500 px-6 pt-16 shadow-xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
   >
@@ -24,12 +22,7 @@ const tertiaryCTA = { text: "View Services", href: "/services" };
       class="absolute left-1/2 top-1/2 -z-10 size-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
       aria-hidden="true"
     >
-      <circle
-        cx="512"
-        cy="512"
-        r="512"
-        fill="url(#gradient_2)"
-        fill-opacity="0.7"></circle>
+      <circle cx="512" cy="512" r="512" fill="url(#gradient_2)" fill-opacity="0.7"></circle>
       <defs>
         <radialGradient id="gradient_2">
           <stop offset="0" stop-color="#087f7f"></stop>
@@ -50,9 +43,7 @@ const tertiaryCTA = { text: "View Services", href: "/services" };
       <p class="mt-6 text-pretty text-lg/8 text-slate-700">
         {subTitle}
       </p>
-      <div
-        class="mt-10 flex items-center justify-start gap-x-6 sm:justify-center lg:justify-start"
-      >
+      <div class="mt-10 flex items-center justify-start gap-x-6 sm:justify-center lg:justify-start">
         <Button
           href={tertiaryCTA.href}
           variant="tertiary"

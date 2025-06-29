@@ -4,15 +4,13 @@ import Button from "@ui/Button.astro";
 const title = "Transform Your Ideas into Scalable Digital Solutions";
 const subTitle =
   "At Wishyor, we specialize in custom software development and full-stack web applications, delivering innovative solutions for startups, enterprises, and organizations globally. We build secure, scalable, and performance-optimized applications to bring your vision to life and ensure your business thrives in the digital era.";
-const secondaryCTA = { text: "Explore Our Global Services", href: "/services"  };
-const primaryCTA = { text: "Request Your Free Consultation",href: "/contact" };
+const secondaryCTA = { text: "Explore Our Global Services", href: "/services" };
+const primaryCTA = { text: "Request Your Free Consultation", href: "/contact" };
 ---
 
 {/* Hero Content */}
 <div class="mx-auto max-w-4xl select-none text-left sm:text-center">
-  <h1
-    class="block text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
-  >
+  <h1 class="block text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl">
     {title}
   </h1>
 </div>
@@ -25,8 +23,6 @@ const primaryCTA = { text: "Request Your Free Consultation",href: "/contact" };
 
 {/* CTA Buttons */}
 <div class="flex flex-col justify-center gap-5 sm:flex-row">
-  <Button href={secondaryCTA.href} variant="secondary" target="_blank"
-    >{secondaryCTA.text}</Button
-  >
+  <Button href={secondaryCTA.href} variant="secondary" target="_blank">{secondaryCTA.text}</Button>
   <Button href={primaryCTA.href} variant="primary">{primaryCTA.text}</Button>
 </div>

@@ -25,12 +25,14 @@ const defaultSchema: WithContext<Thing> = {
   "@id": Astro.url.href,
   url: Astro.url.href,
   name: "Wishyor",
-  description: "Share your wishes and dreams with the world. A place to connect, inspire and make wishes come true.",
+  description:
+    "Share your wishes and dreams with the world. A place to connect, inspire and make wishes come true.",
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
     name: "Wishyor",
-    description: "A social platform for sharing and discovering wishes, dreams, and aspirations with like-minded people.",
+    description:
+      "A social platform for sharing and discovering wishes, dreams, and aspirations with like-minded people.",
   },
 };
 ---
@@ -111,10 +113,8 @@ const defaultSchema: WithContext<Thing> = {
       import type { TransitionBeforeSwapEvent } from "astro:transitions/client";
       document.addEventListener("astro:before-swap", (e) =>
         [
-          ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
-            'link[as="font"]',
-          ),
-        ].forEach((link) => link.remove()),
+          ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll('link[as="font"]'),
+        ].forEach((link) => link.remove())
       );
     </script>
   </head>

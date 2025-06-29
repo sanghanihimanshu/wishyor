@@ -1,6 +1,39 @@
 import type { APIContext, APIRoute } from "astro";
 import { db, Feedback, eq, sql } from "astro:db";
 
+// GET handler: fetch feedback by slug from query params
+export const GET: APIRoute = async ({ request }: APIContext): Promise<Response> => {
+  try {
+    const url = new URL(request.url);
+    const slug = url.searchParams.get("slug");
+    if (!slug) {
+      return new Response(JSON.stringify({ error: "Missing slug" }), {
+        status: 400,
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+    }
+    const feedback = await db
+      .select()
+      .from(Feedback)
+      .where(eq(Feedback.slug, slug))
+      .then((rows) => rows[0] || { helpful: 0, notHelpful: 0 });
+
+    return new Response(JSON.stringify(feedback), {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+  } catch (error) {
+    console.error("Error handling feedback GET:", error);
+    return new Response("Internal server error", { status: 500 });
+  }
+};
+
 /**
  * Handles POST requests to submit or retrieve feedback data for a specific `slug`.
  *
@@ -14,7 +47,7 @@ import { db, Feedback, eq, sql } from "astro:db";
  * @param {APIContext} request An object representing the request data.
  * @returns {Promise<Response>} A Response object containing the feedback data or error message.
  */
-export const POST: APIRoute = async ( {request}:APIContext ): Promise<Response> => {
+export const POST: APIRoute = async ({ request }: APIContext): Promise<Response> => {
   try {
     const data = await request.json();
     const { slug, type } = data;

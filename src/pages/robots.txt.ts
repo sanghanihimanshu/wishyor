@@ -1,4 +1,4 @@
-import type { APIRoute } from 'astro';
+import type { APIRoute } from "astro";
 
 // Helper function that generates the content for the robots.txt file
 // This specifies that all web crawlers (User-agent: *) have access to the entire site (Allow: /)

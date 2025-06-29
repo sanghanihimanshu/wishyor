@@ -153,46 +153,46 @@ export const Icons = {
     name: "SquareFunction",
   },
   speedometer: {
-    name: "Gauge"
+    name: "Gauge",
   },
   users: {
-    name: "Users"
+    name: "Users",
   },
   trophy: {
-    name: "Trophy"
+    name: "Trophy",
   },
   trendingUp: {
-    name: "TrendingUp"
+    name: "TrendingUp",
   },
   rocket: {
-    name: "Rocket"
+    name: "Rocket",
   },
   heart: {
-    name: "Heart"
+    name: "Heart",
   },
   dollarSign: {
-    name: "DollarSign"
+    name: "DollarSign",
   },
   barChart: {
-    name: "BarChart"
+    name: "BarChart",
   },
   link: {
-    name: "Link"
+    name: "Link",
   },
   bookOpen: {
-    name: "BookOpen"
+    name: "BookOpen",
   },
   layersLinked: {
-    name: "Layers2"
+    name: "Layers2",
   },
   expandDiagonal: {
-    name: "MoveDiagonal"
+    name: "MoveDiagonal",
   },
   handshake: {
-    name: "Handshake"
+    name: "Handshake",
   },
   arrowRight: {
-    name: "ArrowRight"
+    name: "ArrowRight",
   },
   globe: {
     name: "Globe",
@@ -215,10 +215,10 @@ export const Icons = {
   shield: {
     name: "Shield",
   },
-  award:{
-    name: "Award"
+  award: {
+    name: "Award",
   },
-  hospital:{
-    name: "Hospital"
-  }
+  hospital: {
+    name: "Hospital",
+  },
 };

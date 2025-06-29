@@ -7,8 +7,7 @@ const ctaData = {
     {
       text: "Schedule a Consultation",
       link: "/contact",
-      style:
-        "bg-teal-50 hover:bg-teal-50/70 text-slate-800 focus:bg-teal-50/70",
+      style: "bg-teal-50 hover:bg-teal-50/70 text-slate-800 focus:bg-teal-50/70",
     },
     {
       text: "View Case Studies",
@@ -20,9 +19,7 @@ const ctaData = {
 ---
 
 <section class="mx-auto max-w-[85rem] px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
-  <div
-    class="group relative isolate overflow-hidden rounded-3xl bg-teal-200 p-5 sm:p-11"
-  >
+  <div class="group relative isolate overflow-hidden rounded-3xl bg-teal-200 p-5 sm:p-11">
     <div
       class="group to-off-white pointer-events-none absolute inset-0 -top-[10%] h-[120%] w-full rounded-xl bg-linear-to-r/oklch from-teal-200 opacity-0 transition duration-1000 group-hover:opacity-100"
     >
@@ -37,9 +34,7 @@ const ctaData = {
         <p class="mx-auto mt-6 max-w-3xl text-lg/8 text-pretty text-slate-700">
           {ctaData.description}
         </p>
-        <div
-          class="mx-auto mt-8 flex max-w-3xl flex-col gap-4 sm:flex-row sm:justify-center"
-        >
+        <div class="mx-auto mt-8 flex max-w-3xl flex-col gap-4 sm:flex-row sm:justify-center">
           {
             ctaData.buttons.map((button) => (
               <a

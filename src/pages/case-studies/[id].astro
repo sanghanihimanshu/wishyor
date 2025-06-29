@@ -5,24 +5,23 @@ import PostFeedback from "@common/PostFeedback.svelte";
 import type { WithContext, Thing } from "schema-dts";
 import { formatDate } from "@utils/utils";
 import { getReadingTime } from "@utils/reading-time";
-import { getEntry, render } from "astro:content";
+import { getEntry, render, getCollection } from "astro:content";
 
-// 1. Get the case study slug from the incoming server request
+// Static generation compatible: all async in frontmatter
 const { id } = Astro.params;
-if (id === undefined) {
-  return Astro.redirect("/404");
+let caseStudy, Content, headings;
+if (!id) {
+  throw new Error("Not found");
 }
-
-// 2. Query for the case study entry
-const caseStudy = await getEntry("caseStudies", id);
-
-// 3. Redirect if the case study does not exist
-if (caseStudy === undefined) {
-  return Astro.redirect("/404");
+try {
+  caseStudy = await getEntry("caseStudies", id);
+  if (!caseStudy) throw new Error("Not found");
+  const rendered = await render(caseStudy);
+  Content = rendered.Content;
+  headings = rendered.headings;
+} catch {
+  throw new Error("Not found");
 }
-
-// 4. Render the case study content
-const { Content, headings } = await render(caseStudy);
 
 const validHeadings = headings.filter((heading) => heading.depth === 2);
 const readingTime = getReadingTime(caseStudy.body ?? "");
@@ -38,17 +37,25 @@ const seo = {
 const schema: WithContext<Thing> = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "url": Astro.url.href,
-  "name": caseStudy.data.title,
-  "description": caseStudy.data.description,
-  "datePublished": caseStudy.data.date.toLocaleDateString('en-UK'),
-  "isPartOf": {
+  url: Astro.url.href,
+  name: caseStudy.data.title,
+  description: caseStudy.data.description,
+  datePublished: caseStudy.data.date.toLocaleDateString("en-UK"),
+  isPartOf: {
     "@type": "WebSite",
-    "url": `${Astro.site}`,
-    "name": "Your Company Name",
-    "description": "Case studies showcasing successful client projects and implementations"
-  }
+    url: `${Astro.site}`,
+    name: "Your Company Name",
+    description: "Case studies showcasing successful client projects and implementations",
+  },
 };
+
+// Static generation: provide all possible paths for [id]
+export async function getStaticPaths() {
+  const all = await getCollection("caseStudies");
+  return all.map(entry => ({
+    params: { id: entry.id }
+  }));
+}
 ---
 
 <BaseLayout seo={seo} schema={schema}>
@@ -56,35 +63,41 @@ const schema: WithContext<Thing> = {
     <div class="mx-auto max-w-(--breakpoint-xl)">
       <div class="grid gap-8 md:grid-cols-4 lg:gap-12">
         {/* Table of Contents */}
-        {validHeadings.length > 0 && (
-          <div class="relative mt-10 rounded-lg border border-slate-300 border-dashed p-5 md:mt-0 md:border-none md:p-0 md:pb-24">
-            <nav class="sticky top-10 md:top-32">
-              <small class="font-semibold uppercase">Case Study Contents</small>
-              <ul class="mt-2 space-y-2">
-                {validHeadings.map((heading) => (
-                  <li>
-                    <a
-                      href={`#${heading.slug}`}
-                      class="block text-slate-400 transition-colors duration-200 hover:text-slate-600"
-                      data-toc-link
-                    >
-                      {heading.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        )}
+        {
+          validHeadings.length > 0 && (
+            <div class="relative mt-10 rounded-lg border border-slate-300 border-dashed p-5 md:mt-0 md:border-none md:p-0 md:pb-24">
+              <nav class="sticky top-10 md:top-32">
+                <small class="font-semibold uppercase">Case Study Contents</small>
+                <ul class="mt-2 space-y-2">
+                  {validHeadings.map((heading) => (
+                    <li>
+                      <a
+                        href={`#${heading.slug}`}
+                        class="block text-slate-400 transition-colors duration-200 hover:text-slate-600"
+                        data-toc-link
+                      >
+                        {heading.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+          )
+        }
 
         {/* Main Content */}
         <div class="mx-auto md:col-span-2 md:col-start-2 md:pt-8">
           {/* Metadata */}
           <ul class="mb-5 text-xs text-slate-500">
-            <li class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-slate-300 last:pe-0 last-of-type:before:hidden">
+            <li
+              class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-slate-300 last:pe-0 last-of-type:before:hidden"
+            >
               {formatDate(caseStudy.data.date)}
             </li>
-            <li class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-slate-300 last:pe-0 last-of-type:before:hidden">
+            <li
+              class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-slate-300 last:pe-0 last-of-type:before:hidden"
+            >
               {caseStudy.data.industry}
             </li>
             <li class="relative inline-block pe-6">
@@ -93,13 +106,17 @@ const schema: WithContext<Thing> = {
           </ul>
 
           {/* Title and Content */}
-          <h1 class="mb-4 text-balance text-center text-2xl text-slate-800 sm:text-3xl md:mb-6 md:text-left xl:text-5xl">
+          <h1
+            class="mb-4 text-balance text-center text-2xl text-slate-800 sm:text-3xl md:mb-6 md:text-left xl:text-5xl"
+          >
             {caseStudy.data.title}
           </h1>
-          <section class="prose prose-slate prose-headings:font-normal prose-h3:text-slate-500 prose-strong:text-slate-500">
+          <section
+            class="prose prose-slate prose-headings:font-normal prose-h3:text-slate-500 prose-strong:text-slate-500"
+          >
             <Content />
           </section>
-          
+
           {/* Feedback Section */}
           <PostFeedback
             client:only="svelte"
@@ -146,9 +163,7 @@ const schema: WithContext<Thing> = {
 
     if (!tocLinks.length || !sections.length) return;
 
-    tocLinks.forEach((link) =>
-      link.classList.remove("text-slate-600", "font-medium"),
-    );
+    tocLinks.forEach((link) => link.classList.remove("text-slate-600", "font-medium"));
 
     intersectionObserver = new IntersectionObserver(
       (entries) => {
@@ -172,7 +187,7 @@ const schema: WithContext<Thing> = {
       {
         threshold: 0.3,
         rootMargin: "-20% 0px -55% 0px",
-      },
+      }
     );
 
     sections.forEach((section) => intersectionObserver?.observe(section));

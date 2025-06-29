@@ -3,7 +3,7 @@ import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
 const articles = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '**/*.mdx', '**/*.mdoc'], base: "./src/content/articles" }),
+  loader: glob({ pattern: ["**/*.md", "**/*.mdx", "**/*.mdoc"], base: "./src/content/articles" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -12,7 +12,7 @@ const articles = defineCollection({
 });
 
 const reference = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '**/*.mdx', '**/*.mdoc'], base: "./src/content/reference" }),
+  loader: glob({ pattern: ["**/*.md", "**/*.mdx", "**/*.mdoc"], base: "./src/content/reference" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -33,7 +33,10 @@ const researchPapers = defineCollection({
 });
 
 const caseStudies = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '**/*.mdx', '**/*.mdoc'], base: "./src/content/case-studies" }),
+  loader: glob({
+    pattern: ["**/*.md", "**/*.mdx", "**/*.mdoc"],
+    base: "./src/content/case-studies",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -43,4 +46,4 @@ const caseStudies = defineCollection({
   }),
 });
 
-export const collections = { articles, reference, researchPapers , caseStudies };
+export const collections = { articles, reference, researchPapers, caseStudies };

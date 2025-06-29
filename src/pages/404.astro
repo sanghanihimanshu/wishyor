@@ -34,7 +34,8 @@ const resources = [
 
 const seo = {
   title: "Page Not Found - TechSolutions",
-  description: "The page you're looking for doesn't exist. Explore our resources or return to homepage.",
+  description:
+    "The page you're looking for doesn't exist. Explore our resources or return to homepage.",
 };
 
 const schema: WithContext<Thing> = {
@@ -44,32 +45,28 @@ const schema: WithContext<Thing> = {
   "@id": Astro.url.href,
   url: Astro.url.href,
   name: "Page Not Found",
-  description: "The page you're looking for doesn't exist. Explore our resources or return to homepage.",
+  description:
+    "The page you're looking for doesn't exist. Explore our resources or return to homepage.",
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
     name: "TechSolutions",
-    description: "Enterprise technology solutions delivering custom software development, cloud infrastructure, and digital transformation services.",
+    description:
+      "Enterprise technology solutions delivering custom software development, cloud infrastructure, and digital transformation services.",
   },
 };
 ---
 
 <BaseLayout seo={seo} schema={schema}>
-  <section
-    class="grid min-h-full place-items-center px-6 pb-10 pt-32 sm:pt-48 lg:px-8"
-  >
+  <section class="grid min-h-full place-items-center px-6 pb-10 pt-32 sm:pt-48 lg:px-8">
     <div class="text-center">
       <p class="text-xl font-semibold text-teal-600">
         {pageContent.errorCode}
       </p>
-      <h1
-        class="mt-4 text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
-      >
+      <h1 class="mt-4 text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl">
         {pageContent.title}
       </h1>
-      <p
-        class="mt-6 text-pretty text-lg font-medium text-slate-500 sm:text-xl/8"
-      >
+      <p class="mt-6 text-pretty text-lg font-medium text-slate-500 sm:text-xl/8">
         {pageContent.description}
       </p>
     </div>
@@ -91,10 +88,7 @@ const schema: WithContext<Thing> = {
                     </h3>
                     <p class="mt-1 text-slate-500">{resource.description}</p>
                   </div>
-                  <Icon
-                    name="chevronRight"
-                    class="self-center text-slate-400 transition"
-                  />
+                  <Icon name="chevronRight" class="self-center text-slate-400 transition" />
                 </a>
               </li>
             ))
@@ -102,17 +96,14 @@ const schema: WithContext<Thing> = {
         </ul>
       </div>
       <div class="mt-5 flex items-center justify-center">
-        <Button id="go-back" variant="primary">{pageContent.goBackLabel}</Button
-        >
+        <Button id="go-back" variant="primary">{pageContent.goBackLabel}</Button>
       </div>
     </div>
   </section>
 
   <script>
     document.addEventListener("astro:page-load", async () => {
-      const goBackButton = document.getElementById(
-        "go-back",
-      ) as HTMLButtonElement;
+      const goBackButton = document.getElementById("go-back") as HTMLButtonElement;
 
       goBackButton.addEventListener("click", () => {
         history.back();

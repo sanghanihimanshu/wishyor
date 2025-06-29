@@ -7,19 +7,21 @@
   // State variables for managing feedback
   let helpful = 0;
   let notHelpful = 0;
-  let initialFetch = false;
   let feedbackGiven = false;
   let userChoice = null;
 
-  import { onMount } from "svelte";
 
-  // Lifecycle: Runs once when the component is mounted
-  onMount(() => {
+  // Fetch feedback when slug changes or on mount
+  $: if (slug) {
+    loadFeedback();
+  }
+
+  async function loadFeedback() {
     const savedFeedback = JSON.parse(localStorage.getItem("feedback") || "{}");
-    feedbackGiven = !!savedFeedback[slug]; // Check if this slug has feedback
+    feedbackGiven = !!savedFeedback[slug];
     userChoice = savedFeedback[slug] || null;
-    fetchFeedback();
-  });
+    await fetchFeedback();
+  }
 
   // Fetch the initial feedback data for the given slug
   async function fetchFeedback() {
@@ -37,7 +39,6 @@
       const data = await response.json();
       helpful = data.helpful || 0;
       notHelpful = data.notHelpful || 0;
-      initialFetch = true;
     } catch (error) {
       console.error("Failed to fetch feedback count:", error);
     }
@@ -63,9 +64,7 @@
       notHelpful = updatedFeedback.notHelpful || 0;
 
       // Save feedback locally to prevent multiple submissions for this slug
-      const savedFeedback = JSON.parse(
-        localStorage.getItem("feedback") || "{}",
-      );
+      const savedFeedback = JSON.parse(localStorage.getItem("feedback") || "{}");
       savedFeedback[slug] = type;
       localStorage.setItem("feedback", JSON.stringify(savedFeedback));
 
@@ -81,34 +80,32 @@
   <h3 class="text-slate-700">{title}</h3>
   <div>
     <button
-    type="button"
-    on:click={() => handleFeedback("helpful")}
-    disabled={feedbackGiven}
-    class="group inline-flex items-center gap-x-2 rounded-lg border border-slate-400 px-3 py-2 text-sm font-medium text-slate-700 hover:border-teal-500 hover:bg-teal-500"
-    class:bg-teal-500={userChoice === "helpful"}
-    class:border-teal-500={userChoice === "helpful"}
-  >
-    <slot name="helpfulIcon" /> {firstChoice}</button
-  >
+      type="button"
+      on:click={() => handleFeedback("helpful")}
+      disabled={feedbackGiven}
+      class="group inline-flex items-center gap-x-2 rounded-lg border border-slate-400 px-3 py-2 text-sm font-medium text-slate-700 hover:border-teal-500 hover:bg-teal-500"
+      class:bg-teal-500={userChoice === "helpful"}
+      class:border-teal-500={userChoice === "helpful"}
+    >
+      <slot name="helpfulIcon" /> {firstChoice}</button
+    >
     <button
-    type="button"
-    on:click={() => handleFeedback("notHelpful")}
-    disabled={feedbackGiven}
-    class="group inline-flex items-center gap-x-2 rounded-lg border border-slate-400 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-300"
-    class:bg-slate-300={userChoice === "notHelpful"}
-  >
-    <slot name="notHelpfulIcon" />
-    {secondChoice}
-  </button>
-</div>
+      type="button"
+      on:click={() => handleFeedback("notHelpful")}
+      disabled={feedbackGiven}
+      class="group inline-flex items-center gap-x-2 rounded-lg border border-slate-400 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-300"
+      class:bg-slate-300={userChoice === "notHelpful"}
+    >
+      <slot name="notHelpfulIcon" />
+      {secondChoice}
+    </button>
+  </div>
 </div>
 
 {#if helpful > 0}
   <div class="mt-5 flex items-center justify-center">
     <p class="text-slate-500 text-sm">
-      {#if !initialFetch}
-        Fetching...
-      {:else if helpful === 1}
+      {#if helpful === 1}
         1 person found this helpful
       {:else}
         {helpful} people found this helpful

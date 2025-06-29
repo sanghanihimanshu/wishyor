@@ -43,8 +43,7 @@ const features = [
     image: image_3,
     imageClass: "h-full w-full object-none rounded-t-xl",
     imageContainerClass: "relative min-h-[30rem] w-full grow shadow-2xl",
-    imageSecondaryContainerClass:
-      "absolute bottom-0 right-0 top-10 overflow-hidden rounded-tl-xl",
+    imageSecondaryContainerClass: "absolute bottom-0 right-0 top-10 overflow-hidden rounded-tl-xl",
     class: "relative lg:row-span-2",
     wrapperClass: "max-lg:rounded-b-3xl lg:rounded-r-3xl",
   },
@@ -64,9 +63,7 @@ const features = [
 <div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20">
   {/* Section container for the title and subtitle */}
   <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-    <h2
-      class="text-balance text-2xl font-semibold text-slate-800 md:text-3xl md:leading-tight"
-    >
+    <h2 class="text-balance text-2xl font-semibold text-slate-800 md:text-3xl md:leading-tight">
       <Fragment set:html={title} />
     </h2>
     <p class="mt-1 text-pretty text-slate-600">
@@ -79,9 +76,7 @@ const features = [
       {
         features.map((feature) => (
           <div class={feature.class}>
-            <div
-              class={`absolute inset-px rounded-lg bg-white ${feature.wrapperClass}`}
-            />
+            <div class={`absolute inset-px rounded-lg bg-white ${feature.wrapperClass}`} />
             <div
               class={`relative flex h-full flex-col overflow-hidden rounded-lg ${feature.wrapperClass}`}
             >
@@ -113,20 +108,12 @@ const features = [
                 <div class={`${feature.imageContainerClass}`}>
                   {feature.imageSecondaryContainerClass ? (
                     <div class={`${feature.imageSecondaryContainerClass}`}>
-                      <Image
-                        class={feature.imageClass}
-                        src={feature.image}
-                        alt=""
-                      />
+                      <Image class={feature.imageClass} src={feature.image} alt="" />
                     </div>
                   ) : (
                     <>
                       <div class={`${feature.imageFadeClass}`} />
-                      <Image
-                        class={`${feature.imageClass}`}
-                        src={feature.image}
-                        alt=""
-                      />
+                      <Image class={`${feature.imageClass}`} src={feature.image} alt="" />
                     </>
                   )}
                 </div>
