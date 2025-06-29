@@ -152,46 +152,73 @@ export const Icons = {
   automation: {
     name: "SquareFunction",
   },
-  speedometer:{
-    name:"Gauge"
+  speedometer: {
+    name: "Gauge"
   },
-  users:{
-    name:"Users"
+  users: {
+    name: "Users"
   },
-  trophy:{
-    name:"Trophy"
+  trophy: {
+    name: "Trophy"
   },
-  trendingUp:{
-    name:"TrendingUp"
+  trendingUp: {
+    name: "TrendingUp"
   },
-  rocket:{
-    name:"Rocket"
+  rocket: {
+    name: "Rocket"
   },
-  heart:{
-    name:"Heart"
+  heart: {
+    name: "Heart"
   },
-  dollarSign:{
-    name:"DollarSign"
+  dollarSign: {
+    name: "DollarSign"
   },
-  barChart:{
-    name:"BarChart"
+  barChart: {
+    name: "BarChart"
   },
-  link:{
-    name:"Link"
+  link: {
+    name: "Link"
   },
-  bookOpen:{
-    name:"BookOpen"
+  bookOpen: {
+    name: "BookOpen"
   },
-  layersLinked:{
-    name:"Layers2"
+  layersLinked: {
+    name: "Layers2"
   },
-  expandDiagonal:{
-    name:"MoveDiagonal"
+  expandDiagonal: {
+    name: "MoveDiagonal"
   },
-  handshake:{
-    name:"Handshake"
+  handshake: {
+    name: "Handshake"
   },
-  arrowRight:{
-    name:"ArrowRight"
+  arrowRight: {
+    name: "ArrowRight"
+  },
+  globe: {
+    name: "Globe",
+  },
+  products: {
+    name: "Box",
+  },
+  orders: {
+    name: "ShoppingCart",
+  },
+  network: {
+    name: "Network",
+  },
+  storage: {
+    name: "Database",
+  },
+  server: {
+    name: "Server",
+  },
+  shield: {
+    name: "Shield",
+  },
+  award:{
+    name: "Award"
+  },
+  hospital:{
+    name: "Hospital"
   }
 };

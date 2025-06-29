@@ -23,20 +23,32 @@ export const servicesMenu = [
     ],
   },
   {
-    sectionTitle: "UI/UX Design",
+    sectionTitle: "Cloud Services",
     items: [
       {
-        icon: "layoutdashboard",
-        title: "Wireframe & Prototyping",
-        description: "Interactive mockups to visualize and iterate on your ideas.",
-        href: "/services/uiux-design#wireframe-and-prototyping",
+        icon: "cloudupload",
+        title: "Cloud Migration & Optimization",
+        description: "Smooth transition to AWS, Azure, or GCP with minimal downtime.",
+        href: "/services/cloud-services#cloud-migration-and-optimization",
       },
       {
-        icon: "tabletsmartphone",
-        title: "Responsive Interface Design",
-        description: "Clean, mobile-first layouts for consistent user experiences.",
-        href: "/services/uiux-design#responsive-interface-design",
+        icon: "servercog",
+        title: "DevOps & Automation",
+        description: "CI/CD, IaC, and cloud-native workflows to boost efficiency.",
+        href: "/services/cloud-services#devops-and-automation",
       },
+      {
+        icon: "shieldplus",
+        title: "Cloud Security & Compliance",
+        description: "Comprehensive security measures and compliance with industry standards.",
+        href: "/services/cloud-services#cloud-security-and-compliance",
+      },
+      {
+        icon: "server",
+        title: "Cloud Native Applications",
+        description: "Build and deploy applications designed for the cloud from the ground up.",
+        href: "/services/cloud-services#cloud-native-applications",
+      }
     ],
   },
   {
@@ -56,21 +68,20 @@ export const servicesMenu = [
       },
     ],
   },
-
   {
-    sectionTitle: "Cloud Services",
+    sectionTitle: "UI/UX Design",
     items: [
       {
-        icon: "cloudupload",
-        title: "Cloud Migration & Optimization",
-        description: "Smooth transition to AWS, Azure, or GCP with minimal downtime.",
-        href: "/services/cloud-services#cloud-migration-and-optimization",
+        icon: "layoutdashboard",
+        title: "Wireframe & Prototyping",
+        description: "Interactive mockups to visualize and iterate on your ideas.",
+        href: "/services/uiux-design#wireframe-and-prototyping",
       },
       {
-        icon: "servercog",
-        title: "DevOps & Automation",
-        description: "CI/CD, IaC, and cloud-native workflows to boost efficiency.",
-        href: "/services/cloud-services#devops-and-automation",
+        icon: "tabletsmartphone",
+        title: "Responsive Interface Design",
+        description: "Clean, mobile-first layouts for consistent user experiences.",
+        href: "/services/uiux-design#responsive-interface-design",
       },
     ],
   },
