@@ -16,26 +16,26 @@ export const supportMenu = [
       },
     ],
   },
-  {
-    sectionTitle: "Help Center",
-    items: [
-      {
-        icon: "info",
-        title: "Knowledge Base",
-        description: "Find answers to common questions and technical guides.",
-        href: "/support/knowledge-base",
-      },
-    ],
-  },
-  {
-    sectionTitle: "Reference",
-    items: [
-      {
-        icon: "link",
-        title: "Erp for All Businesses",
-        description: "Discover how our ERP solutions can benefit your business.",
-        href: "/reference/workwise",
-      },
-    ],
-  }
+  // {
+  //   sectionTitle: "Help Center",
+  //   items: [
+  //     {
+  //       icon: "info",
+  //       title: "Knowledge Base",
+  //       description: "Find answers to common questions and technical guides.",
+  //       href: "/support/knowledge-base",
+  //     },
+  //   ],
+  // },
+  // {
+  //   sectionTitle: "Reference",
+  //   items: [
+  //     {
+  //       icon: "link",
+  //       title: "Erp for All Businesses",
+  //       description: "Discover how our ERP solutions can benefit your business.",
+  //       href: "/reference/workwise",
+  //     },
+  //   ],
+  // }
 ];
