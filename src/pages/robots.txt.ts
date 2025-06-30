@@ -1,14 +1,20 @@
 import type { APIRoute } from "astro";
 
-// Helper function that generates the content for the robots.txt file
-// This specifies that all web crawlers (User-agent: *) have access to the entire site (Allow: /)
+// Generates a more SEO-friendly robots.txt
 const getRobotsTxt = () => `
 User-agent: *
+Disallow: /api/
+Disallow: /admin/
 Allow: /
+
+Sitemap: https://wishyor.vercel.com/sitemap.xml
+Host: your-domain.com
 `;
 
-// API route for serving the robots.txt file
-// When a GET request is made to this route, it returns the generated robots.txt content
 export const GET: APIRoute = () => {
-  return new Response(getRobotsTxt());
+  return new Response(getRobotsTxt().trim(), {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+    },
+  });
 };
