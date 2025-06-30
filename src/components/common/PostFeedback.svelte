@@ -10,7 +10,6 @@
   let feedbackGiven = false;
   let userChoice = null;
 
-
   // Fetch feedback when slug changes or on mount
   $: if (slug) {
     loadFeedback();

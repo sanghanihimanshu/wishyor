@@ -52,8 +52,8 @@ const schema: WithContext<Thing> = {
 // Static generation: provide all possible paths for [id]
 export async function getStaticPaths() {
   const all = await getCollection("caseStudies");
-  return all.map(entry => ({
-    params: { id: entry.id }
+  return all.map((entry) => ({
+    params: { id: entry.id },
   }));
 }
 ---

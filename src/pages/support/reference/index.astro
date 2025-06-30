@@ -2,7 +2,7 @@
 import BaseLayout from "@layout/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-let reference:any[] = [];
+let reference: any[] = [];
 try {
   reference = await getCollection("reference");
   reference = reference.toSorted((a, b) => b.data.date.valueOf() - a.data.date.valueOf());

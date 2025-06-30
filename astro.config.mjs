@@ -28,13 +28,7 @@ export default defineConfig({
       "images.wishyor.app",
     ],
   },
-  integrations: [
-    markdoc(),
-    mdx(),
-    ...(!skipKeystatic ? [keystatic()] : []),
-    db(),
-    svelte(),
-  ],
+  integrations: [markdoc(), mdx(), ...(!skipKeystatic ? [keystatic()] : []), db(), svelte()],
   vite: {
     plugins: [tailwindcss()],
   },
@@ -42,19 +36,19 @@ export default defineConfig({
   adapter: skipAdapter
     ? vercel()
     : isVercel
-    ? vercel({
-        edge: true,
-        webAnalytics:{
-          enabled: true,
-          projectId: "wishyor",
-          siteId: "wishyor",
-        },
-        skewProtection: true,
-        runtime: "nodejs18.x",
-      })
-    : node({
-        mode: "standalone",
-        output: "server",
-        entrypoint: "src/server/index.js",
-      }),
+      ? vercel({
+          edge: true,
+          webAnalytics: {
+            enabled: true,
+            projectId: "wishyor",
+            siteId: "wishyor",
+          },
+          skewProtection: true,
+          runtime: "nodejs18.x",
+        })
+      : node({
+          mode: "standalone",
+          output: "server",
+          entrypoint: "src/server/index.js",
+        }),
 });
