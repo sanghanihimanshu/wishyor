@@ -12,7 +12,7 @@ const skipKeystatic = !!process.env.SKIP_KEYSTATIC;
 const skipAdapter = !!process.env.SKIP_ADAPTER;
 
 export default defineConfig({
-  site: process.env.PUBLIC_SITE_URL || "http://localhost:4321",
+  site: "https://wishyor.com",
   prefetch: true,
   trailingSlash: "never",
   experimental: {

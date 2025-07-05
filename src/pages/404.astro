@@ -33,9 +33,9 @@ const resources = [
 ];
 
 const seo = {
-  title: "Page Not Found - TechSolutions",
+  title: "Page Not Found - Wishyor",
   description:
-    "The page you're looking for doesn't exist. Explore our resources or return to homepage.",
+    "The page you're looking for doesn't exist. Explore Wishyor's enterprise software, cloud, AI/ML, and digital transformation resources or return to homepage.",
 };
 
 const schema: WithContext<Thing> = {
@@ -46,19 +46,23 @@ const schema: WithContext<Thing> = {
   url: Astro.url.href,
   name: "Page Not Found",
   description:
-    "The page you're looking for doesn't exist. Explore our resources or return to homepage.",
+    "The page you're looking for doesn't exist. Explore Wishyor's enterprise software, cloud, AI/ML, and digital transformation resources or return to homepage.",
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
-    name: "TechSolutions",
+    name: "Wishyor",
     description:
-      "Enterprise technology solutions delivering custom software development, cloud infrastructure, and digital transformation services.",
+      "Wishyor delivers enterprise technology solutions: custom software, cloud, AI/ML, and digital transformation for global businesses.",
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": Astro.url.href,
   },
 };
 ---
 
 <BaseLayout seo={seo} schema={schema}>
-  <section class="grid min-h-full place-items-center px-6 pb-10 pt-32 sm:pt-48 lg:px-8">
+  <section lang="en" class="grid min-h-full place-items-center px-6 pb-10 pt-32 sm:pt-48 lg:px-8">
     <div class="text-center">
       <p class="text-xl font-semibold text-teal-600">
         {pageContent.errorCode}

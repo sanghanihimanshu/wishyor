@@ -16,9 +16,15 @@ export const pageContent = {
   pageTitle: "Reference",
   actionLabel: "Read more",
 };
+
+const seo = {
+  title: "Wishyor Reference | Documentation & Guides",
+  description: "Wishyor reference documentation for enterprise software, cloud, and AI/ML solutions.",
+};
+const schema = undefined; // Use default schema in BaseLayout
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo} schema={schema}>
   <section class="mx-auto max-w-[85rem] px-4 pb-12 pt-48 sm:px-6 lg:px-8">
     <div class="max-w-7xl">
       <div class="mx-auto max-w-3xl lg:mx-0">

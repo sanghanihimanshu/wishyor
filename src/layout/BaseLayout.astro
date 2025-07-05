@@ -26,13 +26,13 @@ const defaultSchema: WithContext<Thing> = {
   url: Astro.url.href,
   name: "Wishyor",
   description:
-    "Share your wishes and dreams with the world. A place to connect, inspire and make wishes come true.",
+    "Wishyor is a leading provider of enterprise software development, cloud infrastructure, AI/ML, and digital transformation services.",
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
     name: "Wishyor",
     description:
-      "A social platform for sharing and discovering wishes, dreams, and aspirations with like-minded people.",
+      "Wishyor delivers enterprise technology solutions: custom software, cloud, AI/ML, and digital transformation for global businesses.",
   },
 };
 ---
@@ -42,37 +42,45 @@ const defaultSchema: WithContext<Thing> = {
     {/* SEO Meta Tags */}
     <SEO
       charset="utf-8"
-      title={seo?.title ?? "Wishyor"}
+      title={seo?.title ?? "Wishyor | Enterprise Software, Cloud, AI/ML & Digital Transformation"}
       description={seo?.description ??
-        "Share your wishes and dreams with the world. A place to connect, inspire and make wishes come true."}
+        "Wishyor provides enterprise software development, cloud infrastructure, AI/ML, and digital transformation services for businesses worldwide."}
       openGraph={{
         basic: {
-          title: "Wishyor - Share Your Dreams",
+          title: seo?.title ?? "Wishyor | Enterprise Software, Cloud, AI/ML & Digital Transformation",
           type: "website",
           image: socialImage,
+          url: Astro.url.href,
         },
         optional: {
           description:
-            "Join our community to share your wishes, connect with others, and turn dreams into reality. Express yourself in a supportive environment.",
+            seo?.description ??
+            "Wishyor delivers enterprise technology solutions: custom software, cloud, AI/ML, and digital transformation for global businesses.",
         },
       }}
       twitter={{
         card: "summary_large_image",
-        title: "Wishyor - Share Your Dreams",
+        title: seo?.title ?? "Wishyor | Enterprise Software, Cloud, AI/ML & Digital Transformation",
         description:
-          "Join our community to share your wishes, connect with others, and turn dreams into reality.",
+          seo?.description ??
+          "Wishyor provides enterprise software development, cloud infrastructure, AI/ML, and digital transformation services for businesses worldwide.",
         image: socialImage,
         imageAlt: "Wishyor Logo",
+        site: "@wishyor",
+        creator: "@wishyor"
       }}
       extend={{
         link: [
           { rel: "icon", href: "/icon.svg", type: "image/svg+xml" },
           { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
           { rel: "manifest", href: "/manifest.webmanifest" },
+          { rel: "canonical", href: Astro.url.href },
         ],
         meta: [
-          { name: "viewport", content: "width=device-width" },
+          { name: "viewport", content: "width=device-width, initial-scale=1" },
           { name: "generator", content: `${Astro.generator}` },
+          { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
+          { httpEquiv: "Content-Language", content: "en" },
         ],
       }}
     />

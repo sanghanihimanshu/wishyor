@@ -47,9 +47,9 @@ const expertiseData = {
 
 // SEO metadata for the page
 const seo = {
-  title: "About TechSolutions",
+  title: "About Wishyor | Enterprise Software, Cloud, AI/ML & Digital Transformation",
   description:
-    "Leading provider of enterprise software development, cloud infrastructure, and digital transformation services.",
+    "Wishyor is a leading provider of enterprise software development, cloud infrastructure, AI/ML, and digital transformation services for global businesses.",
 };
 
 // Schema.org metadata for SEO
@@ -59,21 +59,25 @@ const schema: WithContext<Thing> = {
   inLanguage: "en-US",
   "@id": Astro.url.href,
   url: Astro.url.href,
-  name: "About TechSolutions",
+  name: "About Wishyor",
   description:
-    "Enterprise technology solutions provider specializing in custom software development and cloud infrastructure.",
+    "Wishyor delivers enterprise technology solutions: custom software, cloud, AI/ML, and digital transformation for global businesses.",
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
-    name: "TechSolutions",
+    name: "Wishyor",
     description:
-      "Leading provider of enterprise software development, cloud infrastructure, and digital transformation services.",
+      "Wishyor is a leading provider of enterprise software development, cloud infrastructure, AI/ML, and digital transformation services.",
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": Astro.url.href,
   },
 };
 ---
 
 <BaseLayout seo={seo} schema={schema}>
-  <section class="mx-auto max-w-[85rem] px-4 pb-12 pt-48 sm:px-6 lg:px-8">
+  <section lang="en" class="mx-auto max-w-[85rem] px-4 pb-12 pt-48 sm:px-6 lg:px-8">
     <div class="max-w-7xl">
       <div class="mx-auto max-w-2xl lg:mx-0">
         <h1 class="text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl">

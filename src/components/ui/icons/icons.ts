@@ -221,4 +221,25 @@ export const Icons = {
   hospital: {
     name: "Hospital",
   },
+  zap: {
+    name: "Zap",
+  },
+  palette: {
+    name: "SwatchBook",
+  },
+  cloud: {
+    name: "Cloudy",
+  },
+  layers: {
+    name: "Layers",
+  },
+  settings: {
+    name: "Settings",
+  },
+  search: {
+    name: "Search",
+  },
+  star: {
+    name: "Star",
+  }
 };

@@ -25,9 +25,9 @@ const title = "Contact Us";
 const subTitle = "Let's discuss your technology needs.";
 
 const seo = {
-  title: "Contact TechSolutions",
+  title: "Contact Wishyor | Enterprise Software, Cloud, AI/ML & Digital Transformation",
   description:
-    "Get in touch with our technology experts for enterprise solutions, cloud services, and digital transformation.",
+    "Get in touch with Wishyor's technology experts for enterprise software, cloud services, AI/ML, and digital transformation solutions.",
 };
 
 const schema: WithContext<Thing> = {
@@ -36,21 +36,25 @@ const schema: WithContext<Thing> = {
   inLanguage: "en-US",
   "@id": Astro.url.href,
   url: Astro.url.href,
-  name: "Contact TechSolutions",
+  name: "Contact Wishyor",
   description:
-    "Connect with our technology experts for enterprise software development, cloud infrastructure, and digital transformation solutions.",
+    "Connect with Wishyor for enterprise software development, cloud infrastructure, AI/ML, and digital transformation solutions.",
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
-    name: "TechSolutions",
+    name: "Wishyor",
     description:
-      "Enterprise technology solutions provider specializing in custom software development and cloud infrastructure.",
+      "Wishyor delivers enterprise technology solutions: custom software, cloud, AI/ML, and digital transformation for global businesses.",
+  },
+  mainEntityOfPage: {
+    "@type": "ContactPage",
+    "@id": Astro.url.href,
   },
 };
 ---
 
 <BaseLayout seo={seo} schema={schema}>
-  <div class="mx-auto max-w-[85rem] px-4 pb-28 pt-48 sm:px-6 lg:px-8">
+  <div lang="en" class="mx-auto max-w-[85rem] px-4 pb-28 pt-48 sm:px-6 lg:px-8">
     <div class="mb-10 max-w-3xl lg:mb-14">
       <h2 class="text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl">
         {title}

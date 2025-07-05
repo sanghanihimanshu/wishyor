@@ -29,7 +29,7 @@ const slug = id;
 
 // Prepare SEO metadata based on the article content
 const seo = {
-  title: post.data.title,
+  title: post.data.title + " | Wishyor Knowledge Base",
   description: post.data.description,
 };
 
@@ -44,9 +44,9 @@ const schema: WithContext<Thing> = {
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
-    name: "wishyor",
+    name: "Wishyor",
     description:
-      "wishyor Analytics Inc. provides advanced analytics for Excel to help businesses unlock actionable insights quickly with no coding required.",
+      "Wishyor Knowledge Base: articles and guides for enterprise software, cloud, and AI/ML solutions.",
   },
 };
 

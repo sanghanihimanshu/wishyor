@@ -7,8 +7,9 @@ Disallow: /api/
 Disallow: /admin/
 Allow: /
 
-Sitemap: https://wishyor.vercel.com/sitemap.xml
-Host: your-domain.com
+Sitemap: https://wishyor.com/sitemap.xml
+Host: wishyor.com
+Crawl-delay: 5
 `;
 
 export const GET: APIRoute = () => {

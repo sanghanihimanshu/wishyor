@@ -44,8 +44,12 @@ const schema: WithContext<Thing> = {
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
-    name: "Your Company Name",
-    description: "Case studies showcasing successful client projects and implementations",
+    name: "Wishyor",
+    description: "Wishyor case studies: successful enterprise software, cloud, and AI/ML projects.",
+  },
+  mainEntityOfPage: {
+    "@type": "Article",
+    "@id": Astro.url.href,
   },
 };
 

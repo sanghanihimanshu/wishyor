@@ -5,6 +5,7 @@ import PostFeedback from "@common/PostFeedback.svelte";
 import { formatDate } from "@utils/utils";
 import { getReadingTime } from "@utils/reading-time";
 import { getEntry, render, getCollection } from "astro:content";
+import type { Thing, WithContext } from "schema-dts";
 
 // Static generation compatible: all async in frontmatter
 const { id } = Astro.params;
@@ -33,9 +34,30 @@ export async function getStaticPaths() {
     params: { id: entry.id },
   }));
 }
+
+const seo = {
+  title: post.data.title + " | Wishyor Reference",
+  description: post.data.description,
+};
+
+const schema: WithContext<Thing> = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  url: Astro.url.href,
+  name: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toLocaleDateString("en-UK"),
+  isPartOf: {
+    "@type": "WebSite",
+    url: `${Astro.site}`,
+    name: "Wishyor",
+    description:
+      "Wishyor Reference: documentation for enterprise software, cloud, and AI/ML solutions.",
+  },
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo} schema={schema}>
   <section class="mx-auto max-w-[85rem] px-4 py-24 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-(--breakpoint-xl)">
       <div class="grid gap-8 md:grid-cols-4 lg:gap-12">
