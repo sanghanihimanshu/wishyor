@@ -43,6 +43,7 @@ export default defineConfig({
             projectId: "wishyor",
             siteId: "wishyor",
           },
+          isr: true,
           skewProtection: true,
           runtime: "nodejs18.x",
         })
