@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 
-const getRobotsTxt = () => `# robots.txt for Wishyor Technologies
+const getRobotsTxt = (sitemapURL: URL) => `# robots.txt for Wishyor Technologies
 # Publisher: Wishyor Technologies
 # Website: https://www.wishyor.com
 # Maintainer: SEO Team <seo@wishyor.com>
@@ -41,6 +41,8 @@ Host: www.wishyor.vercel.app
 # ------------------------
 # This file is generated automatically. Do not edit manually.
 # For any changes, please contact the SEO team at seo@wishyor.com
+
+Sitemap: ${sitemapURL.href}
 `;
 
 export const GET: APIRoute = ({site}) => {
