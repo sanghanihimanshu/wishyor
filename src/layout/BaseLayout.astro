@@ -9,95 +9,198 @@ import { AstroFont } from "astro-font";
 import "@styles/global.css";
 
 interface Props {
-  seo?: SEOProps; // Optional SEO properties to customize meta tags
-  schema?: WithContext<Thing>; // Optional schema.org properties for structured data
+  seo?: SEOProps;
+  schema?: WithContext<Thing>;
 }
 
-// Extract `seo` and `schema` from properties or define defaults
 const { seo, schema } = Astro.props;
-const socialImage = `${Astro.site}social.png`; // Path to the default social sharing image
+const site = Astro.site?.toString() || "https://www.wishyor.com";
+const currentUrl = Astro.url.href;
+const socialImage = `${site}/social.png`;
 
-// Define default JSON-LD Schema.org data if no schema is passed
-const defaultSchema: WithContext<Thing> = {
+const defaultTitle = "Wishyor | Custom Software Development & Digital Transformation Services";
+const defaultDescription = "Wishyor offers custom software, cloud, AI/ML, and digital transformation solutions. Elevate your business with expert tech consulting.";
+
+const organizationSchema: WithContext<Thing> = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  inLanguage: "en-US",
-  "@id": Astro.url.href,
-  url: Astro.url.href,
+  "@type": "Organization",
+  "@id": site,
+  url: site,
   name: "Wishyor",
-  description:
-    "Wishyor is a leading provider of enterprise software development, cloud infrastructure, AI/ML, and digital transformation services.",
-  isPartOf: {
-    "@type": "WebSite",
-    url: `${Astro.site}`,
-    name: "Wishyor",
-    description:
-      "Wishyor delivers enterprise technology solutions: custom software, cloud, AI/ML, and digital transformation for global businesses.",
+  legalName: "Wishyor Technologies",
+  description: "Custom software development and digital transformation services company specializing in cloud solutions, AI/ML integration, and enterprise technology consulting.",
+  foundingDate: "2020",
+  serviceArea: {
+    "@type": "Place",
+    name: "Worldwide"
   },
+  areaServed: "Worldwide",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Technology Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Custom Software Development",
+          description: "Tailored software solutions for businesses"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Cloud Solutions",
+          description: "Cloud infrastructure and migration services"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "AI/ML Integration",
+          description: "Artificial intelligence and machine learning implementation"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Digital Transformation",
+          description: "Complete digital transformation consulting"
+        }
+      }
+    ]
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    availableLanguage: "English"
+  },
+  sameAs: [
+    "https://linkedin.com/company/wishyor",
+    "https://twitter.com/wishyor"
+  ],
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": currentUrl,
+    url: currentUrl,
+    name: seo?.title || defaultTitle,
+    description: seo?.description || defaultDescription,
+    inLanguage: "en-US",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${site}#website`,
+      url: site,
+      name: "Wishyor",
+      description: "Professional technology services and custom software development solutions."
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Wishyor Technologies",
+      logo: {
+        "@type": "ImageObject",
+        url: `${site}/logo.png`
+      }
+    }
+  }
+};
+
+const websiteSchema: WithContext<Thing> = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${site}#website`,
+  url: site,
+  name: "Wishyor",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${site}/search?q={search_term_string}`,
+  }
 };
 ---
 
-<html lang="en" class="scroll-pt-32">
+<html lang="en">
   <head>
-    {/* SEO Meta Tags */}
     <SEO
       charset="utf-8"
-      title={seo?.title ?? "Wishyor | Enterprise Software, Cloud, AI/ML & Digital Transformation"}
-      description={seo?.description ??
-        "Wishyor provides enterprise software development, cloud infrastructure, AI/ML, and digital transformation services for businesses worldwide."}
+      title={seo?.title || defaultTitle}
+      description={seo?.description || defaultDescription}
+      canonical={currentUrl}
       openGraph={{
         basic: {
-          title: seo?.title ?? "Wishyor | Enterprise Software, Cloud, AI/ML & Digital Transformation",
+          title: seo?.title || defaultTitle,
           type: "website",
           image: socialImage,
-          url: Astro.url.href,
+          url: currentUrl,
         },
         optional: {
-          description:
-            seo?.description ??
-            "Wishyor delivers enterprise technology solutions: custom software, cloud, AI/ML, and digital transformation for global businesses.",
+          description: seo?.description || defaultDescription,
+          siteName: "Wishyor",
+          locale: "en_US",
         },
       }}
       twitter={{
         card: "summary_large_image",
-        title: seo?.title ?? "Wishyor | Enterprise Software, Cloud, AI/ML & Digital Transformation",
-        description:
-          seo?.description ??
-          "Wishyor provides enterprise software development, cloud infrastructure, AI/ML, and digital transformation services for businesses worldwide.",
+        title: seo?.title || defaultTitle,
+        description: seo?.description || defaultDescription,
         image: socialImage,
-        imageAlt: "Wishyor Logo",
+        imageAlt: "Wishyor - Enterprise Technology Solutions",
         site: "@wishyor",
-        creator: "@wishyor"
       }}
       extend={{
         link: [
+          { rel: "icon", href: "/favicon.ico", sizes: "any" },
           { rel: "icon", href: "/icon.svg", type: "image/svg+xml" },
           { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
           { rel: "manifest", href: "/manifest.webmanifest" },
-          { rel: "canonical", href: Astro.url.href },
         ],
         meta: [
           { name: "viewport", content: "width=device-width, initial-scale=1" },
-          { name: "generator", content: `${Astro.generator}` },
-          { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
-          { httpEquiv: "Content-Language", content: "en" },
+          { name: "generator", content: Astro.generator },
+          { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+          { name: "author", content: "Wishyor Technologies" },
+          { name: "theme-color", content: "#0f766e" },
+          { name: "apple-mobile-web-app-title", content: "Wishyor" },
+          { name: "apple-mobile-web-app-capable", content: "yes" },
+          { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+          { name: "keywords", content: "custom software development, cloud solutions, AI integration, ML integration, digital transformation, tech consulting, software engineering, agile development, cloud computing, AWS experts, Azure solutions, Google Cloud services, DevOps, CI/CD, cloud migration, enterprise software, web app development, mobile app development, full-stack development, artificial intelligence, machine learning, predictive analytics, automation solutions, NLP, computer vision, IT modernization, legacy system upgrade, business process automation, data-driven solutions, scalable IT services, next-gen technology, digital innovation, emerging tech trends, software as a service, SaaS development, future-ready tech, technology partner, smart enterprise solutions" },
+          { name: "business:contact_data:street_address", content: "SG Highway" },
+          { name: "business:contact_data:locality", content: "Ahmedabad" },
+          { name: "business:contact_data:region", content: "Gujarat" },
+          { name: "business:contact_data:postal_code", content: "380015" },
+          { name: "business:contact_data:country_name", content: "India" },
+          { name: "category", content: "Technology Services" },
+          { name: "coverage", content: "Worldwide" },
+          { name: "distribution", content: "Global" },
+          { name: "rating", content: "General" },
+          { name: "target", content: "all" },
+          { name: "HandheldFriendly", content: "True" },
+          { name: "MobileOptimized", content: "320" },
+          { name: "geo.region", content: "IN-GJ" },
+          { name: "geo.placename", content: "Ahmedabad" },
+          { name: "ICBM", content: "23.0225, 72.5714" },
+          { name: "google-site-verification", content: "your-google-site-verification-code" },
+          { name: "publisher", content: "Wishyor" },
+          { name: "application-name", content: "Wishyor" },
+          { name: "msapplication-TileColor", content: "#0f766e" },
+          { name: "msapplication-TileImage", content: "/mstile-150x150.png" },
+          { name: "msapplication-config", content: "/browserconfig.xml" },
+          { name: "theme-color", content: "#0f766e" },
         ],
       }}
     />
-    {/* Schema.org JSON-LD */}
-    <Schema item={schema ?? defaultSchema} />
 
-    {/* Client-Side Router for page transitions */}
+    <Schema item={schema || organizationSchema} />
+    <Schema item={websiteSchema} />
     <ClientRouter />
 
-    {/* Font Definitions */}
     <AstroFont
       config={[
         {
           src: [],
           name: "DM Sans",
-          googleFontsURL:
-            "https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap",
+          googleFontsURL: "https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600;700&display=swap",
           preload: true,
           display: "swap",
           selector: "h1, h2, h3, h4",
@@ -106,8 +209,7 @@ const defaultSchema: WithContext<Thing> = {
         {
           src: [],
           name: "Work Sans",
-          googleFontsURL:
-            "https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap",
+          googleFontsURL: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap",
           preload: true,
           display: "swap",
           selector: "body",
@@ -116,23 +218,19 @@ const defaultSchema: WithContext<Thing> = {
       ]}
     />
 
-    {/* Remove duplicate font links during transitions */}
     <script>
       import type { TransitionBeforeSwapEvent } from "astro:transitions/client";
       document.addEventListener("astro:before-swap", (e) =>
-        [
-          ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll('link[as="font"]'),
-        ].forEach((link) => link.remove())
+        [...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll('link[as="font"]')]
+          .forEach((link) => link.remove())
       );
     </script>
   </head>
   <body class="bg-off-white selection:bg-teal-400 selection:text-slate-700">
     <Navbar />
-
     <main>
       <slot />
     </main>
-
     <Footer />
   </body>
 </html>

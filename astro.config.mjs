@@ -7,12 +7,15 @@ import svelte from "@astrojs/svelte";
 import node from "@astrojs/node";
 import mdx from "@astrojs/mdx";
 import vercel from "@astrojs/vercel";
+import sitemap from "@astrojs/sitemap";
+
 const isVercel = process.env.ASTRO_ADAPTER === "vercel";
 const skipKeystatic = !!process.env.SKIP_KEYSTATIC;
 const skipAdapter = !!process.env.SKIP_ADAPTER;
 
 export default defineConfig({
-  site: "https://wishyor.com",
+  site: "http://localhost:4321",
+  base: "/",
   prefetch: true,
   trailingSlash: "never",
   experimental: {
@@ -28,7 +31,14 @@ export default defineConfig({
       "images.wishyor.app",
     ],
   },
-  integrations: [markdoc(), mdx(), ...(!skipKeystatic ? [keystatic()] : []), db(), svelte()],
+  integrations: [
+    markdoc(),
+    mdx(),
+    ...(!skipKeystatic ? [keystatic()] : []),
+    db(),
+    svelte(),
+    sitemap({ changefreq: "weekly", priority: 0.7, lastmod: new Date("2022-02-24") }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
