@@ -38,7 +38,17 @@ Crawl-delay: 10
 # Sitemap & Host
 # ------------------------
 Sitemap: https://www.wishyor.com/sitemap-index.xml
+Sitemap: https://www.wishyor.com/sitemap-0.xml
+Sitemap: https://www.wishyor.vercel.app.com/sitemap-index.xml
+Sitemap: https://www.wishyor.vercel.app.com/sitemap-0.xml
+
 Host: www.wishyor.com
+Host: www.wishyor.vercel.app
+# ------------------------
+# Additional Directives
+# ------------------------
+# This file is generated automatically. Do not edit manually.
+# For any changes, please contact the SEO team at seo@wishyor.com
 `;
 
 export const GET: APIRoute = () => {
